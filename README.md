@@ -4,7 +4,7 @@ Furthermore, this project showcases the power of modern NLP techniques in unders
 
 The project exemplifies how sophisticated NLP applications can be developed using readily available open-source libraries, making advanced text analysis accessible without requiring exceptional Python skills.
 
-**Dataset**<br\>
+**Dataset**<br/>
 Four datasets are used in the project:
          
 From [Inside Airbnb](https://insideairbnb.com/get-the-data/), an investigative website that reports and visualizes scraped data on Airbnb:
