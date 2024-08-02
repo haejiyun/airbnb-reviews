@@ -16,7 +16,6 @@ From [Inside Airbnb](https://insideairbnb.com/get-the-data/), an investigative w
 
 From [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/quartiers-administratifs/), the official open data platform of the French government:
 - *quartier_paris.geojson* : geolocation data of 80 quartiers in Paris.  
-<br/>
 
 **Techniques**  
 
@@ -26,7 +25,6 @@ The NLP techniques utilized comprise a comprehensive analysis pipeline that incl
 - Translation of non-English reviews to English
 - Sentiment analysis using state-of-the-art transformer models
 - Multi-label classification to categorize review content
-<br/>
 
 **Language Detection**  
 
