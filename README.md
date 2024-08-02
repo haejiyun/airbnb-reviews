@@ -15,7 +15,7 @@ From [Inside Airbnb](https://insideairbnb.com/get-the-data/), an investigative w
 - *neighbourhoods.geojson* : geolocation data of 20 arrondissements in Paris.  
 
 From [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/quartiers-administratifs/), the official open data platform of the French government:
-- *quartier_paris.geojson* : geolocation data of 80 quartiers in Paris.
+- *quartier_paris.geojson* : geolocation data of 80 quartiers in Paris.  
 
 <br/>
 <br/>
