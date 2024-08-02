@@ -27,13 +27,7 @@ The NLP techniques utilized comprise a comprehensive analysis pipeline that incl
 - Sentiment analysis using state-of-the-art transformer models
 - Multi-label classification to categorize review content
 
-<br/>
-<br/>
-**Language Detection**<br/>
 
-Airbnb in Paris attracts a diverse array of international travelers, resulting in reviews written in numerous languages. Identifying the languages of reviews is crucial as it enables appropriate text preprocessing for accurate analysis across all languages and provides valuable insights into the diversity of Airbnb guests in Paris through the distribution of languages used.
-
-For language detection, I employed the *langdetect* package, which is based on Google's language-detection library. This tool is particularly well-suited for identifying the language of given texts with high accuracy. Its ease of implementation and seamless integration with other NLP tools made it an ideal choice for this project. *langdetect*'s capability to identify over 55 languages, coupled with its speed and reliability, makes it exceptionally suitable for processing large volumes of review data.
 <br/>
 <br/>
 **Language Detection**<br/>
