@@ -4,7 +4,7 @@ Furthermore, this project showcases the power of modern NLP techniques in unders
 
 The project exemplifies how sophisticated NLP applications can be developed using readily available open-source libraries, making advanced text analysis accessible without requiring exceptional Python skills.
 <br/>
-<br/>
+
 **Dataset**<br/>
 
 Four datasets are used in the project:
@@ -17,7 +17,6 @@ From [Inside Airbnb](https://insideairbnb.com/get-the-data/), an investigative w
 From [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/quartiers-administratifs/), the official open data platform of the French government:
 - *quartier_paris.geojson* : geolocation data of 80 quartiers in Paris.  
 <br/>
-<br/>
 
 **Techniques**  
 
@@ -27,11 +26,9 @@ The NLP techniques utilized comprise a comprehensive analysis pipeline that incl
 - Translation of non-English reviews to English
 - Sentiment analysis using state-of-the-art transformer models
 - Multi-label classification to categorize review content
-
-
 <br/>
-<br/>
-**Language Detection**<br/>
+
+**Language Detection**  
 
 Airbnb in Paris attracts a diverse array of international travelers, resulting in reviews written in numerous languages. Identifying the languages of reviews is crucial as it enables appropriate text preprocessing for accurate analysis across all languages and provides valuable insights into the diversity of Airbnb guests in Paris through the distribution of languages used.
 
