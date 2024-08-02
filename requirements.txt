@@ -3,4 +3,4 @@ matplotlib
 plotly.express
 nltk
 wordcloud
-PIL
+Pillow
