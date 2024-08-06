@@ -27,7 +27,7 @@ st.set_page_config(layout="wide") #Set wide page layout
 st.markdown("""
     <style>
     body {
-        font-size: 18px;  /* Adjust the base font size */
+        font-size: 12px;  /* Adjust the base font size */
     }
     .css-1d391kg p {
         font-size: 12px;  /* Adjust paragraph font size */
