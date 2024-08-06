@@ -26,27 +26,23 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Custom CSS
 st.markdown("""
     <style>
-    body {
-        font-size: 12px;  /* Adjust the base font size */
-    }
-    .css-1d391kg p {
-        font-size: 12px;  /* Adjust paragraph font size */
-    }
-    .css-1cpxqw2 p {
-        font-size: 10px;  /* Adjust widget text font size */
-    }
-    /* Custom font sizes for Streamlit elements */
-    .css-10trblm {  /* Title */
+    [data-testid="stAppViewContainer"] {
         font-size: 12px !important;
     }
-    .css-1qr5ku5 {  /* Header */
-        font-size: 12px;
+    .stMarkdown p {
+        font-size: 12px !important;
     }
-    .css-1v3fvcr {  /* Subheader */
-        font-size: 12px;
+    .stWidgetLabel p {
+        font-size: 10px !important;
     }
-    .css-7jvzb1 {  /* Markdown */
-        font-size: 12px;
+    .stMarkdown h1 {  /* Title */
+        font-size: 16px !important;
+    }
+    .stMarkdown h2 {  /* Header */
+        font-size: 14px !important;
+    }
+    .stMarkdown h3 {  /* Subheader */
+        font-size: 13px !important;
     }
     </style>
     """, unsafe_allow_html=True)
