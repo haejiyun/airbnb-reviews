@@ -37,17 +37,17 @@ st.markdown("""
     }
     /* Custom font sizes for Streamlit elements */
     .css-10trblm {  /* Title */
-        font-size: 18px;
+        font-size: 12px;
     }
-    /*.css-1qr5ku5 {  /* Header */
-        font-size: 24px;
-    }*/
-    /* .css-1v3fvcr {  /* Subheader */
-        /* font-size: 18px; */
-    } */
-    /*.css-7jvzb1 {  /* Markdown */
-        font-size: 14px;
-    }*/
+    .css-1qr5ku5 {  /* Header */
+        font-size: 12px;
+    }
+    .css-1v3fvcr {  /* Subheader */
+        font-size: 12px;
+    }
+    .css-7jvzb1 {  /* Markdown */
+        font-size: 12px;
+    }
     </style>
     """, unsafe_allow_html=True)
 
