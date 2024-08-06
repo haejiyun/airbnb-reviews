@@ -33,16 +33,16 @@ st.markdown("""
         font-size: 12px !important;
     }
     .stWidgetLabel p {
-        font-size: 10px !important;
+        font-size: 12px !important;
     }
     .stMarkdown h1 {  /* Title */
-        font-size: 16px !important;
+        font-size: 12px !important;
     }
     .stMarkdown h2 {  /* Header */
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
     .stMarkdown h3 {  /* Subheader */
-        font-size: 13px !important;
+        font-size: 12px !important;
     }
     </style>
     """, unsafe_allow_html=True)
