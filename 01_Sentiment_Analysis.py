@@ -30,7 +30,7 @@ st.markdown("""
         font-size: 18px;  /* Adjust the base font size */
     }
     .css-1d391kg p {
-        font-size: 18px;  /* Adjust paragraph font size */
+        font-size: 12px;  /* Adjust paragraph font size */
     }
     .css-1cpxqw2 p {
         font-size: 18px;  /* Adjust widget text font size */
