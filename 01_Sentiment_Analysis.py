@@ -17,6 +17,22 @@ import re
 
 
 
+# Custom CSS
+st.markdown("""
+    <style>
+    body {
+        font-size: 18px;  /* Adjust the base font size */
+    }
+    .css-1d391kg p {
+        font-size: 18px;  /* Adjust paragraph font size */
+    }
+    .css-1cpxqw2 p {
+        font-size: 18px;  /* Adjust widget text font size */
+    }
+    /* Add more customizations as needed */
+    </style>
+    """, unsafe_allow_html=True)
+
 
 
 #DATASET#####
