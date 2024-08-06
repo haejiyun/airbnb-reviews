@@ -35,7 +35,19 @@ st.markdown("""
     .css-1cpxqw2 p {
         font-size: 10px;  /* Adjust widget text font size */
     }
-    /* Add more customizations as needed */
+    /* Custom font sizes for Streamlit elements */
+    .css-10trblm {  /* Title */
+        font-size: 20px;
+    }
+    /*.css-1qr5ku5 {  /* Header */
+        font-size: 24px;
+    }*/
+    /* .css-1v3fvcr {  /* Subheader */
+        /* font-size: 18px; */
+    } */
+    /*.css-7jvzb1 {  /* Markdown */
+        font-size: 14px;
+    }*/
     </style>
     """, unsafe_allow_html=True)
 
