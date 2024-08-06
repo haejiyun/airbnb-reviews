@@ -22,6 +22,13 @@ import re
 #################################################################### Streamlit Configuration
 #st.set_option('deprecation.showPyplotGlobalUse', False) #Remove depreciation warning on pyplot
 st.set_page_config(layout="wide") #Set wide page layout
+st.markdown("""
+    <style>
+    body {
+        background-color: red !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Custom CSS
 st.markdown("""
