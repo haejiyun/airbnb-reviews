@@ -17,6 +17,12 @@ import re
 
 
 
+
+
+#################################################################### Streamlit Configuration
+#st.set_option('deprecation.showPyplotGlobalUse', False) #Remove depreciation warning on pyplot
+st.set_page_config(layout="wide") #Set wide page layout
+
 # Custom CSS
 st.markdown("""
     <style>
@@ -51,10 +57,6 @@ arrondissement_gdf = arrondissement_gdf[['neighbourhood','geometry']] #Select us
 
 
 
-
-#################################################################### Streamlit Configuration
-#st.set_option('deprecation.showPyplotGlobalUse', False) #Remove depreciation warning on pyplot
-st.set_page_config(layout="wide") #Set wide page layout
 
 
 #################################################################### Layout
