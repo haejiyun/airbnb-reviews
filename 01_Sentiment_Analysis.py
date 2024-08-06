@@ -37,7 +37,7 @@ st.markdown("""
     }
     /* Custom font sizes for Streamlit elements */
     .css-10trblm {  /* Title */
-        font-size: 20px;
+        font-size: 18px;
     }
     /*.css-1qr5ku5 {  /* Header */
         font-size: 24px;
