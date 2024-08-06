@@ -33,7 +33,7 @@ st.markdown("""
         font-size: 12px;  /* Adjust paragraph font size */
     }
     .css-1cpxqw2 p {
-        font-size: 18px;  /* Adjust widget text font size */
+        font-size: 10px;  /* Adjust widget text font size */
     }
     /* Add more customizations as needed */
     </style>
