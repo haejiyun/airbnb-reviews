@@ -40,6 +40,25 @@ df['labels_string'] = df['labels'].apply(lambda x: ', '.join(x)) #Create a colum
 st.set_page_config(layout="wide") #Set wide page layout
 
 
+# Custom CSS
+st.markdown("""
+    <style>
+    h1 {  /* Title */
+        font-size: 40px;
+    }
+    h2 {  /* Header */
+        font-size: 30px;
+    }
+    p {
+        font-size: 15px;  /* Adjust paragraph font size */
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+
+
+
+
 #################################################################### Layout
 st.title("Airbnb Guest Reviews in Paris") # Page title
 st.header("Multi-Label Classification") #Page subtitle
