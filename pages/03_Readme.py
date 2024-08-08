@@ -25,6 +25,25 @@ df.drop_duplicates('listing_id',inplace = True)
 st.set_page_config(layout="wide") #Set wide page layout
 
 
+# Custom CSS
+st.markdown("""
+    <style>
+    h1 {  /* Title */
+        font-size: 40px;
+    }
+    h2 {  /* Header */
+        font-size: 30px;
+    }
+    p {
+        font-size: 15px;  /* Adjust paragraph font size */
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+
+
+
+
 #################################################################### Layout
 st.title("Airbnb Guest Reviews in Paris") #Page title
 st.header("Readme") #Page subtitle
@@ -84,7 +103,7 @@ The NLP techniques utilized comprise a comprehensive analysis pipeline that incl
 ''')
 
 st.write("") #Blank line
-st.markdown("Language Detection") #Subheader
+st.markdown(<span style="font-size: 24px;">"Language Detection"</span>) #Subheader
 st.write('''
 Airbnb in Paris attracts a diverse array of international travelers, resulting in reviews written in numerous languages. Identifying the languages of reviews is crucial as it enables appropriate text preprocessing for accurate analysis across all languages and provides valuable insights into the diversity of Airbnb guests in Paris through the distribution of languages used.
 
@@ -102,7 +121,7 @@ container.code(code, language='python') #Show code bloc in the container
 container.write(f"{df['comments'][0]} : {df['language'][0]}") #Show the output
 
 st.write("") #Blank line
-st.markdown("Translation") #Subheader
+st.markdown(<span style="font-size: 24px;">"Translation"</span>) #Subheader
 st.write('''
 To translate the reviews, I used the *GoogleTranslator* from the *deep_translator* package. This tool harnesses the power of the Google Translate service, renowned for its accuracy and efficiency in language translation. By employing *GoogleTranslator* to convert all non-English reviews to English, we establish a uniform language base, enabling consistent application of sentiment scoring and classification techniques across the entire dataset.
          ''')
@@ -117,7 +136,7 @@ container.code(code, language='python') #Show code bloc in the container
 container.write(f"{df['comments'][0]} : {df['comments_en'][0]}") #Show the output
 
 st.write("") #Blank line
-st.markdown("Sentiment Score") #Subheader
+st.markdown(<span style="font-size: 24px;">"Sentiment Score"</span>) #Subheader
 st.write('''
 For sentiment analysis, I employed the *nlptown/bert-base-multilingual-uncased-sentiment* model, implemented through the *transformer* packages from [Hugging Face](https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment). This model is a fine-tuned version of the bert-base-multilingual-uncased model, specifically optimized for sentiment analysis on product reviews across six languages: English, Dutch, German, French, Spanish, and Italian. It predicts sentiment on a scale of 1 to 5 stars, providing nuanced insights beyond simple positive/negative classifications. Although applied to English translations in this project, the model can directly analyze text in any of the six supported languages. 
          ''')
@@ -137,7 +156,7 @@ container.code(code, language='python') #Show code bloc in the container
 container.write(f"{df['comments_en'][0]} : {df['sentiment'][0]}") #Show the output
 
 st.write("") #Blank line
-st.markdown("Multi-Label Classification") #Subheader
+st.markdown(<span style="font-size: 24px;">"Multi-Label Classification"</span>) #Subheader
 st.write('''
 For multi-label classification of review, I used the zero-shot classification model *facebook/bart-large-mnli* implemented through the [Hugging Face](https://huggingface.co/facebook/bart-large-mnli) pipeline. This approach employs the BART model fine-tuned on a large-scale dataset designed to train and evaluate models on understanding relationships between sentences and making inferences across a wide range of text genres. I applied the model to classify comments into five topics: 'apartment', 'bed', 'communication', 'location, and 'neighborhood'. With the multi-label option, the model returns a score for each topic. For the final classification, I retained topics with scores higher than 0.9, or the highest-scoring topic when no score exceeded 0.9. 
          ''')
