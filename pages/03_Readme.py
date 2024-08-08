@@ -103,7 +103,7 @@ The NLP techniques utilized comprise a comprehensive analysis pipeline that incl
 ''')
 
 st.write("") #Blank line
-st.markdown('<span style="font-size: 24px;">Language Detection</span>', unsafe_allow_html=True) #Subheader
+st.markdown('<span style="font-size: 20px;">*Language Detection*</span>', unsafe_allow_html=True) #Subheader
 st.write('''
 Airbnb in Paris attracts a diverse array of international travelers, resulting in reviews written in numerous languages. Identifying the languages of reviews is crucial as it enables appropriate text preprocessing for accurate analysis across all languages and provides valuable insights into the diversity of Airbnb guests in Paris through the distribution of languages used.
 
