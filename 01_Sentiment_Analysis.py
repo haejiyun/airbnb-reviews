@@ -26,29 +26,19 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Custom CSS
 st.markdown("""
     <style>
-    body {
-        font-size: 16px;  /* Adjust the base font size */
-    }
-    p {
-        font-size: 15px;  /* Adjust paragraph font size */
-    }
-    .css-1cpxqw2 p {
-        font-size: 12px;  /* Adjust widget text font size */
-    }
     h1 {  /* Title */
         font-size: 40px;
     }
     h2 {  /* Header */
         font-size: 30px;
     }
-    .css-1v3fvcr {  /* Subheader */
-        font-size: 12px;
-    }
-    .css-7jvzb1 {  /* Markdown */
-        font-size: 12px;
+    p {
+        font-size: 15px;  /* Adjust paragraph font size */
     }
     </style>
     """, unsafe_allow_html=True)
+
+
 
 
 
