@@ -29,7 +29,7 @@ st.markdown("""
     body {
         font-size: 16px;  /* Adjust the base font size */
     }
-    .css-1d391kg p {
+    p {
         font-size: 12px;  /* Adjust paragraph font size */
     }
     .css-1cpxqw2 p {
@@ -38,7 +38,7 @@ st.markdown("""
     h1 {  /* Title */
         font-size: 12px;
     }
-    .css-1qr5ku5 {  /* Header */
+    h2 {  /* Header */
         font-size: 12px;
     }
     .css-1v3fvcr {  /* Subheader */
