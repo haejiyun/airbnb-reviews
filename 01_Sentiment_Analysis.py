@@ -36,7 +36,7 @@ st.markdown("""
         font-size: 12px;  /* Adjust widget text font size */
     }
     h1 {  /* Title */
-        font-size: 26px;
+        font-size: 30px;
     }
     h2 {  /* Header */
         font-size: 24px;
