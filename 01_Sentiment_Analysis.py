@@ -37,7 +37,7 @@ st.markdown("""
     }
     /* Adjust the font size of the specific element */
     .st-b1 {
-        font-size: 10px;  /* Adjust this value as needed */
+        font-size: 9px;  /* Adjust this value as needed */
     }
     </style>
     """, unsafe_allow_html=True)
@@ -111,7 +111,7 @@ df_filtered = df[mask] #Select filtered data
 col1, col2 = st.columns([2, 1], gap = 'small') #Create two columns for two graphs
 
 with col1: #On the first column
-    col1_bis, col2_bis= st.columns([1,11]) #Create a sub-columns for sub-filteres
+    col1_bis, col2_bis= st.columns([1,10]) #Create a sub-columns for sub-filteres
     with col1_bis: #On the first sub-column
         st.write("Show by :") #Show the name of filter
     with col2_bis: #On the second sub-column
