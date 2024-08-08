@@ -28,10 +28,10 @@ st.markdown("""
     <style>
     /* Adjust the width of the sidebar */
     .st-emotion-cache-d9beys {
-        width: 300px;  /* Adjust this value as needed */
+        width: 10px;  /* Adjust this value as needed */
     }
     .css-eczjsme13 {
-        width: 300px;  /* Adjust this value as needed */
+        width: 10px;  /* Adjust this value as needed */
     }
     h1 {  /* Title */
         font-size: 40px;
