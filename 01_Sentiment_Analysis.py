@@ -32,6 +32,9 @@ st.markdown("""
     h2 {  /* Header font size*/
         font-size: 30px;
     }
+    h5 {  /* Graph title font size*/
+    font-size: 20px;
+    }
     p {
         font-size: 15px;  /* Paragraph font size */
     }
