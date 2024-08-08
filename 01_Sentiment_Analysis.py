@@ -97,8 +97,7 @@ with col2: #On the second column
         st.session_state.selected = arrondissement_all #Set default selection of arrondissement
     if st.button('Select all arrondissements'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-    arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon",
-                          "6 - Luxembourg"]) #Create arrondissement mutiselect filter
+    arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon"]) #Create arrondissement mutiselect filter
     st.session_state.selected = arrondissement #Update selection at each select action is made
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
@@ -111,7 +110,7 @@ df_filtered = df[mask] #Select filtered data
 col1, col2 = st.columns([2, 1], gap = 'small') #Create two columns for two graphs
 
 with col1: #On the first column
-    col1_bis, col2_bis= st.columns([1,10]) #Create a sub-columns for sub-filteres
+    col1_bis, col2_bis= st.columns([1,9]) #Create a sub-columns for sub-filteres
     with col1_bis: #On the first sub-column
         st.write("Show by :") #Show the name of filter
     with col2_bis: #On the second sub-column
