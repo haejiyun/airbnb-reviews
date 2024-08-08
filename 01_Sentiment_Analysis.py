@@ -35,6 +35,10 @@ st.markdown("""
     p {
         font-size: 15px;  /* Adjust paragraph font size */
     }
+    /* Adjust the font size of the specific element */
+    .st-b1 {
+        font-size: 10px;  /* Adjust this value as needed */
+    }
     </style>
     """, unsafe_allow_html=True)
 
