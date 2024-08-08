@@ -26,13 +26,6 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Custom CSS
 st.markdown("""
     <style>
-   /* Adjust the width of the sidebar */
-    .css-eczjsme11 {
-        width: 1000px;  /* Set the width you desire */
-    }
-    .css-eczjsme1 {
-        width: 1000px;  /* Ensures parent containers are also adjusted */
-    }
     h1 {  /* Title */
         font-size: 40px;
     }
