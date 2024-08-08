@@ -26,13 +26,6 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Custom CSS
 st.markdown("""
     <style>
-    /* Adjust the width of the sidebar */
-    .st-emotion-cache-d9beys {
-        width: 10px;  /* Adjust this value as needed */
-    }
-    .css-eczjsme13 {
-        width: 10px;  /* Adjust this value as needed */
-    }
     h1 {  /* Title */
         font-size: 40px;
     }
