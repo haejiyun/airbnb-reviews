@@ -33,7 +33,7 @@ st.markdown("""
         font-size: 30px;
     }
     h5 {  /* Graph title font size*/
-    font-size: 16px;
+    font-size: 18px;
     }
     p {
         font-size: 15px;  /* Paragraph font size */
