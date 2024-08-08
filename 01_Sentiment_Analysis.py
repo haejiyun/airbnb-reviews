@@ -35,8 +35,7 @@ st.markdown("""
     .css-1cpxqw2 p {
         font-size: 10px;  /* Adjust widget text font size */
     }
-    /* Custom font sizes for Streamlit elements */
-    .css-10trblm {  /* Title */
+    h1 {  /* Title */
         font-size: 12px;
     }
     .css-1qr5ku5 {  /* Header */
