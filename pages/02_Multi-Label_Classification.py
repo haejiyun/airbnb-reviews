@@ -43,14 +43,20 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Custom CSS
 st.markdown("""
     <style>
-    h1 {  /* Title */
+    h1 {  /* Title font size*/
         font-size: 40px;
     }
-    h2 {  /* Header */
+    h2 {  /* Header font size*/
         font-size: 30px;
     }
+    h5 {  /* Graph title font size*/
+    font-size: 20px;
+    }
     p {
-        font-size: 15px;  /* Adjust paragraph font size */
+        font-size: 15px;  /* Paragraph font size */
+    }
+    .st-b1 {
+        font-size: 9px;  /* Arrondissement name font size */
     }
     </style>
     """, unsafe_allow_html=True)
@@ -94,8 +100,7 @@ with col2: #On the second column
         st.session_state.selected = arrondissement_all #Set default selection of arrondissement
     if st.button('Select all arrondissements'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-    arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon",
-                          "6 - Luxembourg"]) #Create arrondissement mutiselect filter
+    arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon"]) #Create arrondissement mutiselect filter
     st.session_state.selected = arrondissement #Update selection at each select action is made
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
