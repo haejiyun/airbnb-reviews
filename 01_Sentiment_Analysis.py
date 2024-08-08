@@ -39,7 +39,7 @@ st.markdown("""
         font-size: 36px;
     }
     h2 {  /* Header */
-        font-size: 24px;
+        font-size: 30px;
     }
     .css-1v3fvcr {  /* Subheader */
         font-size: 12px;
