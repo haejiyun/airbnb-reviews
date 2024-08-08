@@ -30,16 +30,16 @@ st.markdown("""
         font-size: 16px;  /* Adjust the base font size */
     }
     p {
-        font-size: 14px;  /* Adjust paragraph font size */
+        font-size: 15px;  /* Adjust paragraph font size */
     }
     .css-1cpxqw2 p {
         font-size: 12px;  /* Adjust widget text font size */
     }
     h1 {  /* Title */
-        font-size: 24px;
+        font-size: 26px;
     }
     h2 {  /* Header */
-        font-size: 20px;
+        font-size: 24px;
     }
     .css-1v3fvcr {  /* Subheader */
         font-size: 12px;
