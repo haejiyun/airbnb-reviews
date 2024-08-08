@@ -26,18 +26,17 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Custom CSS
 st.markdown("""
     <style>
-    h1 {  /* Title */
+    h1 {  /* Title font size*/
         font-size: 40px;
     }
-    h2 {  /* Header */
+    h2 {  /* Header font size*/
         font-size: 30px;
     }
     p {
-        font-size: 15px;  /* Adjust paragraph font size */
+        font-size: 15px;  /* Paragraph font size */
     }
-    /* Adjust the font size of the specific element */
     .st-b1 {
-        font-size: 9px;  /* Adjust this value as needed */
+        font-size: 9px;  /* Arrondissement name font size */
     }
     </style>
     """, unsafe_allow_html=True)
@@ -110,7 +109,7 @@ df_filtered = df[mask] #Select filtered data
 col1, col2 = st.columns([2, 1], gap = 'small') #Create two columns for two graphs
 
 with col1: #On the first column
-    col1_bis, col2_bis= st.columns([1,6]) #Create a sub-columns for sub-filteres
+    col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
     with col1_bis: #On the first sub-column
         st.write("Show by :") #Show the name of filter
     with col2_bis: #On the second sub-column
