@@ -22,34 +22,31 @@ import re
 #################################################################### Streamlit Configuration
 #st.set_option('deprecation.showPyplotGlobalUse', False) #Remove depreciation warning on pyplot
 st.set_page_config(layout="wide") #Set wide page layout
-st.markdown("""
-    <style>
-    body {
-        background-color: red !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
 # Custom CSS
 st.markdown("""
     <style>
-    [data-testid="stAppViewContainer"] {
-        font-size: 12px !important;
+    body {
+        font-size: 14px;  /* Adjust the base font size */
     }
-    .stMarkdown p {
-        font-size: 12px !important;
+    .css-1d391kg p {
+        font-size: 12px;  /* Adjust paragraph font size */
     }
-    .stWidgetLabel p {
-        font-size: 12px !important;
+    .css-1cpxqw2 p {
+        font-size: 10px;  /* Adjust widget text font size */
     }
-    .stMarkdown h1 {  /* Title */
-        font-size: 12px !important;
+    /* Custom font sizes for Streamlit elements */
+    .css-10trblm {  /* Title */
+        font-size: 12px;
     }
-    .stMarkdown h2 {  /* Header */
-        font-size: 12px !important;
+    .css-1qr5ku5 {  /* Header */
+        font-size: 12px;
     }
-    .stMarkdown h3 {  /* Subheader */
-        font-size: 12px !important;
+    .css-1v3fvcr {  /* Subheader */
+        font-size: 12px;
+    }
+    .css-7jvzb1 {  /* Markdown */
+        font-size: 12px;
     }
     </style>
     """, unsafe_allow_html=True)
