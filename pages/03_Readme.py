@@ -83,13 +83,13 @@ st.write("*reviews.csv*") #Show the dataset name
 st.table(data = df[['listing_id','date','comments']].head()) #Show the dataset
 #with col3: #On the third column
 st.write("*neighbourhoods.geojson*") #Show the dataset name
-st.dataframe(data = df[['arrondissement','geometry_arrondissement']].sample(10).rename(columns ={"geometry_arrondissement":"geometry"}), hide_index=True) #Show the dataset
+st.dataframe(data = df[['arrondissement','geometry_arrondissement']].head().rename(columns ={"geometry_arrondissement":"geometry"}), hide_index=True) #Show the dataset
 #with col4: #On the fourth column
 st.write("*quartier_paris.geojson*") #Show the dataset name
-st.dataframe(data = df[['quartier','geometry_quartier']].sample(10).rename(columns ={"geometry_quartier":"geometry"}), hide_index=True) #Show the dataset
+st.dataframe(data = df[['quartier','geometry_quartier']].head().rename(columns ={"geometry_quartier":"geometry"}), hide_index=True) #Show the dataset
 
 st.write("After comprehensive data processing, a consolidated dataset is constructed as shown below, serving as the foundation for the NLP analysis.") #Explain the base dataset
-st.dataframe(data = df[['listing_id','date','comments','arrondissement','geometry_arrondissement','quartier','geometry_quartier']].sample(5), hide_index = True, width = 1400) #Show the dataset
+st.dataframe(data = df[['listing_id','date','comments','arrondissement','geometry_arrondissement','quartier','geometry_quartier']].head(), hide_index = True, width = 1400) #Show the dataset
 
 
 st.write("") #Blank line
