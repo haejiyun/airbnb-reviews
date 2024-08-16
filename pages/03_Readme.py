@@ -71,10 +71,12 @@ From [Inside Airbnb](https://insideairbnb.com/get-the-data/), an investigative w
 From [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/quartiers-administratifs/), the official open data platform of the French government:
 - *quartier_paris.geojson* : geolocation data of 80 quartiers in Paris.
 
-Below is an extract of columns from each dataset that are used in this analysis:         
 ''')
 
 st.markdown('<span style="font-size: 20px;">**Source Data**</span>', unsafe_allow_html=True) #Subheader
+st.write('''
+Below is an extract of columns from each dataset that are used in this analysis:         
+''')
 st.write("*listings.csv*") #Show the dataset name
 st.dataframe(data = df[['listing_id','latitude','longitude']].head().rename(columns ={"listing_id":"id"}), hide_index=True) #Show the dataset
 st.write("*reviews.csv*") #Show the dataset name
