@@ -64,7 +64,8 @@ st.write('''
 Four datasets are used in the project:
          
 From [Inside Airbnb](https://insideairbnb.com/get-the-data/), an investigative website that reports and visualizes scraped data on Airbnb:
-- *listings.csv* : detailed information about 84,397 Airbnb properties in Paris.  
+- *listings.csv* : detailed information about 84,397 Airbnb properties in Paris.
+st.dataframe(data = df[['listing_id','latitude','longitude']].head().rename(columns ={"listing_id":"id"}), hide_index=True) #Show the dataset
 - *reviews.csv* : 1,794,006 comments left by guests for Airbnb properties in Paris.  
 - *neighbourhoods.geojson* : geolocation data of 20 arrondissements in Paris.  
 
