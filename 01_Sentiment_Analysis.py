@@ -26,10 +26,6 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Custom CSS
 st.markdown("""
     <style>
-    .block-container {
-    padding-top: 1rem;
-    padding-bottom: 0rem;
-    }
     h1 {  /* Title font size*/
         font-size: 40px;
     }
