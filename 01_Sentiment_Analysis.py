@@ -41,9 +41,8 @@ st.markdown("""
     .st-b1 {
         font-size: 8.5px;  /* Arrondissement name font size */
     }
-      /* Apply the width to the entire sidebar container */
     [data-testid="stSidebar"] {
-        width: 200px;  /* Adjust this value to your desired width */
+        width: 200px;  /* Adjust sidebar width */
     }
     </style>
     """, unsafe_allow_html=True)
