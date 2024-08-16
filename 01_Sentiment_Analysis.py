@@ -43,7 +43,7 @@ st.markdown("""
     }
       /* Apply the width to the entire sidebar container */
     [data-testid="stSidebar"] {
-        width: 500px;  /* Adjust this value to your desired width */
+        width: 200px;  /* Adjust this value to your desired width */
     }
     </style>
     """, unsafe_allow_html=True)
