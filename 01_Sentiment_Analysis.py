@@ -76,7 +76,7 @@ This page displays sentiment analysis results for guest reviews of Paris zones a
 
 
 #################################################################### Filters
-col1, col2 = st.columns([2, 3], gap = 'medium') #Create two columns for period & arrondissement filters
+col1, col2 = st.columns([2, 4], gap = 'medium') #Create two columns for period & arrondissement filters
 
 with col1: #On the first column
     min_date = df['month'].min().to_pydatetime() #Set minimum date
