@@ -133,7 +133,7 @@ with col1: #On the first column
                       insidetextfont=dict(size=15) 
                       )
     fig.update_layout(width=1000, #Update the dimension of the graph
-                      height=800, 
+                      height=350, 
                       coloraxis_showscale=False, #Hide colorbar
                       title_font_size=17, #Update title configuration
                       title_xanchor='center',
@@ -148,7 +148,7 @@ with col2: #On the second column
                        title='Count of each topics', 
                        color_discrete_sequence=['#FF5A5F'])
     fig.update_layout(width = 500, #Update the dimension of the graph
-                      height = 780,
+                      height = 320,
                       title_font_size=17, #Update the title configuration
                       title_xanchor='center',
                       title_x = 0.6,
