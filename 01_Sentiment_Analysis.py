@@ -41,8 +41,16 @@ st.markdown("""
     .st-b1 {
         font-size: 8.5px;  /* Arrondissement name font size */
     }
+    /* Apply the width to the entire sidebar container */
     [data-testid="stSidebar"] {
-        width: 500px;  /* Adjust sidebar width */
+        width: 500px;  /* Force the sidebar to be 500px wide */
+        min-width: 500px;  /* Ensure the minimum width is also set */
+        max-width: 500px;  /* Ensure the maximum width is also set */
+    }
+    
+    /* Ensure the sidebar's content takes the full width */
+    [data-testid="stSidebarContent"] {
+        width: 100%;
     }
     </style>
     """, unsafe_allow_html=True)
