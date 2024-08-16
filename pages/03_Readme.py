@@ -74,20 +74,17 @@ From [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/quartiers-administratif
 Below is an extract of columns from each dataset that are used in this analysis:         
 ''')
 
-#col1, col2, col3, col4 = st.columns([1.3,3.5,1.7,1.5]) #Divide four columns with different width to show four dataset on the same line
-#with col1: #On the first column
+st.markdown('<span style="font-size: 20px;">**Source Data**</span>', unsafe_allow_html=True) #Subheader
 st.write("*listings.csv*") #Show the dataset name
 st.dataframe(data = df[['listing_id','latitude','longitude']].head().rename(columns ={"listing_id":"id"}), hide_index=True) #Show the dataset
-#with col2: #On the second column
 st.write("*reviews.csv*") #Show the dataset name
 st.table(data = df[['listing_id','date','comments']].head()) #Show the dataset
-#with col3: #On the third column
 st.write("*neighbourhoods.geojson*") #Show the dataset name
 st.dataframe(data = df[['arrondissement','geometry_arrondissement']].head().rename(columns ={"geometry_arrondissement":"geometry"}), hide_index=True) #Show the dataset
-#with col4: #On the fourth column
 st.write("*quartier_paris.geojson*") #Show the dataset name
 st.dataframe(data = df[['quartier','geometry_quartier']].head().rename(columns ={"geometry_quartier":"geometry"}), hide_index=True) #Show the dataset
 
+st.markdown('<span style="font-size: 20px;">**Final Data**</span>', unsafe_allow_html=True) #Subheader
 st.write("After comprehensive data processing, a consolidated dataset is constructed as shown below, serving as the foundation for the NLP analysis.") #Explain the base dataset
 st.dataframe(data = df[['listing_id','date','comments','arrondissement','geometry_arrondissement','quartier','geometry_quartier']].head(), hide_index = True, width = 1400) #Show the dataset
 
