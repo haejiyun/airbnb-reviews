@@ -56,7 +56,7 @@ st.markdown("""
         font-size: 15px;  /* Paragraph font size */
     }
     .st-b1 {
-        font-size: 9px;  /* Arrondissement name font size */
+        font-size: 8.5px;  /* Arrondissement name font size */
     }
     </style>
     """, unsafe_allow_html=True)
