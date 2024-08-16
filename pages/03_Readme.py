@@ -86,7 +86,7 @@ st.write("*neighbourhoods.geojson*") #Show the dataset name
 st.dataframe(data = df[['arrondissement','geometry_arrondissement']].sample(10).rename(columns ={"geometry_arrondissement":"geometry"}), hide_index=True) #Show the dataset
 #with col4: #On the fourth column
 st.write("*quartier_paris.geojson*") #Show the dataset name
-st.table(data = df[['quartier','geometry_quartier']].sample(10).rename(columns ={"geometry_quartier":"geometry"})) #Show the dataset
+st.dataframe(data = df[['quartier','geometry_quartier']].sample(10).rename(columns ={"geometry_quartier":"geometry"}), hide_index=True) #Show the dataset
 
 st.write("After comprehensive data processing, a consolidated dataset is constructed as shown below, serving as the foundation for the NLP analysis.") #Explain the base dataset
 st.dataframe(data = df[['listing_id','date','comments','arrondissement','geometry_arrondissement','quartier','geometry_quartier']].sample(5), hide_index = True, width = 1400) #Show the dataset
@@ -118,7 +118,7 @@ from langdetect import detect
 detect(comments) #Detect language
 '''
 container.code(code, language='python') #Show code bloc in the container
-container.write(f"{df['comments'][1]} : {df['language'][1]}") #Show the output
+container.write(f"{df['comments'][4]} : {df['language'][4]}") #Show the output
 
 st.write("") #Blank line
 st.markdown('<span style="font-size: 20px;">**Translation**</span>', unsafe_allow_html=True) #Subheader
@@ -133,7 +133,7 @@ from deep_translator import GoogleTranslator
 GoogleTranslator(source='fr', target='en').translate(comments) #Translate
 '''
 container.code(code, language='python') #Show code bloc in the container
-container.write(f"{df['comments'][1]} : {df['comments_en'][1]}") #Show the output
+container.write(f"{df['comments'][4]} : {df['comments_en'][4]}") #Show the output
 
 st.write("") #Blank line
 st.markdown('<span style="font-size: 20px;">**Sentiment Score**</span>', unsafe_allow_html=True) #Subheader
@@ -153,7 +153,7 @@ tokens = tokenizer.encode(comments, max_length=512, return_tensors='pt') #Apply 
 model(tokens) #Apply sentiment calculator on tokens
 '''
 container.code(code, language='python') #Show code bloc in the container
-container.write(f"{df['comments_en'][1]} : {df['sentiment'][1]}") #Show the output
+container.write(f"{df['comments_en'][4]} : {df['sentiment'][4]}") #Show the output
 
 st.write("") #Blank line
 st.markdown('<span style="font-size: 20px;">**Multi-Label Classification**</span>', unsafe_allow_html=True) #Subheader
@@ -170,7 +170,7 @@ model = pipeline("zero-shot-classification", model="facebook/bart-large-mnli") #
 model(comments, candidate_labels=['communication', 'apartment', 'neighborhood', 'location', 'bed'], multi_label = True) #Apply multi-label zero-shot model
 '''
 container.code(code, language='python') #Show code bloc in the container
-container.write(f"{df['label_classification'][1]}") #Show the output
+container.write(f"{df['label_classification'][4]}") #Show the output
 
 st.write("") #Blank line
 st.subheader("Output") #Header
