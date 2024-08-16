@@ -43,20 +43,25 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Custom CSS
 st.markdown("""
     <style>
-    h1 {  /* Title font size */
+    h1 {  /* Title font size*/
         font-size: 40px;
     }
-    h2 {  /* Header font size */
+    h2 {  /* Header font size*/
         font-size: 30px;
     }
-    h5 {  /* Graph title font size */
-        font-size: 20px;
+    h5 {  /* Graph title font size*/
+    font-size: 18px;
     }
-    p {  /* Paragraph font size */
-        font-size: 15px;
+    p {
+        font-size: 15px;  /* Paragraph font size */
     }
-    .st-b1 {  /* Arrondissement name font size */
-        font-size: 8.5px;
+    .st-b1 {
+        font-size: 9px;  /* Arrondissement name font size */
+    }
+    [data-testid="stSidebar"] {
+        width: 240px;  /* Sidebar width */
+        min-width: 240px;  /* Sidebar minimum width */
+        max-width: 240px;  /* Sidebar maximum width */
     }
     </style>
     """, unsafe_allow_html=True)
