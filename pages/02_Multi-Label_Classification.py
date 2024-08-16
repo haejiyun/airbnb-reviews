@@ -71,9 +71,7 @@ st.header("Multi-Label Classification") #Page subtitle
 st.markdown("***") #Breakline
 st.write('''
 This page presents the results of topic classification for guest reviews across different time periods in Paris. The classification model categorizes comments into five main topics: Apartment, Bed, Communication, Location, Neighborhood. Based on the content of each review, one or multiple relevant topics are assigned. You can customize your view by selecting time period of interest and specific area in Paris.
-
-This interface allows you to explore prevalent themes in guest feedback, analyze topic distributions, and read specific examples of reviews for different areas of Paris over various time periods.
-         ''')
+ ''')
 
 
 #################################################################### Filters
