@@ -140,7 +140,7 @@ with col1: #On the first column
                             zoom=11.1, 
                             center={"lat": 48.86, "lon": 2.345},
                             #opacity=0.8,
-                            height=550,
+                            height=250,
                             width=1300)
     choropleth.update_traces(marker_line_width=0, #Update market configuration
                              marker_opacity=0.8)
