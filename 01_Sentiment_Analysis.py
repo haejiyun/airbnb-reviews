@@ -69,16 +69,13 @@ arrondissement_gdf = arrondissement_gdf[['neighbourhood','geometry']] #Select us
 
 
 
-
-
 #################################################################### Layout
 st.title("Airbnb Guest Reviews in Paris") #Page title
 st.header("Sentiment Analysis") #Page subtitle
-st.markdown("***") #Breakline
 st.write('''
 This page displays sentiment analysis results for guest reviews of Paris zones across different time periods. Based on the content of each comment, a sentiment score from 1 to 5 is assigned, where 1 represents highly negative sentiment and 5 indicates positive sentiment. You can customize your view by selecting time period of interest and specific area in Paris.  
          ''')
-
+st.markdown("***") #Breakline
 
 #################################################################### Filters
 col1, col2 = st.columns([2, 3], gap = 'medium') #Create two columns for period & arrondissement filters
