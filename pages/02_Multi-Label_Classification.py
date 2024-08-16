@@ -73,10 +73,10 @@ st.markdown("""
 #################################################################### Layout
 st.title("Airbnb Guest Reviews in Paris") # Page title
 st.header("Multi-Label Classification") #Page subtitle
-st.markdown("***") #Breakline
 st.write('''
 This page presents the results of topic classification for guest reviews across different time periods in Paris. The classification model categorizes comments into five main topics: Apartment, Bed, Communication, Location, Neighborhood. Based on the content of each review, one or multiple relevant topics are assigned. You can customize your view by selecting time period of interest and specific area in Paris.
  ''')
+st.markdown("***") #Breakline
 
 
 #################################################################### Filters
