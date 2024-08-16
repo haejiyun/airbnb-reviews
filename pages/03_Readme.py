@@ -73,6 +73,7 @@ From [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/quartiers-administratif
 
 ''')
 
+st.write("") #Blank line
 st.markdown('<span style="font-size: 20px;">**Source Data**</span>', unsafe_allow_html=True) #Subheader
 st.write('''
 Below is an extract of columns from each dataset that are used in this analysis:         
@@ -86,6 +87,7 @@ st.dataframe(data = df[['arrondissement','geometry_arrondissement']].head().rena
 st.write("*quartier_paris.geojson*") #Show the dataset name
 st.dataframe(data = df[['quartier','geometry_quartier']].head().rename(columns ={"geometry_quartier":"geometry"}), hide_index=True) #Show the dataset
 
+st.write("") #Blank line
 st.markdown('<span style="font-size: 20px;">**Final Data**</span>', unsafe_allow_html=True) #Subheader
 st.write("After comprehensive data processing, a consolidated dataset is constructed as shown below, serving as the foundation for the NLP analysis.") #Explain the base dataset
 st.dataframe(data = df[['listing_id','date','comments','arrondissement','geometry_arrondissement','quartier','geometry_quartier']].head(), hide_index = True, width = 1400) #Show the dataset
