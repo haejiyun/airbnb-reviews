@@ -119,7 +119,8 @@ col1, col2 = st.columns([2, 1], gap = 'small') #Create two columns for two graph
 with col1: #On the first column
     col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
     with col1_bis: #On the first sub-column
-        st.write("Show by :") #Show the name of filter
+        st.markdown("<p style='line-height:2.4;'>Show by :</p>", unsafe_allow_html=True)
+        #st.write("Show by :") #Show the name of filter
     with col2_bis: #On the second sub-column
         zone = st.radio("", options=["Arrondissement", "Quartier"], horizontal=True, label_visibility="collapsed") #Create area division option filter
     if zone == "Quartier": #If quartier is selected
