@@ -114,7 +114,7 @@ df_filtered = df[mask] #Select filtered data
 #################################################################### Graphs
 
 # Chorolepleth
-col1, col2 = st.columns([2.5, 1.5], gap = 'small') #Create two columns for two graphs
+col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
 
 with col1: #On the first column
     col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
