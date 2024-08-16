@@ -39,7 +39,7 @@ st.markdown("""
         font-size: 15px;  /* Paragraph font size */
     }
     .st-b1 {
-        font-size: 8.5px;  /* Arrondissement name font size */
+        font-size: 9.5px;  /* Arrondissement name font size */
     }
     [data-testid="stSidebar"] {
         width: 250px;  /* Sidebar width */
