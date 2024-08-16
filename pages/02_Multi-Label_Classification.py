@@ -58,10 +58,6 @@ st.markdown("""
     .st-b1 {  /* Arrondissement name font size */
         font-size: 8.5px;
     }
-    /* Customize the width of the sidebar */
-    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-        width: 500px;  /* Adjust this value to your desired width */
-    }
     </style>
     """, unsafe_allow_html=True)
 
