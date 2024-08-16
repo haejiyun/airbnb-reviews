@@ -42,9 +42,9 @@ st.markdown("""
         font-size: 9px;  /* Arrondissement name font size */
     }
     [data-testid="stSidebar"] {
-        width: 250px;  /* Sidebar width */
-        min-width: 250px;  /* Sidebar minimum width */
-        max-width: 250px;  /* Sidebar maximum width */
+        width: 240px;  /* Sidebar width */
+        min-width: 240px;  /* Sidebar minimum width */
+        max-width: 240px;  /* Sidebar maximum width */
     }
     </style>
     """, unsafe_allow_html=True)
