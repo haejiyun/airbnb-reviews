@@ -44,8 +44,6 @@ st.markdown("""
     /* Apply the width to the entire sidebar container */
     [data-testid="stSidebar"] {
         width: 500px;  /* Force the sidebar to be 500px wide */
-        min-width: 500px;  /* Ensure the minimum width is also set */
-        max-width: 500px;  /* Ensure the maximum width is also set */
     }
     
     /* Ensure the sidebar's content takes the full width */
