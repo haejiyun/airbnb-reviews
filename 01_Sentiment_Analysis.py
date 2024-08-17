@@ -253,7 +253,7 @@ with ClassificationTab:
     
     with col2: #On the second column
         fig = px.histogram(labels_counts_exploded, #Create barplot
-                           y='labels', 
+                           y='labels_list', 
                            x= 'count', 
                            title='Count of each topics', 
                            color_discrete_sequence=['#FF5A5F'])
