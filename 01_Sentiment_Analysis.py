@@ -96,12 +96,12 @@ with col2: #On the second column
                           "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
                           "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
                           "16 - Passy","17 - Batignolles-Monceau","18 - Buttes-Montmartre","19 - Buttes-Chaumont","20 - Ménilmontant"]
-    container = st.container() #Create a container for arrondissement filter
+    container = st.sidebar.container() #Create a container for arrondissement filter
     if 'selected' not in st.session_state: #Create session_state for selected arrondissement
         st.session_state.selected = arrondissement_all #Set default selection of arrondissement
     if st.sidebar.button('Select all arrondissements'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-    arrondissement = container.sidebar.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon"]) #Create arrondissement mutiselect filter
+    arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon"]) #Create arrondissement mutiselect filter
     st.session_state.selected = arrondissement #Update selection at each select action is made
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
