@@ -126,6 +126,7 @@ with SentimentTab: ################################################# Sentiment A
     col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
     
     with col1: #On the first column
+        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Linechart title
         col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
         with col1_bis: #On the first sub-column
             st.markdown("<p style='line-height:2.4;'>Show by :</p>", unsafe_allow_html=True)
@@ -159,6 +160,7 @@ with SentimentTab: ################################################# Sentiment A
         st.plotly_chart(choropleth) #Show the choropleth
     
     with col2: #On the second column
+        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Common Words in Guest Reviews</h5>", unsafe_allow_html=True) #Wordcloud title
         comments_pos = df_filtered.loc[df_filtered['sentiment_binary'] == 'positive', 'comments_en'].astype(str).str.replace('\n', ' ').dropna() #Extract positive comments
         comments_pos = ' '.join(comments_pos) #Extract words
         comments_neg = df_filtered.loc[df_filtered['sentiment_binary'] == 'negative', 'comments_en'].astype(str).str.replace('\n', ' ').dropna() #Extract negative comments
