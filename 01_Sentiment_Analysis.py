@@ -123,7 +123,7 @@ with SentimentTab: ################################################# Sentiment A
     This page displays sentiment analysis results for guest reviews of Paris zones across different time periods. Based on the content of each comment, a sentiment score from 1 to 5 is assigned, where 1 represents highly negative sentiment and 5 indicates positive sentiment. You can customize your view by selecting time period of interest and specific area in Paris.  
              ''')
     
-    col1, col2 = st.columns([3, 1.8], gap = 'small') #Create two columns for two graphs
+    col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
     
     with col1: #On the first column
         col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
@@ -213,7 +213,7 @@ with ClassificationTab: ############################################ Multi-class
     This page presents the results of topic classification for guest reviews across different time periods in Paris. The classification model categorizes comments into five main topics: Apartment, Bed, Communication, Location, and Neighborhood. For each review, one or multiple relevant topics are assigned. You can customize your view by selecting time period of interest and specific area in Paris.
      ''')
     
-    col1, col2 = st.columns([3, 2], gap="small") #Create two columns for two graphs
+    col1, col2 = st.columns([3, 2], gap="medium") #Create two columns for two graphs
     
     with col1: #On the first column
         fig = px.treemap(labels_counts, #Create a treemap 
