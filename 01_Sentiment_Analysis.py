@@ -227,7 +227,8 @@ with ClassificationTab: ############################################ Multi-class
                           coloraxis_showscale=False, #Hide colorbar
                           title_font_size=17, #Update title configuration
                           title_xanchor='center',
-                          title_x = 0.5
+                          title_x = 0.5,
+                          margin=dict(t=0, l=0, r=0, b=0) 
                           )
         st.plotly_chart(fig, use_container_width=False) #Show the graph
     
