@@ -185,13 +185,14 @@ with SentimentTab: ################################################# Sentiment A
     linechart = px.line(df_sentiment, x='date', y='sentiment') #Create linechart
     linechart.update_xaxes(dtick='D1', #Update ticks configuration
                            tickangle=-90, 
-                           tickfont=dict(size=8)) #
+                           tickfont=dict(size=8))
     linechart.update_layout(yaxis_title="Score", #Update y-axis title
                             yaxis_title_font=dict(size=15), 
                             xaxis_title=None, #Update x-axis title
                             yaxis=dict(range=[0, 5.2]),
                             yaxis_tickfont=dict(size=13), #Update y-ticks configuration
-                            xaxis_tickfont=dict(size=13)) #Update x-ticks configuration
+                            xaxis_tickfont=dict(size=13), #Update x-ticks configuration
+                            line_color="#00A699", #Update line color) 
     linechart.update_layout(margin=dict(l=60, r=60, t=5, b=115)) #Update margin
     st.plotly_chart(linechart) #Show the chart
 
