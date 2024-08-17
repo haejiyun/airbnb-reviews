@@ -230,7 +230,10 @@ with ClassificationTab: ############################################ Multi-class
                           title_xanchor='center',
                           title_x = 0.5,
                           margin=dict(t=30, l=0, r=0, b=20),
-                          title_font=dict(size=17, weight='normal')
+                          title=dict(text='Multi-Topics of Guest Reviews',
+                                     font=dict(size=17,weight='normal'),
+                                     xanchor='center',
+                                     x=0.5)
                           )
         st.plotly_chart(fig, use_container_width=False) #Show the graph
     
