@@ -67,6 +67,9 @@ df = pd.read_csv('df_streamlit.csv') #Load
 
 df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d') #Set date data as date datatype
 df['month'] = pd.to_datetime(df['month'], format='%Y-%m') #Set date data as date datatype
+df['labels_list'] = df['labels'].apply(ast.literal_eval) #Convert labels datatype as python list
+df['labels_list'] = df['labels_list'].apply(sorted) #Sort each list of labels
+df['labels_string'] = df['labels_list'].apply(lambda x: ', '.join(x)) #Create a column with labels as list of strings
 
 quartiers_gdf = gpd.read_file('quartier_paris.geojson') #Load quartier location data
 quartiers_gdf = quartiers_gdf[['l_qu','geometry']].rename(columns = {'l_qu':'quartier'}) #Select using columns and rename
@@ -215,10 +218,6 @@ with ClassificationTab:
     
     
     #################################################################### Filters
-    
-    df['labels'] = df['labels'].apply(ast.literal_eval) #Convert labels datatype as python list
-    df['labels'] = df['labels'].apply(sorted) #Sort each list of labels
-    df['labels_string'] = df['labels'].apply(lambda x: ', '.join(x)) #Create a column with labels as list of strings
     
     labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
     labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
