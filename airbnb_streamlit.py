@@ -33,14 +33,14 @@ st.set_page_config(layout="wide") #Set wide page layout
 # Adjust CSS
 st.markdown("""
     <style>
-    h1 {  /* Title font size*/
+    h1 {  /* Title font size */
         font-size: 40px;
     }
-    h2 {  /* Header font size*/
+    h2 {  /* Header font size */
         font-size: 30px;
     }
-    h5 {  /* Graph title font size*/
-    font-size: 18px;
+    h5 {  /* Graph title font size */
+        font-size: 18px;
     }
     p {
         font-size: 15px;  /* Paragraph font size */
@@ -54,7 +54,7 @@ st.markdown("""
         max-width: 250px;  /* Sidebar maximum width */
     }
     </style>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 
 
