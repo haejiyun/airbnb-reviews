@@ -154,7 +154,7 @@ with SentimentTab: ################################################# Sentiment A
         choropleth.update_traces(marker_line_width=0, #Update market configuration
                                  marker_opacity=0.8)
         choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
-                                 margin=dict(l=0, r=0, t=0, b=25), #Update margins
+                                 margin=dict(l=0, r=0, t=0, b=25) #Update margins
                                 ) 
         st.plotly_chart(choropleth) #Show the choropleth
     
@@ -229,7 +229,8 @@ with ClassificationTab: ############################################ Multi-class
                           title_font_size=17, #Update title configuration
                           title_xanchor='center',
                           title_x = 0.5,
-                          margin=dict(t=30, l=0, r=0, b=20)
+                          margin=dict(t=30, l=0, r=0, b=20),
+                          title=dict(font=dict(weight='normal') # Unbold the title
                           )
         st.plotly_chart(fig, use_container_width=False) #Show the graph
     
@@ -248,7 +249,8 @@ with ClassificationTab: ############################################ Multi-class
                           xaxis_title=None,
                           yaxis_tickfont=dict(size=15), #Update axis ticks configuration
                           xaxis_tickfont=dict(size=15),
-                          margin=dict(t=30, l=0, r=0, b=0) 
+                          margin=dict(t=30, l=0, r=0, b=0),
+                          title=dict(font=dict(weight='normal') # Unbold the title
                           )
         fig.update_yaxes(tickfont=dict(color='white'),categoryorder='category descending') #Update y-axes configuration
         fig.update_xaxes(tickfont=dict(color='white')) #Update x-axes configuration
