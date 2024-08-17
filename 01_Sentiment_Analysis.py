@@ -105,7 +105,7 @@ with col2: #On the second column
     container = st.sidebar.container() #Create a container for arrondissement filter
     if 'selected' not in st.session_state: #Create session_state for selected arrondissement
         st.session_state.selected = arrondissement_all #Set default selection of arrondissement
-    if st.sidebar.button('Select all arrondissements'): #Create button for all selection
+    if st.sidebar.button('All arrondissements'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
     arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon"]) #Create arrondissement mutiselect filter
     st.session_state.selected = arrondissement #Update selection at each select action is made
