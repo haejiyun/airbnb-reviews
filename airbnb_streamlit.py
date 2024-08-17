@@ -45,13 +45,13 @@ st.markdown("""
     p {
         font-size: 15px;  /* Paragraph font size */
     }
-    .st-b1 {
-        font-size: 8px !important; /* Arrondissement filter options */
-    }
     [data-testid="stSidebar"] {
         width: 250px;  /* Sidebar width */
         min-width: 250px;  /* Sidebar minimum width */
         max-width: 250px;  /* Sidebar maximum width */
+    }
+    .st-b1 {
+        font-size: 9px !important; /* Arrondissement filter options */
     }
     </style>
 """, unsafe_allow_html=True)
