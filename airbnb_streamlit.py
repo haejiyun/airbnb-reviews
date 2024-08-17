@@ -271,9 +271,18 @@ with ClassificationTab: ############################################ Multi-class
     with col2: #On the last column
         st.write('') #Blank line
         if st.button('Refresh comments'): #Create refresh button
-            comments = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))),'comments_en'].sample(5) #If clicked, comments are refreshed
+            filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en']
+            if len(filtered_df) >= 5:
+                comments = filtered_df.sample(5) #If clicked, comments are refreshed
+            else:
+                comments = filtered_df
     
-    comments = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))),'comments_en'].sample(5) #Create 5 random comments which correspond to applied filters
+    filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en']
+    if len(filtered_df) >= 5:
+        comments = filtered_df.sample(5) #Create 5 random comments which correspond to applied filters
+    else:
+        comments = filtered_df
+    
     with st.container(border=True): #Create a container for the comments
         for index in range(len(comments)): #Show each comments generated in plain text
             st.write(index+1, comments.iloc[index])
