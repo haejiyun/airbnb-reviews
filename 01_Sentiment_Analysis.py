@@ -231,7 +231,7 @@ with ClassificationTab: ############################################ Multi-class
                           #title_font_size=17, #Update title configuration
                           #title_xanchor='center',
                           #title_x = 0.5,
-                          margin=dict(t=30, l=0, r=0, b=20)
+                          #margin=dict(t=0, l=0, r=0, b=20)
                           )
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-Topics of guest reviews</h5>", unsafe_allow_html=True) #Treemap title
         st.plotly_chart(fig, use_container_width=False) #Show the graph
