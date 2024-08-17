@@ -219,7 +219,7 @@ with ClassificationTab: ############################################ Multi-class
         fig = px.treemap(labels_counts, #Create a treemap 
                          path=['label_percent'], 
                          values='count', 
-                         title='Multi-Topics of guest reviews', 
+                         #title='Multi-Topics of guest reviews', 
                          color='count', 
                          color_continuous_scale=['#FBD2C5','#00A699'])
         fig.update_traces(textposition='middle center', #Update text configuration in the treemap
@@ -228,11 +228,12 @@ with ClassificationTab: ############################################ Multi-class
         fig.update_layout(width=1000, #Update the dimension of the graph
                           height=500, 
                           coloraxis_showscale=False, #Hide colorbar
-                          title_font_size=17, #Update title configuration
-                          title_xanchor='center',
-                          title_x = 0.5,
+                          #title_font_size=17, #Update title configuration
+                          #title_xanchor='center',
+                          #title_x = 0.5,
                           margin=dict(t=30, l=0, r=0, b=20)
                           )
+        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-Topics of guest reviews</h5>", unsafe_allow_html=True) #Linechart title
         st.plotly_chart(fig, use_container_width=False) #Show the graph
     
     with col2: #On the second column
