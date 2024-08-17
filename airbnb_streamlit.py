@@ -123,7 +123,7 @@ with SentimentTab: ################################################# Sentiment A
     This page displays sentiment analysis results for guest reviews of Paris zones across different time periods. Based on the content of each comment, a sentiment score from 1 to 5 is assigned, where 1 represents highly negative sentiment and 5 indicates positive sentiment. You can customize your view by selecting time period of interest and specific area in Paris.  
              ''')
     
-    col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
+    col1, col2 = st.columns([3.5, 1.5], gap = 'small') #Create two columns for two graphs
     
     with col1: #On the first column
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Linechart title
@@ -145,7 +145,7 @@ with SentimentTab: ################################################# Sentiment A
                                 color_continuous_scale=['#FF5A5F','#00A699'],
                                 range_color=[0, 5],
                                 mapbox_style="carto-positron",
-                                zoom=10.4, 
+                                zoom=10.5, 
                                 center={"lat": 48.86, "lon": 2.345},
                                 #opacity=0.8,
                                 height=350,
