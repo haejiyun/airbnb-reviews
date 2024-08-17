@@ -27,7 +27,7 @@ import random
 
 
 
-#################################################################### STREAMLIT CONFIGURATIONS
+#################################################################### STREAMLIT CONFIGURATION
 st.set_page_config(layout="wide") #Set wide page layout
 
 # Adjust CSS
@@ -82,10 +82,10 @@ arrondissement_gdf = arrondissement_gdf[['neighbourhood','geometry']] #Select us
 #################################################################### PAGE TITLE & SIDEBAR FILTERS
 st.title("Airbnb Guest Reviews in Paris") #Page title
 
-st.sidebar.markdown('## Select Time Period')
+st.sidebar.markdown('## Select Time Period') #Time Filter title
 min_date = df['month'].min().to_pydatetime() #Set minimum date
 max_date = df['month'].max().to_pydatetime() #Set maximum date
-selected_min, selected_max = st.sidebar.slider( #Create slider
+selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     "Period", #Slider name
     value=(min_date, max_date), #Slider values
     min_value=min_date, #Minimum value
@@ -93,8 +93,7 @@ selected_min, selected_max = st.sidebar.slider( #Create slider
     format="YYYY-MM" #Format
 )
 
-
-st.sidebar.markdown('## Select Area')
+st.sidebar.markdown('## Select Area') #Arrondissement Filter title
 arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon",
                       "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
                       "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
@@ -114,13 +113,12 @@ df_filtered = df[mask] #Select filtered data
 
 
 
-SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Multi-Label Classification", "Readme"])
+#################################################################### TAB PAGES
+SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Multi-Label Classification", "Readme"]) #Create tabs
 
-#################################################################### Sentiment Analysis
 
-with SentimentTab:
+with SentimentTab: #Sentiment analysis tab
     
-    # Chorolepleth
     col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
     
     with col1: #On the first column
@@ -155,11 +153,6 @@ with SentimentTab:
                                  margin=dict(l=5, r=5, t=0, b=50)) #Update margins
         st.plotly_chart(choropleth) #Show the choropleth
     
-    # Wordcloud
-    #nltk.download('stopwords')
-    #stop_words = set(stopwords.words('english'))
-    #stop_words.add('br')
-    #stop_words.add('\n')
     with col2: #On the second column
         comments_pos = df_filtered.loc[df_filtered['sentiment_binary'] == 'positive', 'comments_en'].astype(str).str.replace('\n', ' ').dropna() #Extract positive comments
         comments_pos = ' '.join(comments_pos) #Extract words
@@ -199,18 +192,7 @@ with SentimentTab:
 
 
 
-
-
-#################################################################### Classification
-with ClassificationTab:
-
-    #st.write('''
-    #This page presents the results of topic classification for guest reviews across different time periods in Paris. The classification model categorizes comments into five main topics: Apartment, Bed, Communication, Location, Neighborhood. Based on the content of each review, one or multiple relevant topics are assigned. You can customize your view by selecting time period of interest and specific area in Paris.
-    # ''')
-    #st.markdown("***") #Breakline
-    
-    
-    #################################################################### Filters
+with ClassificationTab: #Multi-classification tab
     
     labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
     labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
@@ -219,9 +201,6 @@ with ClassificationTab:
     df_exploded = df_filtered.explode('labels_list') #Create dataset with single topic 
     df_exploded['labels_list'] = df_exploded['labels_list'].str.strip() #Remove space before and after each topic extracted
     labels_counts_exploded = df_exploded['labels_list'].value_counts().reset_index() #Count the single topic
-    
-    
-    #################################################################### Graphs
     
     col1, col2 = st.columns([3, 2], gap="large") #Create two columns for two graphs
     
@@ -280,17 +259,11 @@ with ClassificationTab:
 
 
 
-
-
-
-#################################################################### Readme
-with ReadmeTab:
+with ReadmeTab: #Readme Tab
 
     df['listing_id'] = df['listing_id'].astype(str) #Set listing id as string
     df.drop_duplicates('listing_id',inplace = True)
     
-    
-    #%%############################################################## STREAMLIT
     st.write("""
     The purpose of this project is to analyze Airbnb guest experiences in Paris across various time periods, leveraging advanced Natural Language Processing (NLP) techniques on guest reviews. By combining various NLP tasks, this study aims to provide meaningful insights and a holistic view of guest experiences.
     
