@@ -30,7 +30,7 @@ import random
 #st.set_option('deprecation.showPyplotGlobalUse', False) #Remove depreciation warning on pyplot
 st.set_page_config(layout="wide") #Set wide page layout
 
-# Custom CSS
+# Adjust CSS
 st.markdown("""
     <style>
     h1 {  /* Title font size*/
@@ -56,11 +56,11 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+st.title("Airbnb Guest Reviews in Paris") #Page title
+st.markdown("***") #Breakline
 
 
 
-
-#DATASET#####
 
 #################################################################### Data load
 df = pd.read_csv('df_streamlit.csv') #Load 
@@ -79,15 +79,9 @@ arrondissement_gdf = arrondissement_gdf[['neighbourhood','geometry']] #Select us
 
 
 
-#################################################################### Layout
-st.title("Airbnb Guest Reviews in Paris") #Page title
-st.header("Sentiment Analysis") #Page subtitle
-st.write('''
-This page displays sentiment analysis results for guest reviews of Paris zones across different time periods. Based on the content of each comment, a sentiment score from 1 to 5 is assigned, where 1 represents highly negative sentiment and 5 indicates positive sentiment. You can customize your view by selecting time period of interest and specific area in Paris.  
-         ''')
-st.markdown("***") #Breakline
 
-#################################################################### Filters
+
+#################################################################### Sidebar Filters
 col1, col2 = st.columns([2, 3], gap = 'medium') #Create two columns for period & arrondissement filters
 
 with col1: #On the first column
@@ -298,7 +292,14 @@ with ReadmeTab:
     
     
     #%%############################################################## STREAMLIT
+    st.write("""
+    The purpose of this project is to analyze Airbnb guest experiences in Paris across various time periods, leveraging advanced Natural Language Processing (NLP) techniques on guest reviews. By combining various NLP tasks, this study aims to provide meaningful insights and a holistic view of guest experiences.
     
+    Furthermore, this project showcases the power of modern NLP techniques in understanding customer experiences in the hospitality sector. It demonstrates how pre-trained models, which have been developed on large datasets, can be effectively utilized to perform complex language tasks. These models are particularly valuable when working with limited or unlabeled data, offering significant advantages in terms of time efficiency and computational resource management.
+    
+    The project exemplifies how sophisticated NLP applications can be developed using readily available open-source libraries, making advanced text analysis accessible without requiring exceptional Python skills.
+    """)
+
     st.subheader("Dataset") #Header
     st.write('''
              
