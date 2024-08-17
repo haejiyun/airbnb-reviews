@@ -47,6 +47,7 @@ st.markdown("""
     }
     .st-b1 {
         font-size: 8px !important; /* Arrondissement filter options */
+        background-color: black !important; /* Debugging */
     }
     [data-testid="stSidebar"] {
         width: 250px;  /* Sidebar width */
