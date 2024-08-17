@@ -60,6 +60,10 @@ st.markdown("""
         padding-bottom: 0px;
         padding-top: 0px;
     }
+    div[data-testid="stVerticalBlock"] > div:has(> .stCheckbox) {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
     </style>
     """, unsafe_allow_html=True)
 
