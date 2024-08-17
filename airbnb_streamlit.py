@@ -103,7 +103,9 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
     st.session_state.selected = arrondissement_all #Set default selection of arrondissement
 if st.sidebar.button('All arrondissements'): #Create button for all selection
     st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-arrondissement = container.multiselect("Select Arrondissement:", arrondissement_all, default=arrondissement_all) #Create arrondissement mutiselect filter
+arrondissement = container.multiselect("Select Arrondissement:", 
+                                       arrondissement_all, 
+                                       default=st.session_state.selected) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement #Update selection at each select action is made
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
