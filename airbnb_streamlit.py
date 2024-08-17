@@ -46,8 +46,9 @@ st.markdown("""
         font-size: 15px;  /* Paragraph font size */
     }
     .st-b1 {
-        font-size: 8px !important; /* Arrondissement filter options */
-        background-color: black !important; /* Debugging */
+        font-size: 8.5px !important; /* Arrondissement filter options */
+        color: red !important; /* Debugging */
+        background-color: yellow !important; /* Debugging */
     }
     [data-testid="stSidebar"] {
         width: 250px;  /* Sidebar width */
