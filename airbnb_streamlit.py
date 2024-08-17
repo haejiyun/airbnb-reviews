@@ -51,7 +51,7 @@ st.markdown("""
         max-width: 250px;  /* Sidebar maximum width */
     }
     .st-b1 {
-        font-size: 9px !important; /* Arrondissement filter options */
+        font-size: 8px !important; /* Arrondissement filter options */
     }
     </style>
 """, unsafe_allow_html=True)
