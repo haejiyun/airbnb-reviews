@@ -153,7 +153,7 @@ with SentimentTab: ################################################# Sentiment A
                                 width=1300)
         choropleth.update_traces(marker_line_width=0, #Update market configuration
                                  marker_opacity=0.8)
-        choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 335,'yanchor':'bottom','y': 0}, #Update colorbar configuration
+        choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
                                  margin=dict(l=0, r=0, t=0, b=25)) #Update margins
         st.plotly_chart(choropleth) #Show the choropleth
     
@@ -169,7 +169,7 @@ with SentimentTab: ################################################# Sentiment A
         st.write("") #Blank line
         wordcloud = plt.figure(facecolor = 'none', figsize=(5,5)) #Set graph background transparent
         ax1 = wordcloud.add_axes([0, 0, 1, 1]) #Configure wordcloud position for positive comments
-        ax2 = wordcloud.add_axes([0, -0.5, 1, 1]) #Configure wordcloud position for negative comments
+        ax2 = wordcloud.add_axes([0, -0.6, 1, 1]) #Configure wordcloud position for negative comments
         ax1.imshow(wordcloud_pos) #Show wordcloud of positive comments
         ax1.set_title('Positive', color = '#00A699', size=20) #Title
         ax1.axis('off') #Remove axis
