@@ -155,6 +155,7 @@ with SentimentTab: ################################################# Sentiment A
                                  marker_opacity=0.8)
         choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
                                  margin=dict(l=0, r=0, t=0, b=25), #Update margins
+                                 plot_bgcolor='rgba(0,0,0,0)',
                                  paper_bgcolor='rgba(0,0,0,0)'
                                 ) 
         st.plotly_chart(choropleth) #Show the choropleth
