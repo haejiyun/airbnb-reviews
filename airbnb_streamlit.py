@@ -45,8 +45,8 @@ st.markdown("""
     p {
         font-size: 15px;  /* Paragraph font size */
     }
-    .st-cp.st-bx.st-dp.st-dq.st-dr.st-co.st-b1 {
-    font-size: 8px;  /* Reduce the font size */
+    .st-b1 {
+        font-size: 8px !important; /* Arrondissement filter name*/
     }
     [data-testid="stSidebar"] {
         width: 250px;  /* Sidebar width */
