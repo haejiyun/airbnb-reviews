@@ -182,7 +182,7 @@ with SentimentTab: ################################################# Sentiment A
         st.pyplot(wordcloud) #Remove axis
     
     # Linechart
-    st.markdown("<h5 style='text-align: center; font-weight: normal;'>Daily Average Sentiment Score</h5>", unsafe_allow_html=True) #Linechart title
+    st.markdown("<h5 style='text-align: center; font-weight: normal;'>Daily Average Sentiment Score in Paris</h5>", unsafe_allow_html=True) #Linechart title
     df_sentiment = df_filtered.set_index('date').resample('D')['sentiment'].mean().reset_index() #Create monthly data
     linechart = px.line(df_sentiment, x='date', y='sentiment') #Create linechart
     linechart.update_xaxes(dtick='D1', #Update ticks configuration
