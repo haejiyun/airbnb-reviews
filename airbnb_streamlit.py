@@ -137,9 +137,11 @@ with SentimentTab: ################################################# Sentiment A
         if zone == "Quartier": #If quartier is selected
             df_filtered_zone = df_filtered[['quartier','sentiment']].groupby('quartier').mean().reset_index() #Create dataset grouped by quartier
             gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, quartiers_gdf, on='quartier'), geometry='geometry') #Add quartier geolocalisation in the dataset
+            hover_data = ['quartier', 'sentiment'] # Define hover data for quartier
         elif zone == "Arrondissement": #If arrondissement is selected
             df_filtered_zone = df_filtered[['arrondissement','neighbourhood','sentiment']].groupby(['arrondissement','neighbourhood']).mean().reset_index() #Create dataset grouped by arrondissement
-            gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, arrondissement_gdf, on='neighbourhood'), geometry='geometry') #Add arrondissement geolocalisation in the dataset      
+            gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, arrondissement_gdf, on='neighbourhood'), geometry='geometry') #Add arrondissement geolocalisation in the dataset
+            hover_data = ['neighbourhood', 'sentiment'] # Define hover data for arrondissement
         choropleth = px.choropleth_mapbox(gdf_zone, #Create the choropleth
                                 geojson= gdf_zone.geometry, 
                                 locations=gdf_zone.index,
@@ -151,7 +153,8 @@ with SentimentTab: ################################################# Sentiment A
                                 center={"lat": 48.86, "lon": 2.345},
                                 #opacity=0.8,
                                 height=350,
-                                width=1300)
+                                width=1300,
+                                hover_data=hover_data)
         choropleth.update_traces(marker_line_width=0, #Update market configuration
                                  marker_opacity=0.8)
         choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
