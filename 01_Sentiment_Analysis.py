@@ -107,6 +107,14 @@ st.session_state.selected = arrondissement #Update selection at each select acti
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
 
+labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
+labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
+labels_counts['label_percent'] = '<b>'+labels_counts['labels_string']+'<br>'+labels_counts['percent'] #Create a column with the name and the percentage of each combination
+
+df_exploded = df_filtered.explode('labels') #Create dataset with single topic 
+df_exploded['labels'] = df_exploded['labels'].str.strip() #Remove space before and after each topic extracted
+labels_counts_exploded = df_exploded['labels'].value_counts().reset_index() #Count the single topic
+
 
 
 SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Classification", "Readme"])
@@ -207,13 +215,7 @@ with ClassificationTab:
     
     #################################################################### Filters
     
-    labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
-    labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
-    labels_counts['label_percent'] = '<b>'+labels_counts['labels_string']+'<br>'+labels_counts['percent'] #Create a column with the name and the percentage of each combination
-    
-    df_exploded = df_filtered.explode('labels') #Create dataset with single topic 
-    df_exploded['labels'] = df_exploded['labels'].str.strip() #Remove space before and after each topic extracted
-    labels_counts_exploded = df_exploded['labels'].value_counts().reset_index() #Count the single topic
+
     
     
     #################################################################### Graphs
