@@ -233,20 +233,20 @@ with ClassificationTab: ############################################ Multi-class
                           #title_x = 0.5,
                           margin=dict(t=30, l=0, r=0, b=20)
                           )
-        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-Topics of guest reviews</h5>", unsafe_allow_html=True) #Linechart title
+        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-Topics of guest reviews</h5>", unsafe_allow_html=True) #Treemap title
         st.plotly_chart(fig, use_container_width=False) #Show the graph
     
     with col2: #On the second column
         fig = px.histogram(labels_counts_exploded, #Create barplot
                            y='labels_list', 
                            x= 'count', 
-                           title='Count of each topics', 
+                           #title='Count of each topics', 
                            color_discrete_sequence=['#FF5A5F'])
         fig.update_layout(width = 500, #Update the dimension of the graph
                           height = 480,
-                          title_font_size=17, #Update the title configuration
-                          title_xanchor='center',
-                          title_x = 0.6,
+                          #title_font_size=17, #Update the title configuration
+                          #title_xanchor='center',
+                          #title_x = 0.6,
                           yaxis_title=None, #Update axis title configuration
                           xaxis_title=None,
                           yaxis_tickfont=dict(size=15), #Update axis ticks configuration
@@ -255,6 +255,7 @@ with ClassificationTab: ############################################ Multi-class
                           )
         fig.update_yaxes(tickfont=dict(color='white'),categoryorder='category descending') #Update y-axes configuration
         fig.update_xaxes(tickfont=dict(color='white')) #Update x-axes configuration
+        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Count of each topic</h5>", unsafe_allow_html=True) #Barchart title
         st.plotly_chart(fig) #Show the plot
     
     st.markdown("<h5 style='text-align: center; font-weight: normal;'>Random Guest Reviews</h5>", unsafe_allow_html=True) #Title
