@@ -107,13 +107,6 @@ with col2: #On the second column
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
 
-labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
-labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
-labels_counts['label_percent'] = '<b>'+labels_counts['labels_string']+'<br>'+labels_counts['percent'] #Create a column with the name and the percentage of each combination
-
-df_exploded = df_filtered.explode('labels') #Create dataset with single topic 
-df_exploded['labels'] = df_exploded['labels'].str.strip() #Remove space before and after each topic extracted
-labels_counts_exploded = df_exploded['labels'].value_counts().reset_index() #Count the single topic
 
 
 
@@ -216,7 +209,17 @@ with ClassificationTab:
     
     #################################################################### Filters
     
-
+    df['labels'] = df['labels'].apply(ast.literal_eval) #Convert labels datatype as python list
+    df['labels'] = df['labels'].apply(sorted) #Sort each list of labels
+    df['labels_string'] = df['labels'].apply(lambda x: ', '.join(x)) #Create a column with labels as list of strings
+    
+    labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
+    labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
+    labels_counts['label_percent'] = '<b>'+labels_counts['labels_string']+'<br>'+labels_counts['percent'] #Create a column with the name and the percentage of each combination
+    
+    df_exploded = df_filtered.explode('labels') #Create dataset with single topic 
+    df_exploded['labels'] = df_exploded['labels'].str.strip() #Remove space before and after each topic extracted
+    labels_counts_exploded = df_exploded['labels'].value_counts().reset_index() #Count the single topic
     
     
     #################################################################### Graphs
