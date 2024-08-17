@@ -230,7 +230,7 @@ with ClassificationTab: ############################################ Multi-class
                           title_xanchor='center',
                           title_x = 0.5,
                           margin=dict(t=30, l=0, r=0, b=20),
-                          title=dict(font=dict(weight='normal') # Unbold the title
+                          title_font=dict(size=17, weight='normal')
                           )
         st.plotly_chart(fig, use_container_width=False) #Show the graph
     
@@ -250,7 +250,7 @@ with ClassificationTab: ############################################ Multi-class
                           yaxis_tickfont=dict(size=15), #Update axis ticks configuration
                           xaxis_tickfont=dict(size=15),
                           margin=dict(t=30, l=0, r=0, b=0),
-                          title=dict(font=dict(weight='normal') # Unbold the title
+                          title_font=dict(size=17, weight='normal')
                           )
         fig.update_yaxes(tickfont=dict(color='white'),categoryorder='category descending') #Update y-axes configuration
         fig.update_xaxes(tickfont=dict(color='white')) #Update x-axes configuration
