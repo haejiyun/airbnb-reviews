@@ -106,16 +106,9 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
 #arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=arrondissement_all) #Create arrondissement mutiselect filter
 #st.session_state.selected = arrondissement #Update selection at each select action is made
 container.write("Arrondissement:")
-
-select_all = container.checkbox("Select All", value=True) # Create a checkbox for "Select All"
-
-arrondissement_checkboxes = {} # Create individual checkboxes for each arrondissement
+arrondissement_checkboxes = {}
 for arr in arrondissement_all:
-    if select_all:
-        arrondissement_checkboxes[arr] = container.checkbox(arr, value=True)
-    else:
-        arrondissement_checkboxes[arr] = container.checkbox(arr)
-
+    arrondissement_checkboxes[arr] = container.checkbox(arr, value=True)
 st.session_state.selected = [arr for arr, checked in arrondissement_checkboxes.items() if checked] # Update the selected arrondissements based on checkbox states
 
 
