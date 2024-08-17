@@ -78,31 +78,31 @@ This page displays sentiment analysis results for guest reviews of Paris zones a
 st.markdown("***") #Breakline
 
 #################################################################### Filters
-#col1, col2 = st.columns([2, 3], gap = 'medium') #Create two columns for period & arrondissement filters
+col1, col2 = st.columns([2, 3], gap = 'medium') #Create two columns for period & arrondissement filters
 
-#with col1: #On the first column
-min_date = df['month'].min().to_pydatetime() #Set minimum date
-max_date = df['month'].max().to_pydatetime() #Set maximum date
-selected_min, selected_max = st.sidebar.slider( #Create slider
-    "Period", #Slider name
-    value=(min_date, max_date), #Slider values
-    min_value=min_date, #Minimum value
-    max_value=max_date, #Maximum value
-    format="YYYY-MM" #Format
-)
+with col1: #On the first column
+    min_date = df['month'].min().to_pydatetime() #Set minimum date
+    max_date = df['month'].max().to_pydatetime() #Set maximum date
+    selected_min, selected_max = st.sidebar.slider( #Create slider
+        "Period", #Slider name
+        value=(min_date, max_date), #Slider values
+        min_value=min_date, #Minimum value
+        max_value=max_date, #Maximum value
+        format="YYYY-MM" #Format
+    )
 
-#with col2: #On the second column
-arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon",
-                      "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
-                      "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
-                      "16 - Passy","17 - Batignolles-Monceau","18 - Buttes-Montmartre","19 - Buttes-Chaumont","20 - Ménilmontant"]
-container = st.sidebar.container() #Create a container for arrondissement filter
-if 'selected' not in st.session_state: #Create session_state for selected arrondissement
-    st.session_state.selected = arrondissement_all #Set default selection of arrondissement
-if st.sidebar.button('Select all arrondissements'): #Create button for all selection
-    st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon"]) #Create arrondissement mutiselect filter
-st.session_state.selected = arrondissement #Update selection at each select action is made
+with col2: #On the second column
+    arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon",
+                          "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
+                          "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
+                          "16 - Passy","17 - Batignolles-Monceau","18 - Buttes-Montmartre","19 - Buttes-Chaumont","20 - Ménilmontant"]
+    container = st.container() #Create a container for arrondissement filter
+    if 'selected' not in st.session_state: #Create session_state for selected arrondissement
+        st.session_state.selected = arrondissement_all #Set default selection of arrondissement
+    if st.sidebar.button('Select all arrondissements'): #Create button for all selection
+        st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
+    arrondissement = container.sidebar.multiselect("Arrondissement:", arrondissement_all, default=["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon"]) #Create arrondissement mutiselect filter
+    st.session_state.selected = arrondissement #Update selection at each select action is made
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
@@ -114,6 +114,7 @@ labels_counts['label_percent'] = '<b>'+labels_counts['labels_string']+'<br>'+lab
 df_exploded = df_filtered.explode('labels') #Create dataset with single topic 
 df_exploded['labels'] = df_exploded['labels'].str.strip() #Remove space before and after each topic extracted
 labels_counts_exploded = df_exploded['labels'].value_counts().reset_index() #Count the single topic
+
 
 
 
