@@ -127,21 +127,17 @@ with SentimentTab: ################################################# Sentiment A
     
     with col1: #On the first column
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Linechart title
-        #col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
-        #with col1_bis: #On the first sub-column
-        #    st.markdown("<p style='line-height:2.4;'>Show by :</p>", unsafe_allow_html=True)
-        #with col2_bis: #On the second sub-column
-        #    zone = st.radio("", options=["Arrondissement", "Quartier"], horizontal=True, label_visibility="collapsed") #Create area division option filter
-        #if zone == "Quartier": #If quartier is selected
-        #    df_filtered_zone = df_filtered[['quartier','sentiment']].groupby('quartier').mean().reset_index() #Create dataset grouped by quartier
-        #    gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, quartiers_gdf, on='quartier'), geometry='geometry') #Add quartier geolocalisation in the dataset
-        #elif zone == "Arrondissement": #If arrondissement is selected
-        #    df_filtered_zone = df_filtered[['arrondissement','neighbourhood','sentiment']].groupby(['arrondissement','neighbourhood']).mean().reset_index() #Create dataset grouped by arrondissement
-        #    gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, arrondissement_gdf, on='neighbourhood'), geometry='geometry') #Add arrondissement geolocalisation in the dataset
-
-        df_filtered_zone = df_filtered[['arrondissement','neighbourhood','sentiment']].groupby(['arrondissement','neighbourhood']).mean().reset_index() #Create dataset grouped by arrondissement
-        gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, arrondissement_gdf, on='neighbourhood'), geometry='geometry') #Add arrondissement geolocalisation in the dataset
-        
+        col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
+        with col1_bis: #On the first sub-column
+            st.markdown("<p style='line-height:2.4;'>Show by :</p>", unsafe_allow_html=True)
+        with col2_bis: #On the second sub-column
+            zone = st.radio("", options=["Arrondissement", "Quartier"], horizontal=True, label_visibility="collapsed") #Create area division option filter
+        if zone == "Quartier": #If quartier is selected
+            df_filtered_zone = df_filtered[['quartier','sentiment']].groupby('quartier').mean().reset_index() #Create dataset grouped by quartier
+            gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, quartiers_gdf, on='quartier'), geometry='geometry') #Add quartier geolocalisation in the dataset
+        elif zone == "Arrondissement": #If arrondissement is selected
+            df_filtered_zone = df_filtered[['arrondissement','neighbourhood','sentiment']].groupby(['arrondissement','neighbourhood']).mean().reset_index() #Create dataset grouped by arrondissement
+            gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, arrondissement_gdf, on='neighbourhood'), geometry='geometry') #Add arrondissement geolocalisation in the dataset      
         choropleth = px.choropleth_mapbox(gdf_zone, #Create the choropleth
                                 geojson= gdf_zone.geometry, 
                                 locations=gdf_zone.index,
