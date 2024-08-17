@@ -224,7 +224,7 @@ with ClassificationTab: ############################################ Multi-class
                           insidetextfont=dict(size=15) 
                          )
         fig.update_layout(width=1000, #Update the dimension of the graph
-                          height=550, 
+                          height=500, 
                           coloraxis_showscale=False, #Hide colorbar
                           title_font_size=17, #Update title configuration
                           title_xanchor='center',
@@ -240,7 +240,7 @@ with ClassificationTab: ############################################ Multi-class
                            title='Count of each topics', 
                            color_discrete_sequence=['#FF5A5F'])
         fig.update_layout(width = 500, #Update the dimension of the graph
-                          height = 520,
+                          height = 500,
                           title_font_size=17, #Update the title configuration
                           title_xanchor='center',
                           title_x = 0.6,
