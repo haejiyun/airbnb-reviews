@@ -221,8 +221,7 @@ with ClassificationTab: ############################################ Multi-class
                          color='count', 
                          color_continuous_scale=['#FBD2C5','#00A699'])
         fig.update_traces(textposition='middle center', #Update text configuration in the treemap
-                          insidetextfont=dict(size=15),
-                          root_color="black"  
+                          insidetextfont=dict(size=15) 
                           )
         fig.update_layout(width=1000, #Update the dimension of the graph
                           height=550, 
@@ -230,7 +229,8 @@ with ClassificationTab: ############################################ Multi-class
                           title_font_size=17, #Update title configuration
                           title_xanchor='center',
                           title_x = 0.5,
-                          margin=dict(t=30, l=0, r=0, b=15) 
+                          margin=dict(t=30, l=0, r=0, b=15),
+                          treemapcolorway=["rgba(0,0,0,0)"] 
                           )
         st.plotly_chart(fig, use_container_width=False) #Show the graph
     
