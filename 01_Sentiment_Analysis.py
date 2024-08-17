@@ -207,7 +207,7 @@ with ClassificationTab: ############################################ Multi-class
     labels_counts_exploded = df_exploded['labels_list'].value_counts().reset_index() #Count the single topic
 
     st.write('''
-    This page presents the results of topic classification for guest reviews across different time periods in Paris. The classification model categorizes comments into five main topics: Apartment, Bed, Communication, Location, Neighborhood. Based on the content of each review, one or multiple relevant topics are assigned. You can customize your view by selecting time period of interest and specific area in Paris.
+    This page presents the results of topic classification for guest reviews across different time periods in Paris. The classification model categorizes comments into five main topics: Apartment, Bed, Communication, Location, and Neighborhood. For each review, one or multiple relevant topics are assigned. You can customize your view by selecting time period of interest and specific area in Paris.
      ''')
     
     col1, col2 = st.columns([3, 2], gap="large") #Create two columns for two graphs
