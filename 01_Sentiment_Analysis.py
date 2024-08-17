@@ -240,7 +240,7 @@ with ClassificationTab: ############################################ Multi-class
                            title='Count of each topics', 
                            color_discrete_sequence=['#FF5A5F'])
         fig.update_layout(width = 500, #Update the dimension of the graph
-                          height = 500,
+                          height = 480,
                           title_font_size=17, #Update the title configuration
                           title_xanchor='center',
                           title_x = 0.6,
