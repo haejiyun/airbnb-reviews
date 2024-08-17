@@ -103,8 +103,21 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
     st.session_state.selected = arrondissement_all #Set default selection of arrondissement
 #if st.sidebar.button('All arrondissements'): #Create button for all selection
 #    st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=arrondissement_all) #Create arrondissement mutiselect filter
-st.session_state.selected = arrondissement #Update selection at each select action is made
+#arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=arrondissement_all) #Create arrondissement mutiselect filter
+#st.session_state.selected = arrondissement #Update selection at each select action is made
+container.write("Arrondissement:")
+
+select_all = container.checkbox("Select All", value=True) # Create a checkbox for "Select All"
+
+arrondissement_checkboxes = {} # Create individual checkboxes for each arrondissement
+for arr in arrondissement_all:
+    if select_all:
+        arrondissement_checkboxes[arr] = container.checkbox(arr, value=True)
+    else:
+        arrondissement_checkboxes[arr] = container.checkbox(arr)
+
+st.session_state.selected = [arr for arr, checked in arrondissement_checkboxes.items() if checked] # Update the selected arrondissements based on checkbox states
+
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
