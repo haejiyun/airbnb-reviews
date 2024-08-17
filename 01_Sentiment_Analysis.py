@@ -162,8 +162,8 @@ with SentimentTab: ################################################# Sentiment A
         comments_pos = ' '.join(comments_pos) #Extract words
         comments_neg = df_filtered.loc[df_filtered['sentiment_binary'] == 'negative', 'comments_en'].astype(str).str.replace('\n', ' ').dropna() #Extract negative comments
         comments_neg = ' '.join(comments_neg) #Extract words
-        mask_pos = np.array(Image.open('circle_up.png')) #Import wordcloud mask shape for positive comments
-        mask_neg = np.array(Image.open('circle_down.png')) #Import wordcloud mask shape for negative comments
+        mask_pos = np.array(Image.open('oval_up.png')) #Import wordcloud mask shape for positive comments
+        mask_neg = np.array(Image.open('oval_down.png')) #Import wordcloud mask shape for negative comments
         wordcloud_pos = WordCloud(colormap=LinearSegmentedColormap.from_list("custom", ['#00A699', '#767676','#79CCCD']), mask = mask_pos, background_color=None, mode="RGBA", max_words=100).generate(comments_pos) #Create wordcloud for positive comments
         wordcloud_neg = WordCloud(colormap=LinearSegmentedColormap.from_list("custom", ['#FF5A5F', '#FBD2C5','#FFF6E6']), mask = mask_neg, background_color=None, mode="RGBA",  max_words=100).generate(comments_neg) #Create wordcloud for negative comments
         st.write("") #Blank line
