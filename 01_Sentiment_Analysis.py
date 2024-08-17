@@ -118,6 +118,10 @@ SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Mul
 
 
 with SentimentTab: ################################################# Sentiment Analysis
+
+    st.write('''
+    This page displays sentiment analysis results for guest reviews of Paris zones across different time periods. Based on the content of each comment, a sentiment score from 1 to 5 is assigned, where 1 represents highly negative sentiment and 5 indicates positive sentiment. You can customize your view by selecting time period of interest and specific area in Paris.  
+             ''')
     
     col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
     
@@ -163,7 +167,7 @@ with SentimentTab: ################################################# Sentiment A
         wordcloud_pos = WordCloud(colormap=LinearSegmentedColormap.from_list("custom", ['#00A699', '#767676','#79CCCD']), mask = mask_pos, background_color=None, mode="RGBA", max_words=100).generate(comments_pos) #Create wordcloud for positive comments
         wordcloud_neg = WordCloud(colormap=LinearSegmentedColormap.from_list("custom", ['#FF5A5F', '#FBD2C5','#FFF6E6']), mask = mask_neg, background_color=None, mode="RGBA",  max_words=100).generate(comments_neg) #Create wordcloud for negative comments
         st.write("") #Blank line
-        wordcloud = plt.figure(facecolor = 'none') #Set graph background transparent
+        wordcloud = plt.figure(facecolor = 'none', figsize=(5,5)) #Set graph background transparent
         ax1 = wordcloud.add_axes([0, 0, 1, 1]) #Configure wordcloud position for positive comments
         ax2 = wordcloud.add_axes([0, -0.7, 1, 1]) #Configure wordcloud position for negative comments
         ax1.imshow(wordcloud_pos) #Show wordcloud of positive comments
