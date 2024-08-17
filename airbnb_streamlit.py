@@ -53,6 +53,9 @@ st.markdown("""
         min-width: 240px;  /* Sidebar minimum width */
         max-width: 240px;  /* Sidebar maximum width */
     }
+    .stCheckbox {
+        padding-bottom: 0px;
+    }
     </style>
     """, unsafe_allow_html=True)
 
