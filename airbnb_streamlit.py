@@ -85,18 +85,18 @@ arrondissement_gdf = arrondissement_gdf[['neighbourhood','geometry']] #Select us
 #################################################################### PAGE TITLE & SIDEBAR FILTERS
 st.title("Airbnb Guest Reviews in Paris") #Page title
 
-st.sidebar.markdown('### Select Time Period') #Time Filter title
+#st.sidebar.markdown('### Select Time Period') #Time Filter title
 min_date = df['month'].min().to_pydatetime() #Set minimum date
 max_date = df['month'].max().to_pydatetime() #Set maximum date
 selected_min, selected_max = st.sidebar.slider( #Create time filter slider
-    "", #Slider name
+    "Select Time Period", #Slider name
     value=(min_date, max_date), #Slider values
     min_value=min_date, #Minimum value
     max_value=max_date, #Maximum value
     format="YYYY-MM" #Format
 )
 
-st.sidebar.markdown('### Select Area') #Arrondissement Filter title
+#st.sidebar.markdown('### Select Area') #Arrondissement Filter title
 arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon",
                       "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
                       "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
@@ -106,7 +106,7 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
     st.session_state.selected = arrondissement_all #Set default selection of arrondissement
 #if st.sidebar.button('All arrondissements'): #Create button for all selection
 #    st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-arrondissement = container.multiselect("Arrondissement:", arrondissement_all, default=arrondissement_all) #Create arrondissement mutiselect filter
+arrondissement = container.multiselect("Select Arrondissement:", arrondissement_all, default=arrondissement_all) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement #Update selection at each select action is made
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
