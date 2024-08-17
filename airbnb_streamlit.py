@@ -31,30 +31,34 @@ import random
 st.set_page_config(layout="wide") #Set wide page layout
 
 # Adjust CSS
-st.markdown("""
-    <style>
-    h1 {  /* Title font size */
-        font-size: 40px;
-    }
-    h2 {  /* Header font size */
-        font-size: 30px;
-    }
-    h5 {  /* Graph title font size */
-        font-size: 18px;
-    }
-    p {
-        font-size: 15px;  /* Paragraph font size */
-    }
-    .st-b1 {
-        font-size: 8.5px !important; /* Arrondissement filter options */
-    }
-    [data-testid="stSidebar"] {
-        width: 250px;  /* Sidebar width */
-        min-width: 250px;  /* Sidebar minimum width */
-        max-width: 250px;  /* Sidebar maximum width */
-    }
-    </style>
-""", unsafe_allow_html=True)
+def inject_css():
+    st.markdown("""
+        <style>
+        h1 {  /* Title font size */
+            font-size: 40px;
+        }
+        h2 {  /* Header font size */
+            font-size: 30px;
+        }
+        h5 {  /* Graph title font size */
+            font-size: 18px;
+        }
+        p {
+            font-size: 15px;  /* Paragraph font size */
+        }
+        .st-b1 {
+            font-size: 8px !important; /* Arrondissement filter options */
+        }
+        [data-testid="stSidebar"] {
+            width: 250px;  /* Sidebar width */
+            min-width: 250px;  /* Sidebar minimum width */
+            max-width: 250px;  /* Sidebar maximum width */
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+# Call the function to inject CSS
+inject_css()
 
 
 
