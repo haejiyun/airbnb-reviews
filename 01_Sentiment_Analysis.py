@@ -146,7 +146,7 @@ with SentimentTab: ################################################# Sentiment A
                                 color_continuous_scale=['#FF5A5F','#00A699'],
                                 range_color=[0, 5],
                                 mapbox_style="carto-positron",
-                                zoom=11.1, 
+                                zoom=11, 
                                 center={"lat": 48.86, "lon": 2.345},
                                 #opacity=0.8,
                                 height=350,
@@ -169,7 +169,7 @@ with SentimentTab: ################################################# Sentiment A
         st.write("") #Blank line
         wordcloud = plt.figure(facecolor = 'none', figsize=(5,5)) #Set graph background transparent
         ax1 = wordcloud.add_axes([0, 0, 1, 1]) #Configure wordcloud position for positive comments
-        ax2 = wordcloud.add_axes([0, -0.65, 1, 1]) #Configure wordcloud position for negative comments
+        ax2 = wordcloud.add_axes([0, -0.61, 1, 1]) #Configure wordcloud position for negative comments
         ax1.imshow(wordcloud_pos) #Show wordcloud of positive comments
         ax1.set_title('Positive', color = '#00A699', size=20) #Title
         ax1.axis('off') #Remove axis
