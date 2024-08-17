@@ -164,8 +164,8 @@ with SentimentTab: ################################################# Sentiment A
         wordcloud_neg = WordCloud(colormap=LinearSegmentedColormap.from_list("custom", ['#FF5A5F', '#FBD2C5','#FFF6E6']), mask = mask_neg, background_color=None, mode="RGBA",  max_words=100).generate(comments_neg) #Create wordcloud for negative comments
         st.write("") #Blank line
         wordcloud = plt.figure(facecolor = 'none', figsize=(4, 4)) #Set graph background transparent
-        ax1 = wordcloud.add_axes([-0.5, 0, 1.2, 1]) #Configure wordcloud position for positive comments
-        ax2 = wordcloud.add_axes([-0.5, -0.7, 1.2, 1]) #Configure wordcloud position for negative comments
+        ax1 = wordcloud.add_axes([-2, 0, 1.2, 1]) #Configure wordcloud position for positive comments
+        ax2 = wordcloud.add_axes([-2, -0.7, 1.2, 1]) #Configure wordcloud position for negative comments
         ax1.imshow(wordcloud_pos) #Show wordcloud of positive comments
         ax1.set_title('Positive', color = '#00A699', size=20) #Title
         ax1.axis('off') #Remove axis
