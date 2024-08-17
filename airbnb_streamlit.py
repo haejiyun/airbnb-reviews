@@ -149,7 +149,7 @@ with SentimentTab: ################################################# Sentiment A
                                 center={"lat": 48.86, "lon": 2.345},
                                 #opacity=0.8,
                                 height=350,
-                                width=1300)
+                                width=1350)
         choropleth.update_traces(marker_line_width=0, #Update market configuration
                                  marker_opacity=0.8)
         choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
