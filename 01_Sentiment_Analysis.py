@@ -57,7 +57,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 st.title("Airbnb Guest Reviews in Paris") #Page title
-st.markdown("***") #Breakline
+
 
 
 
@@ -115,7 +115,7 @@ df_filtered = df[mask] #Select filtered data
 
 
 
-SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Classification", "Readme"])
+SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Multi-Label Classification", "Readme"])
 
 #################################################################### Sentiment Analysis
 
