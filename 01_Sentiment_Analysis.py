@@ -154,7 +154,9 @@ with SentimentTab: ################################################# Sentiment A
         choropleth.update_traces(marker_line_width=0, #Update market configuration
                                  marker_opacity=0.8)
         choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
-                                 margin=dict(l=0, r=0, t=0, b=25)) #Update margins
+                                 margin=dict(l=0, r=0, t=0, b=25), #Update margins
+                                 paper_bgcolor='rgba(0,0,0,0)'
+                                ) 
         st.plotly_chart(choropleth) #Show the choropleth
     
     with col2: #On the second column
