@@ -95,7 +95,10 @@ selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     max_value=max_date, #Maximum value
     format="YYYY-MM" #Format
 )
+
 st.write("")
+st.write("")
+
 st.sidebar.markdown('### Select Area') #Arrondissement Filter title
 arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon",
                       "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
