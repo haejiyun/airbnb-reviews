@@ -121,8 +121,8 @@ SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Mul
 
 
 with SentimentTab: ################################################# Sentiment Analysis
-
-    st.write('''
+    container = st.container(border=True)
+    container.write('''
     This page displays sentiment analysis results for guest reviews of Paris zones across different time periods. Based on the content of each comment, a sentiment score from 1 to 5 is assigned, where 1 represents highly negative sentiment and 5 indicates positive sentiment. You can customize your view by selecting time period of interest and specific area in Paris.  
              ''')
     
