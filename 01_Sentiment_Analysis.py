@@ -169,7 +169,7 @@ with SentimentTab: ################################################# Sentiment A
         st.write("") #Blank line
         wordcloud = plt.figure(facecolor = 'none', figsize=(5,5)) #Set graph background transparent
         ax1 = wordcloud.add_axes([0, 0, 1, 1]) #Configure wordcloud position for positive comments
-        ax2 = wordcloud.add_axes([0, -0.6, 1, 1]) #Configure wordcloud position for negative comments
+        ax2 = wordcloud.add_axes([0, -0.65, 1, 1]) #Configure wordcloud position for negative comments
         ax1.imshow(wordcloud_pos) #Show wordcloud of positive comments
         ax1.set_title('Positive', color = '#00A699', size=20) #Title
         ax1.axis('off') #Remove axis
@@ -205,6 +205,10 @@ with ClassificationTab: ############################################ Multi-class
     df_exploded = df_filtered.explode('labels_list') #Create dataset with single topic 
     df_exploded['labels_list'] = df_exploded['labels_list'].str.strip() #Remove space before and after each topic extracted
     labels_counts_exploded = df_exploded['labels_list'].value_counts().reset_index() #Count the single topic
+
+    st.write('''
+    This page presents the results of topic classification for guest reviews across different time periods in Paris. The classification model categorizes comments into five main topics: Apartment, Bed, Communication, Location, Neighborhood. Based on the content of each review, one or multiple relevant topics are assigned. You can customize your view by selecting time period of interest and specific area in Paris.
+     ''')
     
     col1, col2 = st.columns([3, 2], gap="large") #Create two columns for two graphs
     
