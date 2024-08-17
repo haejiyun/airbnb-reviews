@@ -223,9 +223,9 @@ with ClassificationTab:
     labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
     labels_counts['label_percent'] = '<b>'+labels_counts['labels_string']+'<br>'+labels_counts['percent'] #Create a column with the name and the percentage of each combination
     
-    df_exploded = df_filtered.explode('labels') #Create dataset with single topic 
-    df_exploded['labels'] = df_exploded['labels'].str.strip() #Remove space before and after each topic extracted
-    labels_counts_exploded = df_exploded['labels'].value_counts().reset_index() #Count the single topic
+    df_exploded = df_filtered.explode('labels_list') #Create dataset with single topic 
+    df_exploded['labels_list'] = df_exploded['labels_list'].str.strip() #Remove space before and after each topic extracted
+    labels_counts_exploded = df_exploded['labels_list'].value_counts().reset_index() #Count the single topic
     
     
     #################################################################### Graphs
