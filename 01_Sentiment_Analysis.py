@@ -278,9 +278,9 @@ with ClassificationTab:
     with col3: #On the last column
         st.write('') #Blank line
         if st.button('Refresh comments'): #Create refresh button
-            comments = df_filtered.loc[df_filtered['labels'].apply(lambda x: x == list(sorted(topic))),'comments_en'].sample(5) #If clicked, comments are refreshed
+            comments = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))),'comments_en'].sample(5) #If clicked, comments are refreshed
     
-    comments = df_filtered.loc[df_filtered['labels'].apply(lambda x: x == list(sorted(topic))),'comments_en'].sample(5) #Create 5 random comments which correspond to applied filters
+    comments = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))),'comments_en'].sample(5) #Create 5 random comments which correspond to applied filters
     with st.container(border=True): #Create a container for the comments
         for index in range(len(comments)): #Show each comments generated in plain text
             st.write(index+1, comments.iloc[index])
