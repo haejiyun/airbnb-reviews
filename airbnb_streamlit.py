@@ -49,7 +49,7 @@ st.markdown("""
         font-size: 9px;  /* Arrondissement name font size */
     }
     .st-cp.st-bx.st-dp.st-dq.st-dr.st-co.st-b1 {
-    font-size: 9px;  /* Reduce the font size */
+    font-size: 8px;  /* Reduce the font size */
     }
     [data-testid="stSidebar"] {
         width: 240px;  /* Sidebar width */
