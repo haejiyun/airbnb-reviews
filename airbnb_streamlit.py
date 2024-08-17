@@ -89,7 +89,7 @@ st.sidebar.markdown('### Select Time Period') #Time Filter title
 min_date = df['month'].min().to_pydatetime() #Set minimum date
 max_date = df['month'].max().to_pydatetime() #Set maximum date
 selected_min, selected_max = st.sidebar.slider( #Create time filter slider
-    #"Period", #Slider name
+    "", #Slider name
     value=(min_date, max_date), #Slider values
     min_value=min_date, #Minimum value
     max_value=max_date, #Maximum value
