@@ -229,11 +229,7 @@ with ClassificationTab: ############################################ Multi-class
                           title_font_size=17, #Update title configuration
                           title_xanchor='center',
                           title_x = 0.5,
-                          margin=dict(t=30, l=0, r=0, b=20),
-                          title=dict(text='Multi-Topics of Guest Reviews',
-                                     font=dict(size=17,weight='normal'),
-                                     xanchor='center',
-                                     x=0.5)
+                          margin=dict(t=30, l=0, r=0, b=20)
                           )
         st.plotly_chart(fig, use_container_width=False) #Show the graph
     
@@ -252,8 +248,7 @@ with ClassificationTab: ############################################ Multi-class
                           xaxis_title=None,
                           yaxis_tickfont=dict(size=15), #Update axis ticks configuration
                           xaxis_tickfont=dict(size=15),
-                          margin=dict(t=30, l=0, r=0, b=0),
-                          title_font=dict(size=17, weight='normal')
+                          margin=dict(t=30, l=0, r=0, b=0)
                           )
         fig.update_yaxes(tickfont=dict(color='white'),categoryorder='category descending') #Update y-axes configuration
         fig.update_xaxes(tickfont=dict(color='white')) #Update x-axes configuration
