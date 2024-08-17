@@ -117,7 +117,7 @@ df_filtered = df[mask] #Select filtered data
 SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Multi-Label Classification", "Readme"]) #Create tabs
 
 
-with SentimentTab: #Sentiment analysis tab
+with SentimentTab: ################################################# Sentiment Analysis
     
     col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
     
@@ -192,7 +192,7 @@ with SentimentTab: #Sentiment analysis tab
 
 
 
-with ClassificationTab: #Multi-classification tab
+with ClassificationTab: ############################################ Multi-classification
     
     labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
     labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
@@ -259,7 +259,7 @@ with ClassificationTab: #Multi-classification tab
 
 
 
-with ReadmeTab: #Readme Tab
+with ReadmeTab: #################################################### Readme
 
     df['listing_id'] = df['listing_id'].astype(str) #Set listing id as string
     df.drop_duplicates('listing_id',inplace = True)
@@ -295,7 +295,7 @@ with ReadmeTab: #Readme Tab
     st.write("*listings.csv*") #Show the dataset name
     st.dataframe(data = df[['listing_id','latitude','longitude']].head().rename(columns ={"listing_id":"id"}), hide_index=True) #Show the dataset
     st.write("*reviews.csv*") #Show the dataset name
-    st.table(data = df[['listing_id','date','comments']].head()) #Show the dataset
+    st.dataframe(data = df[['listing_id','date','comments']].head(), hide_index=True) #Show the dataset
     st.write("*neighbourhoods.geojson*") #Show the dataset name
     st.dataframe(data = df[['arrondissement','geometry_arrondissement']].head().rename(columns ={"geometry_arrondissement":"geometry"}), hide_index=True) #Show the dataset
     st.write("*quartier_paris.geojson*") #Show the dataset name
