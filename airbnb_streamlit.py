@@ -56,6 +56,10 @@ st.markdown("""
     .stCheckbox {
         padding-bottom: 0px;
     }
+    .stCheckbox > label {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
     </style>
     """, unsafe_allow_html=True)
 
