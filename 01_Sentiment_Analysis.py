@@ -192,7 +192,8 @@ with SentimentTab: ################################################# Sentiment A
                             yaxis=dict(range=[0, 5.2]),
                             yaxis_tickfont=dict(size=13), #Update y-ticks configuration
                             xaxis_tickfont=dict(size=13), #Update x-ticks configuration
-                            line_color="#00A699", #Update line color) 
+                            line_color="#00A699" #Update line color
+                           ) 
     linechart.update_layout(margin=dict(l=60, r=60, t=5, b=115)) #Update margin
     st.plotly_chart(linechart) #Show the chart
 
