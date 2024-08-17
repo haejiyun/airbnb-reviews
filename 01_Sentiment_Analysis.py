@@ -295,7 +295,7 @@ with ReadmeTab: #################################################### Readme
     st.write("*listings.csv*") #Show the dataset name
     st.dataframe(data = df[['listing_id','latitude','longitude']].head().rename(columns ={"listing_id":"id"}), hide_index=True) #Show the dataset
     st.write("*reviews.csv*") #Show the dataset name
-    st.dataframe(data = df[['listing_id','date','comments']].head(), hide_index=True) #Show the dataset
+    st.dataframe(data = df[['listing_id','date','comments']].head(), hide_index=True, width = 1000) #Show the dataset
     st.write("*neighbourhoods.geojson*") #Show the dataset name
     st.dataframe(data = df[['arrondissement','geometry_arrondissement']].head().rename(columns ={"geometry_arrondissement":"geometry"}), hide_index=True) #Show the dataset
     st.write("*quartier_paris.geojson*") #Show the dataset name
