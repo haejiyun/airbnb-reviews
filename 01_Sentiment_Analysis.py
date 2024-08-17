@@ -85,6 +85,7 @@ arrondissement_gdf = arrondissement_gdf[['neighbourhood','geometry']] #Select us
 col1, col2 = st.columns([2, 3], gap = 'medium') #Create two columns for period & arrondissement filters
 
 with col1: #On the first column
+    st.sidebar.markdown('## Select Time Period')
     min_date = df['month'].min().to_pydatetime() #Set minimum date
     max_date = df['month'].max().to_pydatetime() #Set maximum date
     selected_min, selected_max = st.sidebar.slider( #Create slider
@@ -96,6 +97,7 @@ with col1: #On the first column
     )
 
 with col2: #On the second column
+    st.sidebar.markdown('## Select Area')
     arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon",
                           "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
                           "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
