@@ -145,7 +145,7 @@ with SentimentTab: ################################################# Sentiment A
                                 color_continuous_scale=['#FF5A5F','#00A699'],
                                 range_color=[0, 5],
                                 mapbox_style="carto-positron",
-                                zoom=10.5, 
+                                zoom=10.4, 
                                 center={"lat": 48.86, "lon": 2.345},
                                 #opacity=0.8,
                                 height=350,
@@ -158,7 +158,7 @@ with SentimentTab: ################################################# Sentiment A
         st.plotly_chart(choropleth) #Show the choropleth
     
     with col2: #On the second column
-        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Common Words in Guest Reviews</h5>", unsafe_allow_html=True) #Wordcloud title
+        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Common Words in Reviews</h5>", unsafe_allow_html=True) #Wordcloud title
         comments_pos = df_filtered.loc[df_filtered['sentiment_binary'] == 'positive', 'comments_en'].astype(str).str.replace('\n', ' ').dropna() #Extract positive comments
         comments_pos = ' '.join(comments_pos) #Extract words
         comments_neg = df_filtered.loc[df_filtered['sentiment_binary'] == 'negative', 'comments_en'].astype(str).str.replace('\n', ' ').dropna() #Extract negative comments
