@@ -46,9 +46,9 @@ st.markdown("""
         font-size: 15px;  /* Paragraph font size */
     }
     [data-testid="stSidebar"] {
-        width: 300px;  /* Sidebar width */
-        min-width: 300px;  /* Sidebar minimum width */
-        max-width: 300px;  /* Sidebar maximum width */
+        width: 280px;  /* Sidebar width */
+        min-width: 280px;  /* Sidebar minimum width */
+        max-width: 280px;  /* Sidebar maximum width */
     }
     .st-b1 {
         font-size: 8px !important; /* Arrondissement filter options */
