@@ -50,7 +50,7 @@ st.markdown("""
         min-width: 260px;  /* Sidebar minimum width */
         max-width: 260px;  /* Sidebar maximum width */
     }
-    .st-b1 {
+    st-cp st-c8 st-dp st-dq st-dr st-co {
         font-size: 8px !important; /* Arrondissement filter options */
     }
     </style>
