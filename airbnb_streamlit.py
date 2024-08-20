@@ -87,7 +87,7 @@ min_date = df['month'].min().to_pydatetime() #Set minimum date
 max_date = df['month'].max().to_pydatetime() #Set maximum date
 selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     "Select Time Period", #Slider name
-    value=(df['date'].min(), df['date'].max()), #Slider values
+    value=(df['date'].min().to_pydatetime(), df['date'].max().to_pydatetime()), #Slider values
     min_value=min_date, #Minimum value
     max_value=max_date, #Maximum value
     format="YYYY-MM" #Format
