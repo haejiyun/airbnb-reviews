@@ -90,7 +90,7 @@ selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     value=(df['date'].min().to_pydatetime(), df['date'].max().to_pydatetime()), #Slider values
     min_value=min_date, #Minimum value
     max_value=max_date, #Maximum value
-    format="YYYY-MM" #Format
+    format="YYYY-MM-DD" #Format
 )
 
 #st.sidebar.markdown('### Select Area') #Arrondissement Filter title
