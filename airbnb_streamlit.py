@@ -46,9 +46,9 @@ st.markdown("""
         font-size: 15px;  /* Paragraph font size */
     }
     [data-testid="stSidebar"] {
-        width: 270px;  /* Sidebar width */
-        min-width: 270px;  /* Sidebar minimum width */
-        max-width: 270px;  /* Sidebar maximum width */
+        width: 275px;  /* Sidebar width */
+        min-width: 275px;  /* Sidebar minimum width */
+        max-width: 275px;  /* Sidebar maximum width */
     }
     .st-b1 {
         font-size: 8px !important; /* Arrondissement filter options */
@@ -125,7 +125,7 @@ with SentimentTab: ################################################# Sentiment A
              ''')
     st.write("")
     
-    col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
+    col1, col2 = st.columns([3, 1.4], gap = 'small') #Create two columns for two graphs
     
     with col1: #On the first column
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Linechart title
