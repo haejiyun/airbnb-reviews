@@ -125,7 +125,7 @@ with SentimentTab: ################################################# Sentiment A
              ''')
     st.write("")
     
-    col1, col2 = st.columns([3, 1.4], gap = 'small') #Create two columns for two graphs
+    col1, col2 = st.columns([3.1, 1.4], gap = 'small') #Create two columns for two graphs
     
     with col1: #On the first column
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Linechart title
