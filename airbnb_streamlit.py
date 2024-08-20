@@ -150,7 +150,7 @@ with SentimentTab: ################################################# Sentiment A
                                 range_color=[0, 5],
                                 mapbox_style="carto-positron",
                                 zoom=10.3, 
-                                center={"lat": 48.8, "lon": 2.345},
+                                center={"lat": 48.86, "lon": 2.34},
                                 #opacity=0.8,
                                 height=350,
                                 width=1300,
