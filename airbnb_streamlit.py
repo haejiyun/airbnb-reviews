@@ -90,7 +90,7 @@ selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     value=(min_date, max_date), #Slider values
     min_value=min_date, #Minimum value
     max_value=max_date, #Maximum value
-    format="YYYY-MM-dd" #Format
+    format="YYYY-MM-DD" #Format
 )
 
 #st.sidebar.markdown('### Select Area') #Arrondissement Filter title
