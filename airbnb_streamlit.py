@@ -115,7 +115,7 @@ with col1:
     if st.sidebar.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
 with col2:
-    if st.sidebar.button('Deselect All'):
+    if st.sidebar.button('Select None'):
         st.session_state.selected = []
 arrondissement = container.multiselect("Select Arrondissement:", 
                                        arrondissement_all, 
