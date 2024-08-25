@@ -102,7 +102,7 @@ selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     format="YYYY-MM-DD" #Format
 )
 
-#st.sidebar.markdown('### Select Area') #Arrondissement Filter title
+st.sidebar.markdown('### Select Arrondissement') #Arrondissement Filter title
 arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon", 
                       "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
                       "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
@@ -117,7 +117,7 @@ with col2:
 container = st.sidebar.container() #Create a container for arrondissement filter
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
-arrondissement = container.multiselect("Select Arrondissement:", 
+arrondissement = container.multiselect("", 
                                        arrondissement_all, 
                                        default=st.session_state.selected) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement
