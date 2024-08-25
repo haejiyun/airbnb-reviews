@@ -123,9 +123,7 @@ arrondissement = container.multiselect("Select Arrondissement:",
 #if arrondissement == []:
 #    st.session_state.selected = []
 
-if not arrondissement:  # If the selection is empty
-    st.session_state.selected = []
-else:
+if arrondissement != st.session_state.selected:
     st.session_state.selected = arrondissement
 
 
