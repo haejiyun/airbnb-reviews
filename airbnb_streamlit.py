@@ -112,10 +112,10 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
 col1, col2 = st.sidebar.columns([1, 1], gap = 'small')
 with col1:
-    if st.sidebar.button('All'): #Create button for all selection
+    if st.button('All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
 with col2:
-    if st.sidebar.button('None'):
+    if st.button('None'):
         st.session_state.selected = []
 arrondissement = container.multiselect("Select Arrondissement:", 
                                        arrondissement_all, 
