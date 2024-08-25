@@ -61,6 +61,9 @@ def inject_css():
         svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el {
         display: none !important;
         }
+        .st-bz {
+        margin-top: -10px;  /* Adjust this value as needed */
+        }
         </style>
     """, unsafe_allow_html=True)
 
