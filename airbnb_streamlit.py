@@ -438,4 +438,4 @@ with ReadmeTab: #################################################### Readme
     st.write("") #Blank line
     st.subheader("Code Source") #Header
     "[Github code](https://github.com/haejiyun/airbnb-reviews/tree/main)" #Github code link
-    "[Author's Linkedin](https://www.linkedin.com/in/haejiyun/)" #Linkedin link
+    "[Author's page](https://haejiyun.github.io/)" #Github page link
