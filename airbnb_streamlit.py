@@ -55,6 +55,9 @@ def inject_css():
         .st-co {
             font-size: 11px !important; /* Arrondissement filter options */
         }
+        st-emotion-cache-rkczhd e1nzilvr4 {
+            font-size: 11px !important; /* Arrondissement filter options */
+        }
         svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el {
         display: none !important;
         }
