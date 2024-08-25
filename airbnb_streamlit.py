@@ -129,10 +129,7 @@ with SentimentTab: ################################################# Sentiment A
     st.write("")
 
     if not arrondissement or selected_min == selected_max : #Warning message when no data is selected
-        st.info("Please select at least one arrondissement and one period.")
         st.success("Please select at least one arrondissement and one period.")
-        st.warning("Please select at least one arrondissement and one period.")
-        st.error("Please select at least one arrondissement and one period.")
     else : 
 
         col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
@@ -228,74 +225,78 @@ with ClassificationTab: ############################################ Multi-class
     This page presents the results of topic classification for guest reviews across different time periods in Paris. The classification model categorizes comments into five main topics: Apartment, Bed, Communication, Location, and Neighborhood. For each review, one or multiple relevant topics are assigned. You can customize your view by selecting time period of interest and specific area in Paris.
      ''')
     st.write("")
+
+    if not arrondissement or selected_min == selected_max : #Warning message when no data is selected
+        st.success("Please select at least one arrondissement and one period.")
+    else : 
     
-    col1, col2 = st.columns([3, 2], gap="medium") #Create two columns for two graphs
-    
-    with col1: #On the first column
-        fig = px.treemap(labels_counts, #Create a treemap 
-                         path=['label_percent'], 
-                         values='count', 
-                         #title='Multi-Topics of guest reviews', 
-                         color='count', 
-                         color_continuous_scale=['#FBD2C5','#00A699'])
-        fig.update_traces(textposition='middle center', #Update text configuration in the treemap
-                          insidetextfont=dict(size=15) 
-                         )
-        fig.update_layout(width=1000, #Update the dimension of the graph
-                          height=400, 
-                          coloraxis_showscale=False, #Hide colorbar
-                          #title_font_size=17, #Update title configuration
-                          #title_xanchor='center',
-                          #title_x = 0.5,
-                          margin=dict(t=0, l=0, r=0, b=20)
-                          )
-        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-label of guest reviews</h5>", unsafe_allow_html=True) #Treemap title
-        st.plotly_chart(fig, use_container_width=False) #Show the graph
-    
-    with col2: #On the second column
-        fig = px.histogram(labels_counts_exploded, #Create barplot
-                           y='labels_list', 
-                           x= 'count', 
-                           #title='Count of each topics', 
-                           color_discrete_sequence=['#FF5A5F'])
-        fig.update_layout(width = 500, #Update the dimension of the graph
-                          height = 380,
-                          #title_font_size=17, #Update the title configuration
-                          #title_xanchor='center',
-                          #title_x = 0.6,
-                          yaxis_title=None, #Update axis title configuration
-                          xaxis_title=None,
-                          yaxis_tickfont=dict(size=15), #Update axis ticks configuration
-                          xaxis_tickfont=dict(size=15),
-                          margin=dict(t=0, l=0, r=0, b=0)
-                          )
-        fig.update_yaxes(tickfont=dict(color='white'),categoryorder='category descending') #Update y-axes configuration
-        fig.update_xaxes(tickfont=dict(color='white')) #Update x-axes configuration
-        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Count of each label</h5>", unsafe_allow_html=True) #Barchart title
-        st.plotly_chart(fig) #Show the plot
-    
-    st.markdown("<h5 style='text-align: center; font-weight: normal;'>Random Guest Reviews</h5>", unsafe_allow_html=True) #Title
-    col1, col2 = st.columns([6,1]) #Create columns for filters
-    with col1: #On the first column
-        topic = st.multiselect("Select Topics", ['apartment', 'bed', 'communication', 'location', 'neighborhood'], default=['apartment', 'bed', 'communication', 'location', 'neighborhood']) #Create topic selector
-    with col2: #On the last column
-        st.write('') #Blank line
-        if st.button('Refresh comments'): #Create refresh button
-            filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en']
-            if len(filtered_df) >= 5:
-                comments = filtered_df.sample(5) #If clicked, comments are refreshed
-            else:
-                comments = filtered_df
-    
-    filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en']
-    if len(filtered_df) >= 5:
-        comments = filtered_df.sample(5) #Create 5 random comments which correspond to applied filters
-    else:
-        comments = filtered_df
-    
-    with st.container(border=True): #Create a container for the comments
-        for index in range(len(comments)): #Show each comments generated in plain text
-            st.write(index+1, comments.iloc[index])
+        col1, col2 = st.columns([3, 2], gap="medium") #Create two columns for two graphs
+        
+        with col1: #On the first column
+            fig = px.treemap(labels_counts, #Create a treemap 
+                             path=['label_percent'], 
+                             values='count', 
+                             #title='Multi-Topics of guest reviews', 
+                             color='count', 
+                             color_continuous_scale=['#FBD2C5','#00A699'])
+            fig.update_traces(textposition='middle center', #Update text configuration in the treemap
+                              insidetextfont=dict(size=15) 
+                             )
+            fig.update_layout(width=1000, #Update the dimension of the graph
+                              height=400, 
+                              coloraxis_showscale=False, #Hide colorbar
+                              #title_font_size=17, #Update title configuration
+                              #title_xanchor='center',
+                              #title_x = 0.5,
+                              margin=dict(t=0, l=0, r=0, b=20)
+                              )
+            st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-label of guest reviews</h5>", unsafe_allow_html=True) #Treemap title
+            st.plotly_chart(fig, use_container_width=False) #Show the graph
+        
+        with col2: #On the second column
+            fig = px.histogram(labels_counts_exploded, #Create barplot
+                               y='labels_list', 
+                               x= 'count', 
+                               #title='Count of each topics', 
+                               color_discrete_sequence=['#FF5A5F'])
+            fig.update_layout(width = 500, #Update the dimension of the graph
+                              height = 380,
+                              #title_font_size=17, #Update the title configuration
+                              #title_xanchor='center',
+                              #title_x = 0.6,
+                              yaxis_title=None, #Update axis title configuration
+                              xaxis_title=None,
+                              yaxis_tickfont=dict(size=15), #Update axis ticks configuration
+                              xaxis_tickfont=dict(size=15),
+                              margin=dict(t=0, l=0, r=0, b=0)
+                              )
+            fig.update_yaxes(tickfont=dict(color='white'),categoryorder='category descending') #Update y-axes configuration
+            fig.update_xaxes(tickfont=dict(color='white')) #Update x-axes configuration
+            st.markdown("<h5 style='text-align: center; font-weight: normal;'>Count of each label</h5>", unsafe_allow_html=True) #Barchart title
+            st.plotly_chart(fig) #Show the plot
+        
+        st.markdown("<h5 style='text-align: center; font-weight: normal;'>Random Guest Reviews</h5>", unsafe_allow_html=True) #Title
+        col1, col2 = st.columns([6,1]) #Create columns for filters
+        with col1: #On the first column
+            topic = st.multiselect("Select Topics", ['apartment', 'bed', 'communication', 'location', 'neighborhood'], default=['apartment', 'bed', 'communication', 'location', 'neighborhood']) #Create topic selector
+        with col2: #On the last column
+            st.write('') #Blank line
+            if st.button('Refresh comments'): #Create refresh button
+                filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en']
+                if len(filtered_df) >= 5:
+                    comments = filtered_df.sample(5) #If clicked, comments are refreshed
+                else:
+                    comments = filtered_df
+        
+        filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en']
+        if len(filtered_df) >= 5:
+            comments = filtered_df.sample(5) #Create 5 random comments which correspond to applied filters
+        else:
+            comments = filtered_df
+        
+        with st.container(border=True): #Create a container for the comments
+            for index in range(len(comments)): #Show each comments generated in plain text
+                st.write(index+1, comments.iloc[index])
 
 
 
