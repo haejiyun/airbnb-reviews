@@ -100,28 +100,25 @@ selected_min, selected_max = st.sidebar.slider( #Create time filter slider
 )
 
 #st.sidebar.markdown('### Select Area') #Arrondissement Filter title
-@st.cache_data
-def get_default_selections(): #default value of selected arrondissement
-    return ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"]
 arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon", 
                       "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
                       "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
                       "16 - Passy","17 - Batignolles-Monceau","18 - Buttes-Montmartre","19 - Buttes-Chaumont","20 - Ménilmontant"]
 container = st.sidebar.container() #Create a container for arrondissement filter
-
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
-    st.session_state.selected = get_default_selections() #Set default selection of arrondissement
+    st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
 if st.sidebar.button('All arrondissements'): #Create button for all selection
     st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-if st.sidebar.button('Deselect All'):
-    st.session_state.selected = []
+#if st.sidebar.button('Deselect All'):
+#    st.session_state.selected = []
 arrondissement = container.multiselect("Select Arrondissement:", 
                                        arrondissement_all, 
                                        default=st.session_state.selected) #Create arrondissement mutiselect filter
+@st.cache_data
 st.session_state.selected = arrondissement #Update selection at each select action is made
 
-if arrondissement == []:
-    st.session_state.selected = []
+#if arrondissement == []:
+#    st.session_state.selected = []
 
 
 
