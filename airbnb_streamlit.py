@@ -55,6 +55,9 @@ def inject_css():
         .st-co {
             font-size: 10.5px !important; /* Arrondissement filter options */
         }
+        div[data-baseweb="select"] [data-id="clear-indicator"] {
+        display: none;
+        }
         </style>
     """, unsafe_allow_html=True)
 
