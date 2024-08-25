@@ -91,7 +91,7 @@ arrondissement_gdf = arrondissement_gdf[['neighbourhood','geometry']] #Select us
 #################################################################### PAGE TITLE & SIDEBAR FILTERS
 st.title("Airbnb Guest Reviews in Paris") #Page title
 
-#st.sidebar.markdown('### Select Time Period') #Time Filter title
+st.sidebar.markdown('#### Select Time Period') #Time Filter title
 min_date = df['month'].min().to_pydatetime() #Set minimum date
 max_date = df['month'].max().to_pydatetime() #Set maximum date
 selected_min, selected_max = st.sidebar.slider( #Create time filter slider
@@ -99,7 +99,8 @@ selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     value=(df['date'].min().to_pydatetime(), df['date'].max().to_pydatetime()), #Slider values
     min_value=min_date, #Minimum value
     max_value=max_date, #Maximum value
-    format="YYYY-MM-DD" #Format
+    format="YYYY-MM-DD", #Format
+    label_visibility="collapsed"
 )
 
 st.sidebar.markdown('### Select Arrondissement') #Arrondissement Filter title
@@ -119,7 +120,8 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
 arrondissement = container.multiselect("", 
                                        arrondissement_all, 
-                                       default=st.session_state.selected) #Create arrondissement mutiselect filter
+                                       default=st.session_state.selected,
+                                       label_visibility="collapsed") #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
