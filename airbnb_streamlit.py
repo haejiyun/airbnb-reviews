@@ -31,31 +31,34 @@ import random
 st.set_page_config(layout="wide") #Set wide page layout
 
 # Adjust CSS
-st.markdown("""
-    <style>
-    h1 {  /* Title font size */
-        font-size: 40px;
-    }
-    h2 {  /* Header font size */
-        font-size: 30px;
-    }
-    h5 {  /* Graph title font size */
-        font-size: 18px;
-    }
-    p {
-        font-size: 15px;  /* Paragraph font size */
-    }
-    [data-testid="stSidebar"] {
-        width: 260px;  /* Sidebar width */
-        min-width: 260px;  /* Sidebar minimum width */
-        max-width: 260px;  /* Sidebar maximum width */
-    }
-    .st-co {
-        font-size: 10.5px !important; /* Arrondissement filter options */
-    }
-    </style>
-""", unsafe_allow_html=True)
+# Inject CSS for styling
+def inject_css():
+    st.markdown("""
+        <style>
+        h1 {  /* Title font size */
+            font-size: 40px;
+        }
+        h2 {  /* Header font size */
+            font-size: 30px;
+        }
+        h5 {  /* Graph title font size */
+            font-size: 18px;
+        }
+        p {
+            font-size: 15px;  /* Paragraph font size */
+        }
+        [data-testid="stSidebar"] {
+            width: 260px;  /* Sidebar width */
+            min-width: 260px;  /* Sidebar minimum width */
+            max-width: 260px;  /* Sidebar maximum width */
+        }
+        .st-co {
+            font-size: 10.5px !important; /* Arrondissement filter options */
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
+inject_css()
 
 
 
@@ -110,6 +113,14 @@ st.session_state.selected = arrondissement #Update selection at each select acti
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
+
+
+
+
+
+#################################################################### BUTTON TO "CLEAR CACHE"
+if st.sidebar.button('Refresh UI'):
+    st.experimental_rerun()  # Refresh the entire app and reapply the CSS
 
 
 
