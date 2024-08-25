@@ -128,8 +128,11 @@ with SentimentTab: ################################################# Sentiment A
              ''')
     st.write("")
 
-    if not arrondissement or selected_min == selected_max :
+    if not arrondissement or selected_min == selected_max : #Warning message when no data is selected
+        st.info("Please select at least one arrondissement and one period.")
+        st.success("Please select at least one arrondissement and one period.")
         st.warning("Please select at least one arrondissement and one period.")
+        st.error("Please select at least one arrondissement and one period.")
     else : 
 
         col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
