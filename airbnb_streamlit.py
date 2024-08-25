@@ -117,6 +117,7 @@ arrondissement = container.multiselect("Select Arrondissement:",
 @st.cache_data
 def arrondissement_select():
     st.session_state.selected = arrondissement #Update selection at each select action is made
+    return st.session_state_selected
 arrondissement_select()
 
 #if arrondissement == []:
