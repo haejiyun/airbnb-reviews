@@ -53,7 +53,7 @@ def inject_css():
             max-width: 260px;  /* Sidebar maximum width */
         }
         .st-co {
-            font-size: 10.5px !important; /* Arrondissement filter options */
+            font-size: 11px !important; /* Arrondissement filter options */
         }
         svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el {
         display: none !important;
