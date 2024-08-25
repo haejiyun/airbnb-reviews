@@ -118,14 +118,6 @@ df_filtered = df[mask] #Select filtered data
 
 
 
-#################################################################### BUTTON TO "CLEAR CACHE"
-if st.sidebar.button('Refresh UI'):
-    st.experimental_rerun()  # Refresh the entire app and reapply the CSS
-
-
-
-
-
 #################################################################### TAB PAGES
 SentimentTab, ClassificationTab, ReadmeTab = st.tabs(["Sentiment Analysis", "Multi-Label Classification", "Readme"]) #Create tabs
 
