@@ -111,7 +111,7 @@ arrondissement = container.multiselect("Select Arrondissement:",
                                        default=st.session_state.selected) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement #Update selection at each select action is made
 
-if not arrondissement or selected_min is None or selected_max is None:
+if not arrondissement or selected_min == selected_max :
     st.warning("Please select at least one arrondissement and one period.") 
 else:
     # If selections are made, filter the data
