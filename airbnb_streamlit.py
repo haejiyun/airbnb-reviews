@@ -114,11 +114,14 @@ if st.sidebar.button('All arrondissements'): #Create button for all selection
 arrondissement = container.multiselect("Select Arrondissement:", 
                                        arrondissement_all, 
                                        default=st.session_state.selected) #Create arrondissement mutiselect filter
+st.session_state.selected = arrondissement
 @st.cache_data
-def arrondissement_select():
-    st.session_state.selected = arrondissement #Update selection at each select action is made
-    return st.session_state_selected
+def arrondissement_x():
+    if arrondissement == []
+    st.session_state_selected == []
 arrondissement_select()
+
+
 
 #if arrondissement == []:
 #    st.session_state.selected = []
