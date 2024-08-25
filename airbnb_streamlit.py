@@ -58,7 +58,7 @@ def inject_css():
         svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el {
         display: none !important;
         }
-        .css-1emrehy.edgvbvh3 {
+        .st-emotion-cache-rkczhd p {
         font-size: 11px; /
         }
         </style>
