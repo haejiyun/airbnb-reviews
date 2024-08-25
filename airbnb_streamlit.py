@@ -109,10 +109,10 @@ arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Vill
                       "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
                       "16 - Passy","17 - Batignolles-Monceau","18 - Buttes-Montmartre","19 - Buttes-Chaumont","20 - Ménilmontant"]
 col1, col2 = st.sidebar.columns([0.6, 1], gap = 'small')
-with col2:
+with col1:
     if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-with col1:
+with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
 container = st.sidebar.container() #Create a container for arrondissement filter
