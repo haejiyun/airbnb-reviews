@@ -119,7 +119,7 @@ st.session_state.selected = arrondissement
 def arrondissement_x():
     if arrondissement == [] :
         st.session_state_selected == []
-arrondissement_select()
+arrondissement_x()
 
 
 
