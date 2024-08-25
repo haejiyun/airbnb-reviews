@@ -115,7 +115,9 @@ arrondissement = container.multiselect("Select Arrondissement:",
                                        arrondissement_all, 
                                        default=st.session_state.selected) #Create arrondissement mutiselect filter
 @st.cache_data
+def arrondissement_select():
     st.session_state.selected = arrondissement #Update selection at each select action is made
+arrondissement_select()
 
 #if arrondissement == []:
 #    st.session_state.selected = []
