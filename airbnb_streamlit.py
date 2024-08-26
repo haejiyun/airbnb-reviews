@@ -128,7 +128,7 @@ arrondissement = container.multiselect("Select Arrondissement",
 st.session_state.temp_selected = arrondissement
 
 # Apply Selection button to finalize changes
-if st.button('Apply Selection'):
+if st.sidebar.button('Apply Selection'):
     st.session_state.selected = st.session_state.temp_selected  # Apply the temporary selection to the final state
 
 
