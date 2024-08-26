@@ -249,10 +249,10 @@ with ClassificationTab: ############################################ Multi-class
         
         with col1: #On the first column
             fig = px.treemap(labels_counts, #Create a treemap 
-                             path=['label_type','label_percent'], 
+                             path=[px.Constant('All'),'label_type','label_percent'], 
                              values='count', 
                              #title='Multi-Topics of guest reviews', 
-                             color='count', 
+                             color='count',
                              color_continuous_scale=['#FBD2C5','#00A699'])
             fig.update_traces(textposition='middle center', #Update text configuration in the treemap
                               insidetextfont=dict(size=15),
