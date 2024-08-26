@@ -141,8 +141,6 @@ with SentimentTab: ################################################# Sentiment A
              ''')
     st.write("")
 
-    st.write('hahaha')
-
     if not arrondissement or selected_min == selected_max : #Warning message when no data is selected
         st.success("Please select at least one arrondissement and one period.")
     else : 
