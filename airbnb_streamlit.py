@@ -255,7 +255,8 @@ with ClassificationTab: ############################################ Multi-class
                              color='count', 
                              color_continuous_scale=['#FBD2C5','#00A699'])
             fig.update_traces(textposition='middle center', #Update text configuration in the treemap
-                              insidetextfont=dict(size=15) 
+                              insidetextfont=dict(size=15),
+                              maxdepth=2
                              )
             fig.update_layout(width=1000, #Update the dimension of the graph
                               height=400, 
