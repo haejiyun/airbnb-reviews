@@ -264,7 +264,7 @@ with ClassificationTab: ############################################ Multi-class
                               #title_xanchor='center',
                               #title_x = 0.5,
                               margin=dict(t=0, l=0, r=0, b=0),
-                              paper_bgcolor='lightslategrey'
+                              paper_bgcolor='slategrey'
                               )
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-label of guest reviews</h5>", unsafe_allow_html=True) #Treemap title
             st.plotly_chart(fig, use_container_width=False) #Show the graph
