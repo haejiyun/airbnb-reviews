@@ -148,7 +148,7 @@ with SentimentTab: ################################################# Sentiment A
         col1, col2 = st.columns([3, 1.5], gap = 'small') #Create two columns for two graphs
         
         with col1: #On the first column
-            st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Linechart title
+            st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Choropleth title
             col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
             with col1_bis: #On the first sub-column
                 st.markdown("<p style='font-size: 8px; line-height: 2.4;'>Show by :</p>", unsafe_allow_html=True)
@@ -217,8 +217,7 @@ with SentimentTab: ################################################# Sentiment A
                                 xaxis_title=None, #Update x-axis title
                                 yaxis=dict(range=[0, 5.2]),
                                 yaxis_tickfont=dict(size=13), #Update y-ticks configuration
-                                xaxis_tickfont=dict(size=11), #Update x-ticks configuration
-                                xaxis=dict(tickformat="%d-%m")
+                                xaxis_tickfont=dict(size=11) #Update x-ticks configuration
                                ) 
         linechart.update_layout(margin=dict(l=60, r=60, t=5, b=115)) #Update margin
         linechart.update_traces(line_color="#00A699")
