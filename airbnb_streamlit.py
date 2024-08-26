@@ -127,7 +127,7 @@ st.session_state.selected = container.multiselect("Select Arrondissement",
                                        label_visibility="collapsed") #Create arrondissement mutiselect filter
 #st.session_state.selected = arrondissement
 
-if arrondissement != session_state.selected:
+if arrondissement != st.session_state.selected:
     raise RerunException(RerunData(widget_state=None))
 
 #arrondissement = container.multiselect("Select Arrondissement", 
