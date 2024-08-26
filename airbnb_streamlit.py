@@ -96,7 +96,7 @@ min_date = df['month'].min().to_pydatetime() #Set minimum date
 max_date = df['month'].max().to_pydatetime() #Set maximum date
 selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     "Select Time Period", #Slider name
-    value=(df['date'].min().to_pydatetime(), df['date'].max().to_pydatetime()), #Slider values
+    value=( df['date'].min().to_pydatetime(), df['date'].max().to_pydatetime()), #Slider values
     min_value=min_date, #Minimum value
     max_value=max_date, #Maximum value
     format="YYYY-MM-DD", #Format
@@ -155,7 +155,7 @@ with SentimentTab: ################################################# Sentiment A
             with col1_bis: #On the first sub-column
                 st.markdown("<p style='font-size: 8px; line-height: 2.4;'>Show by :</p>", unsafe_allow_html=True)
             with col2_bis: #On the second sub-column
-                zone = st.radio("", options=["Quartier","Arrondissement"], horizontal=True, label_visibility="collapsed") #Create area division option filter
+                zone = st.radio("Show by", options=["Quartier","Arrondissement"], horizontal=True, label_visibility="collapsed") #Create area division option filter
             if zone == "Quartier": #If quartier is selected
                 df_filtered_zone = df_filtered[['quartier','sentiment']].groupby('quartier').mean().reset_index() #Create dataset grouped by quartier
                 gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, quartiers_gdf, on='quartier'), geometry='geometry') #Add quartier geolocalisation in the dataset
