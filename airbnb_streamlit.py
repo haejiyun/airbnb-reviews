@@ -206,8 +206,9 @@ with SentimentTab: ################################################# Sentiment A
         
         # Linechart
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Daily Average Sentiment Score in Paris</h5>", unsafe_allow_html=True) #Linechart title
-        df_sentiment = df_filtered.set_index('date').resample('D')['sentiment'].mean().reset_index() #Create monthly data
-        linechart = px.line(df_sentiment, x='date', y='sentiment') #Create linechart
+        df_sentiment = df_filtered.set_index('date').resample('D')['sentiment'].mean().reset_index() #Create daily data
+        df_sentiment['moving_avg'] = df_sentiment['sentiment'].rolling(window=7).mean() #Moving average over 7 days
+        linechart = px.line(df_sentiment, x='date', y='moving_avg') #Create linechart
         linechart.update_xaxes(dtick='D1', #Update ticks configuration
                                tickangle=-90, 
                                tickfont=dict(size=8))
