@@ -253,7 +253,7 @@ with ClassificationTab: ############################################ Multi-class
                              values='count', 
                              #title='Multi-Topics of guest reviews', 
                              color='count',
-                             color_continuous_scale=['#FBD2C5','#00A699'])
+                             color_continuous_scale=['#FBD2C5','#FF5A5F'])
             fig.update_traces(textposition='middle center', #Update text configuration in the treemap
                               insidetextfont=dict(size=15),
                               marker=dict(cornerradius=1))
