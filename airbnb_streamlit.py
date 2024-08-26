@@ -263,7 +263,7 @@ with ClassificationTab: ############################################ Multi-class
                               #title_font_size=17, #Update title configuration
                               #title_xanchor='center',
                               #title_x = 0.5,
-                              margin=dict(t=0, l=0, r=0, b=20),
+                              margin=dict(t=0, l=0, r=0, b=0),
                               paper_bgcolor='white',
                               plot_bgcolor='rgba(0,0,0,0)'
                               )
