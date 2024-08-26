@@ -211,7 +211,7 @@ with SentimentTab: ################################################# Sentiment A
         linechart = px.line(df_sentiment, x='date', y='moving_avg') #Create linechart
         linechart.update_xaxes(dtick='D1', #Update ticks configuration
                                tickangle=-90, 
-                               tickfont=dict(size=8))
+                               tickfont=dict(size=3))
         linechart.update_layout(yaxis_title="Score", #Update y-axis title
                                 yaxis_title_font=dict(size=15), 
                                 xaxis_title=None, #Update x-axis title
