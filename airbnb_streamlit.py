@@ -258,7 +258,7 @@ with ClassificationTab: ############################################ Multi-class
                               insidetextfont=dict(size=15),
                               marker=dict(cornerradius=1))
             fig.update_layout(width=1000, #Update the dimension of the graph
-                              height=400, 
+                              height=380, 
                               coloraxis_showscale=False, #Hide colorbar
                               #title_font_size=17, #Update title configuration
                               #title_xanchor='center',
