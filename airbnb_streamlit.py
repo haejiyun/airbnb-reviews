@@ -264,8 +264,7 @@ with ClassificationTab: ############################################ Multi-class
                               #title_xanchor='center',
                               #title_x = 0.5,
                               margin=dict(t=0, l=0, r=0, b=0),
-                              paper_bgcolor='white',
-                              plot_bgcolor='rgba(0,0,0,0)'
+                              paper_bgcolor='smokewhite'
                               )
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-label of guest reviews</h5>", unsafe_allow_html=True) #Treemap title
             st.plotly_chart(fig, use_container_width=False) #Show the graph
@@ -291,7 +290,8 @@ with ClassificationTab: ############################################ Multi-class
             fig.update_xaxes(tickfont=dict(color='white')) #Update x-axes configuration
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Count of each label</h5>", unsafe_allow_html=True) #Barchart title
             st.plotly_chart(fig) #Show the plot
-        
+
+        st.markdown("")
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Random Guest Reviews</h5>", unsafe_allow_html=True) #Title
         col1, col2 = st.columns([6,0.8]) #Create columns for filters
         with col1: #On the first column
