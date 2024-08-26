@@ -230,6 +230,7 @@ with ClassificationTab: ############################################ Multi-class
     labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
     labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
     labels_counts['label_percent'] = '<b>'+labels_counts['labels_string']+'<br>'+labels_counts['percent'] #Create a column with the name and the percentage of each combination
+    labels_counts['label_type'] = labels_counts['labels_string'].apply(lambda x: 'multi-label' if len(x.split(',')) > 1 else 'single-label')
     
     df_exploded = df_filtered.explode('labels_list') #Create dataset with single topic 
     df_exploded['labels_list'] = df_exploded['labels_list'].str.strip() #Remove space before and after each topic extracted
@@ -248,7 +249,7 @@ with ClassificationTab: ############################################ Multi-class
         
         with col1: #On the first column
             fig = px.treemap(labels_counts, #Create a treemap 
-                             path=['label_percent'], 
+                             path=['label_type','label_percent'], 
                              values='count', 
                              #title='Multi-Topics of guest reviews', 
                              color='count', 
