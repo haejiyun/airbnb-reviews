@@ -249,7 +249,7 @@ with ClassificationTab: ############################################ Multi-class
         
         with col1: #On the first column
             fig = px.treemap(labels_counts, #Create a treemap 
-                             path=[px.Constant('All'),'label_type','label_percent'], 
+                             path=[px.Constant('all'),'label_type','label_percent'], 
                              values='count', 
                              #title='Multi-Topics of guest reviews', 
                              color='count',
