@@ -112,24 +112,36 @@ arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Vill
 if 'selected' not in st.session_state:
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"]  # Default selection
 if 'temp_selected' not in st.session_state:
-    st.session_state.temp_selected = st.session_state.selected
+    st.session_state.temp_selected = st.session_state.selected.copy()
 col1, col2 = st.sidebar.columns([0.6, 1], gap = 'small')
 with col1:
     if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
+        st.session_state.temp_selected = arrondissement_all.copy()
 with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
+        st.session_state.temp_selected = []
 container = st.sidebar.container() #Create a container for arrondissement filter
-arrondissement = container.multiselect("Select Arrondissement", 
-                                       arrondissement_all, 
+arrondissement = container.multiselect("Select Arrondissement",
+                                       arrondissement_all,
                                        default=st.session_state.temp_selected,
-                                       label_visibility="collapsed") #Create arrondissement mutiselect filter
+                                       key="temp_multiselect",
+                                       label_visibility="collapsed")
 st.session_state.temp_selected = arrondissement
+if st.sidebar.button('Apply Selection'):
+    st.session_state.selected = st.session_state.temp_selected.copy()
+
+
+#arrondissement = container.multiselect("Select Arrondissement", 
+#                                       arrondissement_all, 
+#                                       default=st.session_state.temp_selected,
+#                                       label_visibility="collapsed") #Create arrondissement mutiselect filter
+#st.session_state.temp_selected = arrondissement
 
 # Apply Selection button to finalize changes
-if st.sidebar.button('Apply Selection'):
-    st.session_state.selected = st.session_state.temp_selected  # Apply the temporary selection to the final state
+#if st.sidebar.button('Apply Selection'):
+#    st.session_state.selected = st.session_state.temp_selected  # Apply the temporary selection to the final state
 
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
