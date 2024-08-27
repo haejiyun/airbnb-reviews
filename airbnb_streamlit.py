@@ -77,7 +77,65 @@ def inject_css():
             margin-bottom: -15px;
         }
 
-        
+        /* Sidebar configuration */
+        [data-testid="stSidebar"] {
+            width: 260px;
+            min-width: 260px;
+            max-width: 260px;
+        }
+
+        /* Media queries for responsiveness */
+        /* Styles for 16:9 aspect ratio (e.g., 1920x1080) */
+        @media screen and (aspect-ratio: 16/9) {
+            [data-testid="stSidebar"] {
+                width: 320px;
+                min-width: 320px;
+                max-width: 320px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 0.875rem;
+            }
+        }
+        /* Styles for 16:10 aspect ratio (e.g., 1920x1200) */
+        @media screen and (aspect-ratio: 16/10) {
+            [data-testid="stSidebar"] {
+                width: 260px;
+                min-width: 260px;
+                max-width: 260px;
+            }
+            h1 {
+                font-size: 2.25rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Additional styling to handle other aspect ratios or edge cases */
+        @media screen and (max-width: 768px) {
+            [data-testid="stSidebar"] {
+                width: 180px;
+                min-width: 180px;
+                max-width: 180px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+            p {
+                font-size: 0.75rem;
+            }
+        }
         </style>
     """, unsafe_allow_html=True)
 inject_css()
