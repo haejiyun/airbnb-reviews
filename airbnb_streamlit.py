@@ -193,15 +193,13 @@ with SentimentTab: ################################################# Sentiment A
                                     zoom=10.3, 
                                     center={"lat": 48.86, "lon": 2.347},
                                     #opacity=0.8,
-                                    height=400,
-                                    #width=1300,
                                     hover_data=hover_data)
             choropleth.update_traces(marker_line_width=0, #Update market configuration
                                      marker_opacity=0.8)
             choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
                                      margin=dict(l=0, r=0, t=0, b=0), #Update margins
-                                     width=1000, #Update the dimension of the graph
-                                     height=380,
+                                     #width=1000, #Update the dimension of the graph
+                                     height=300,
                                     ) 
             st.plotly_chart(choropleth, use_container_width=False) #Show the choropleth
         
