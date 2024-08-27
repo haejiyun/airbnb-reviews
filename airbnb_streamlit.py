@@ -132,11 +132,12 @@ with col2:
 container = st.sidebar.container() #Create a container for arrondissement filter
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
-arrondissement = container.multiselect("Select Arrondissement", 
-                                       arrondissement_all, 
-                                       default=st.session_state.selected,
-                                       label_visibility="collapsed"
-                                      ) #Create arrondissement mutiselect filter
+with st.container.expander("Select Arrondissement"):
+    arrondissement = container.multiselect("Select Arrondissement", 
+                                           arrondissement_all, 
+                                           default=st.session_state.selected,
+                                           label_visibility="collapsed"
+                                          ) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
