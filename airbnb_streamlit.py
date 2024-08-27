@@ -279,7 +279,7 @@ with SentimentTab: ################################################# Sentiment A
             ax2.imshow(wordcloud_neg) #Show wordcloud of negative comments
             ax2.set_title('Negative', color='#FF5A5F', size=20, y=-0.1) #Title
             ax2.axis('off') #Remove axis
-            plt.subplots_adjust(left=0, right=0.1, top=0, bottom=0) 
+            plt.subplots_adjust(left=0, right=0.1, top=0.1, bottom=0) 
             st.pyplot(wordcloud) #Remove axis
         
         # Linechart
