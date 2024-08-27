@@ -127,9 +127,8 @@ with col2:
 container = st.sidebar.container() #Create a container for arrondissement filter
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
-def non_blocking_sleep():
-    def sleep_and_continue():
-        time.sleep(3)  # Sleep for 3 seconds
+def sleep():
+    time.sleep(3)
     threading.Thread(target=sleep_and_continue).start()
 arrondissement = container.multiselect("Select Arrondissement", 
                                        arrondissement_all, 
