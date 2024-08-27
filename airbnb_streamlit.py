@@ -76,12 +76,14 @@ def inject_css():
         .stRadio {
             margin-bottom: -15px;
         }
-        /* Sidebar configuration *
-        [data-testid="stSidebar"] {
-            width: 260px;
-            min-width: 260px;
-            max-width: 260px;
-        }/
+        /* Apply styles only when the aspect ratio is 16:10 */
+        @media (aspect-ratio: 16/10) {
+            [data-testid="stSidebar"] {
+                width: 260px;  /* Sidebar width */
+                min-width: 260px;  /* Sidebar minimum width */
+                max-width: 260px;  /* Sidebar maximum width */
+            }
+        }
         </style>
     """, unsafe_allow_html=True)
 inject_css()
