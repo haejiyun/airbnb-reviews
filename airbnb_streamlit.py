@@ -85,7 +85,8 @@ def inject_css():
         }
 
         /* Media queries for responsiveness */
-        @media screen and (max-width: 1200px) {
+        /* Styles for 16:9 aspect ratio (e.g., 1920x1080) */
+        @media screen and (aspect-ratio: 16/9) {
             [data-testid="stSidebar"] {
                 width: 220px;
                 min-width: 220px;
@@ -101,7 +102,24 @@ def inject_css():
                 font-size: 0.875rem;
             }
         }
-
+        /* Styles for 16:10 aspect ratio (e.g., 1920x1200) */
+        @media screen and (aspect-ratio: 16/10) {
+            [data-testid="stSidebar"] {
+                width: 260px;
+                min-width: 260px;
+                max-width: 260px;
+            }
+            h1 {
+                font-size: 2.25rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Additional styling to handle other aspect ratios or edge cases */
         @media screen and (max-width: 768px) {
             [data-testid="stSidebar"] {
                 width: 180px;
