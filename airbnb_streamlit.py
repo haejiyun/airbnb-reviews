@@ -76,12 +76,12 @@ def inject_css():
         .stRadio {
             margin-bottom: -15px;
         }
-        /* Sidebar configuration */
+        /* Sidebar configuration *
         [data-testid="stSidebar"] {
             width: 260px;
             min-width: 260px;
             max-width: 260px;
-        }
+        }/
         </style>
     """, unsafe_allow_html=True)
 inject_css()
