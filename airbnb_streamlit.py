@@ -80,6 +80,9 @@ def inject_css():
         .stRadio {
             margin-bottom: -15px;
         }
+        [data-testid="stSidebar"] {
+        width: 260px; /* Set the desired width here */
+        }
         </style>
     """, unsafe_allow_html=True)
 inject_css()
