@@ -32,7 +32,6 @@ import threading
 
 #################################################################### STREAMLIT CONFIGURATION
 #st.set_page_config(layout="wide") #Set wide page layout
-st.set_page_config(layout="centered") 
 
 # Adjust CSS
 # Inject CSS for styling
