@@ -124,18 +124,6 @@ arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Vill
                       "16 - Passy","17 - Batignolles-Monceau","18 - Buttes-Montmartre","19 - Buttes-Chaumont","20 - Ménilmontant"]
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
-if st.sidebar.button('Select All'): #Create button for all selection
-    st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-if st.sidebar.button('Deselect All'):
-    st.session_state.selected = []
-with st.sidebar.form(" "):
-    arrondissement = st.multiselect("Select Arrondissement", 
-                                   arrondissement_all, 
-                                   default=st.session_state.selected,
-                                   label_visibility="collapsed"
-                                  ) #Create arrondissement mutiselect filter
-    submitted = st.form_submit_button("Apply selection")
-st.session_state.selected = arrondissement
 col1, col2 = st.sidebar.columns([0.7, 1], gap = 'small')
 with col1:
     if st.button('Select All'): #Create button for all selection
@@ -143,6 +131,16 @@ with col1:
 with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
+with st.sidebar.form(" "):
+    with st.expander('Arrondissement'):
+        arrondissement = st.multiselect("Select Arrondissement", 
+                               arrondissement_all, 
+                               default=st.session_state.selected,
+                               label_visibility="collapsed"
+                              ) #Create arrondissement mutiselect filter
+    submitted = st.form_submit_button("Apply selection")
+st.session_state.selected = arrondissement
+
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
 
