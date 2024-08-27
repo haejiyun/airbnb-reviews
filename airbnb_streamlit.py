@@ -203,7 +203,7 @@ with SentimentTab: ################################################# Sentiment A
                                      #width=1000, #Update the dimension of the graph
                                      height=350,
                                     ) 
-            st.plotly_chart(choropleth, use_container_width=False) #Show the choropleth
+            st.plotly_chart(choropleth, use_container_width=True) #Show the choropleth
         
         with col2: #On the second column
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Common Words in Reviews</h5>", unsafe_allow_html=True) #Wordcloud title
@@ -292,7 +292,7 @@ with ClassificationTab: ############################################ Multi-class
                               paper_bgcolor= 'slategrey'
                               )
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-label of guest reviews</h5>", unsafe_allow_html=True) #Treemap title
-            st.plotly_chart(fig, use_container_width=False) #Show the graph
+            st.plotly_chart(fig, use_container_width=True) #Show the graph
         
         with col2: #On the second column
             fig = px.histogram(labels_counts_exploded, #Create barplot
