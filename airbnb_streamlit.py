@@ -77,10 +77,40 @@ def inject_css():
             margin-bottom: -15px;
         }
         [data-testid="stSidebar"] {
+          width: 18vw;
+          min-width: 200px;
+          max-width: 400px;
+        }
+        
+        @media screen and (max-width: 1200px) {
+          [data-testid="stSidebar"] {
+            width: 22vw;
+          }
+        }
+        
+        @media screen and (max-width: 992px) {
+          [data-testid="stSidebar"] {
+            width: 25vw;
+          }
+        }
+        
+        @media screen and (max-width: 768px) {
+          [data-testid="stSidebar"] {
+            width: 30vw;
+          }
+        }
+        
+        @media screen and (max-width: 576px) {
+          [data-testid="stSidebar"] {
+            width: 100%;
+            max-width: none;
+          }
+        }
+        /[data-testid="stSidebar"] {
             width: 260px;  /* Sidebar width */
             min-width: 260px;  /* Sidebar minimum width */
             max-width: 260px;  /* Sidebar maximum width */
-        }
+        }/
         </style>
     """, unsafe_allow_html=True)
 inject_css()
