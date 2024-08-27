@@ -59,11 +59,10 @@ def inject_css():
         display: none !important;
         }
         .st-emotion-cache-rkczhd p {
-        font-size: 11px; /
+        font-size: 11px;
         }
-        st-emotion-cache-rkczhd e1nzilvr4 p {
+        .st-emotion-cache-rkczhd.e1nzilvr4 p {
         font-size: 13px !important;
-        }
         </style>
     """, unsafe_allow_html=True)
 
