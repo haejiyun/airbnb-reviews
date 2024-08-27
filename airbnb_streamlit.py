@@ -77,9 +77,9 @@ def inject_css():
             margin-bottom: -15px;
         }
         [data-testid="stSidebar"] {
-            width: 18vw;
-            min-width: 18vw;
-            max-width: 18vw;
+            width: 260px;
+            min-width: 260px;
+            max-width: 260px;
         }
        
         </style>
