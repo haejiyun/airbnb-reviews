@@ -24,8 +24,7 @@ import ast
 import random
 import time
 import threading
-from streamlit.ScriptRequestQueue import RerunData
-from streamlit.ScriptRunner import RerunException
+
 
 
 
@@ -134,9 +133,7 @@ arrondissement = container.multiselect("Select Arrondissement",
                                        default=st.session_state.selected,
                                        label_visibility="collapsed"
                                       ) #Create arrondissement mutiselect filter
-#st.session_state.selected = arrondissement
-if arrondissement != st.session_state.selected:
-    raise RerunException(RerunData(widget_state=None))
+st.session_state.selected = arrondissement
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
