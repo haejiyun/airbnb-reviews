@@ -322,7 +322,7 @@ with ClassificationTab: ############################################ Multi-class
         st.success("Please select at least one arrondissement and one period.")
     else : 
     
-        col1, col2 = st.columns([3, 2], gap="medium") #Create two columns for two graphs
+        col1, col2 = st.columns([3, 1.5], gap="medium") #Create two columns for two graphs
         
         with col1: #On the first column
             fig = px.treemap(labels_counts, #Create a treemap 
