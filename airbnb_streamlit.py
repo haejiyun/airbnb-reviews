@@ -151,7 +151,7 @@ with SentimentTab: ################################################# Sentiment A
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Choropleth title
             col1_bis, col2_bis= st.columns([1,7]) #Create a sub-columns for sub-filteres
             with col1_bis: #On the first sub-column
-                st.markdown("<p style='font-size: 8px; line-height: 2.4;'>Show by :</p>", unsafe_allow_html=True)
+                st.markdown("<p style='font-size: 11px; line-height: 2.4;'>Show by :</p>", unsafe_allow_html=True)
             with col2_bis: #On the second sub-column
                 zone = st.radio("Show by", options=["Quartier","Arrondissement"], horizontal=True, label_visibility="collapsed") #Create area division option filter
             if zone == "Quartier": #If quartier is selected
