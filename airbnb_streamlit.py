@@ -78,8 +78,8 @@ def inject_css():
         }
         [data-testid="stSidebar"] {
             width: 18vw;
-            min-width: 260px;
-            max-width: 260px;
+            min-width: 18vw;
+            max-width: 18vw;
         }
        
         </style>
