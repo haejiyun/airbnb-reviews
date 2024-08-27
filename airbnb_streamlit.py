@@ -143,9 +143,8 @@ with st.sidebar.form(" "):
                                label_visibility="collapsed"
                               ) #Create arrondissement mutiselect filter
     submitted = st.form_submit_button("Apply selection")
-
-if sumitted:
-    st.session_state.selected = arrondissement
+    if sumbitted:
+        st.session_state.selected = arrondissement
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
