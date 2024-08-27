@@ -81,9 +81,9 @@ def inject_css():
             margin-bottom: -15px;
         }
         [data-testid="stSidebar"] {
-        width: 260px; /* Set the desired width here */
-        min-width : 260px;
-        max-width : 260px;
+        width: 300px; /* Set the desired width here */
+        min-width : 300px;
+        max-width : 300px;
         }
         </style>
     """, unsafe_allow_html=True)
