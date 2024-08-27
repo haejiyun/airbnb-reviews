@@ -199,7 +199,7 @@ with SentimentTab: ################################################# Sentiment A
             choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
                                      margin=dict(l=0, r=0, t=0, b=0), #Update margins
                                      #width=1000, #Update the dimension of the graph
-                                     height=300,
+                                     height=350,
                                     ) 
             st.plotly_chart(choropleth, use_container_width=False) #Show the choropleth
         
