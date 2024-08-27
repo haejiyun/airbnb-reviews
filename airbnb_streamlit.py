@@ -253,7 +253,7 @@ with SentimentTab: ################################################# Sentiment A
             choropleth.update_traces(marker_line_width=0, #Update market configuration
                                      marker_opacity=0.8)
             choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
-                                     margin=dict(l=0, r=0, t=0, b=25), #Update margins
+                                     margin=dict(l=0, r=0, t=0, b=0), #Update margins
                                      width=1000, #Update the dimension of the graph
                                      height=380,
                                     ) 
@@ -282,6 +282,7 @@ with SentimentTab: ################################################# Sentiment A
             st.pyplot(wordcloud) #Remove axis
         
         # Linechart
+        st.write("")
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Daily Moving Average of Sentiment Score in Paris</h5>", unsafe_allow_html=True) #Linechart title
         df_sentiment = df_filtered.set_index('date').resample('D')['sentiment'].mean().reset_index() #Create daily data
         df_sentiment['moving_avg'] = df_sentiment['sentiment'].rolling(window=7).mean() #Moving average over 7 days
