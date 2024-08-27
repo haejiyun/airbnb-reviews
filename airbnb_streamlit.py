@@ -61,14 +61,8 @@ def inject_css():
         .st-emotion-cache-rkczhd p {
         font-size: 12px;
         }
-        .st-f1.st-f8.st-c1.st-bp.st-co.st-br.st-bs.st-bt.st-bu.st-af.st-f9 {
-        display: flex;
-        align-items: flex-end; /* Aligns text to the bottom */
-        height: 100%; /* Ensure the container takes full height to allow vertical alignment */
-        }
-        .st-b0.st-c2.st-eu.st-ev.st-ew.st-ex.st-e2.st-ag.st-ey.st-bv.st-ez.st-av.st-f0.st-au.st-bi.st-f1.st-f2.st-ee.st-bg.st-d1 {
-        transform: scale(0.8); /* Alternatively, you can scale it down */
-        display: inline-block;
+        .st-ez {
+        margin-top: 0.3rem;
         }
         </style>
     """, unsafe_allow_html=True)
