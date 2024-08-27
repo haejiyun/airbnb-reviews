@@ -63,7 +63,6 @@ def inject_css():
         }
         .st-f1.st-f8.st-c1.st-bp.st-co.st-br.st-bs.st-bt.st-bu.st-af.st-f9 {
         display: flex;
-        justify-content: flex-start; /* Aligns horizontally to the start, adjust as needed */
         align-items: flex-end; /* Aligns text to the bottom */
         height: 100%; /* Ensure the container takes full height to allow vertical alignment */
         }    
