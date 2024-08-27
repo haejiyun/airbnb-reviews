@@ -88,9 +88,9 @@ def inject_css():
         /* Styles for 16:9 aspect ratio (e.g., 1920x1080) */
         @media screen and (aspect-ratio: 16/9) {
             [data-testid="stSidebar"] {
-                width: 220px;
-                min-width: 220px;
-                max-width: 220px;
+                width: 320px;
+                min-width: 320px;
+                max-width: 320px;
             }
             h1 {
                 font-size: 2rem;
