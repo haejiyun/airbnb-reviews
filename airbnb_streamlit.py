@@ -65,7 +65,7 @@ def inject_css():
         margin-top: 0.2rem;
         }
         .st-f0 {
-        margin-bottom: 0px;
+        margin-bottom: -15px;
         }
         .stRadio {margin-bottom: -15px;} 
         </style>
