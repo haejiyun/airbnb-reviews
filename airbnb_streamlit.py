@@ -38,8 +38,8 @@ import threading
 def inject_css():
     st.markdown("""
         <style>
-        .main {
-        max-width: 700px;  /* Adjust the width as per your requirement */
+        .block-container {
+        max-width: 800px;  /* Adjust the width as per your requirement */
         margin: 0 auto;
         }
         h1 {  /* Title font size */
