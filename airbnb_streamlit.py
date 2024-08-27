@@ -193,8 +193,8 @@ with SentimentTab: ################################################# Sentiment A
                                     zoom=10.3, 
                                     center={"lat": 48.86, "lon": 2.347},
                                     #opacity=0.8,
-                                    height=350,
-                                    width=1300,
+                                    height=400,
+                                    #width=1300,
                                     hover_data=hover_data)
             choropleth.update_traces(marker_line_width=0, #Update market configuration
                                      marker_opacity=0.8)
