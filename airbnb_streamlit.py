@@ -132,13 +132,13 @@ with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
 with st.sidebar.form(" "):
-    arrondissement = st.multiselect("Select Arrondissement", 
+    st.session_state.selected = st.multiselect("Select Arrondissement", 
                                arrondissement_all, 
                                default=st.session_state.selected,
                                label_visibility="collapsed"
                               ) #Create arrondissement mutiselect filter
     submitted = st.form_submit_button("Apply selection")
-st.session_state.selected = arrondissement
+#st.session_state.selected = arrondissement
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
