@@ -39,41 +39,87 @@ def inject_css():
     st.markdown("""
         <style>
         h1 {  /* Title font size */
-            font-size: 40px;
+            font-size: 2.5rem;  /* Use rem units for responsive design */
         }
         h2 {  /* Header font size */
-            font-size: 30px;
+            font-size: 1.875rem;
         }
         h5 {  /* Graph title font size */
-            font-size: 18px;
+            font-size: 1.125rem;
         }
-        p {
-            font-size: 15px;  /* Paragraph font size */
+        p {  /* Paragraph font size */
+            font-size: 1rem;
         }
+        
+        /* Sidebar configuration */
         [data-testid="stSidebar"] {
-            width: 260px;  /* Sidebar width */
-            min-width: 260px;  /* Sidebar minimum width */
-            max-width: 260px;  /* Sidebar maximum width */
+            width: 260px;
+            min-width: 260px;
+            max-width: 260px;
         }
+        
+        /* Adjust sidebar elements font size */
         .st-co {
-            font-size: 11px !important; /* Arrondissement filter options */
+            font-size: 0.75rem !important;  /* Arrondissement filter options */
         }
+
+        /* Hide unnecessary SVG icons */
         svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el {
-        display: none !important;
+            display: none !important;
         }
+        
+        /* Adjust paragraph font size inside sidebar */
         .st-emotion-cache-rkczhd p {
-        font-size: 12px;
+            font-size: 0.75rem;
         }
+
+        /* Adjust margin for specific elements */
         .st-ez {
-        margin-top: 0.2rem;
+            margin-top: 0.2rem;
         }
         .st-f0 {
-        margin-bottom: -15px;
+            margin-bottom: -15px;
         }
-        .stRadio {margin-bottom: -15px;} 
+        .stRadio {
+            margin-bottom: -15px;
+        }
+
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 1200px) {
+            [data-testid="stSidebar"] {
+                width: 220px;
+                min-width: 220px;
+                max-width: 220px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 0.875rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            [data-testid="stSidebar"] {
+                width: 180px;
+                min-width: 180px;
+                max-width: 180px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+            p {
+                font-size: 0.75rem;
+            }
+        }
         </style>
     """, unsafe_allow_html=True)
-
 inject_css()
 
 
