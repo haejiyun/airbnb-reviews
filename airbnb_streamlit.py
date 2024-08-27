@@ -32,12 +32,17 @@ import threading
 
 #################################################################### STREAMLIT CONFIGURATION
 #st.set_page_config(layout="wide") #Set wide page layout
+st.set_page_config(layout="centered") 
 
 # Adjust CSS
 # Inject CSS for styling
 def inject_css():
     st.markdown("""
         <style>
+        .main {
+        max-width: 200px;  /* Adjust the width as per your requirement */
+        margin: 0 auto;
+        }
         h1 {  /* Title font size */
             font-size: 2.5rem;  /* Use rem units for responsive design */
         }
