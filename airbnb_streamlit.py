@@ -39,7 +39,7 @@ def inject_css():
     st.markdown("""
         <style>
         .block-container {
-        max-width: 1000px;  /* Adjust the width as per your requirement */
+        max-width: 950px;  /* Adjust the width as per your requirement */
         margin: 0 auto;
         }
         h1 {  /* Title font size */
