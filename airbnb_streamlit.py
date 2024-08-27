@@ -194,7 +194,7 @@ with SentimentTab: ################################################# Sentiment A
                                     color_continuous_scale=['#FF5A5F','#00A699'],
                                     range_color=[0, 5],
                                     mapbox_style="carto-positron",
-                                    zoom=10.5, 
+                                    zoom=10.4, 
                                     center={"lat": 48.86, "lon": 2.347},
                                     #opacity=0.8,
                                     hover_data=hover_data)
