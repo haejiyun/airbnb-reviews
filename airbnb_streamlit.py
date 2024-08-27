@@ -125,10 +125,10 @@ arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Vill
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
 selection = st.sidebar.radio("Selection",['Select All', 'Deselect All'], label_visability = 'collapsed')
-if selection = 'Select All':
-    st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-if selection = 'Deselect All':
-        st.session_state.selected = []
+if selection == 'Select All':
+    st.session_state.selected = arrondissement_all  # Select all
+elif selection == 'Deselect All':
+    st.session_state.selected = []  # Deselect all
 with st.sidebar.form(" "):
     arrondissement = st.multiselect("Select Arrondissement", 
                                    arrondissement_all, 
