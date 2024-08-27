@@ -76,7 +76,7 @@ def inject_css():
         .stRadio {
             margin-bottom: -15px;
         }
-        [data-testid="stSidebar"] {
+        st-emotion-cache-1itdyc2 eczjsme18 {
             width: 260px;
             min-width: 260px;
             max-width: 260px;
