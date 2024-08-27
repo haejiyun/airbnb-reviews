@@ -179,7 +179,7 @@ with SentimentTab: ################################################# Sentiment A
         
         with col1: #On the first column
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Choropleth title
-            col1_bis, col2_bis= st.columns([0.8,8]) #Create a sub-columns for sub-filteres
+            col1_bis, col2_bis= st.columns([0.9,8]) #Create a sub-columns for sub-filteres
             with col1_bis: #On the first sub-column
                 st.markdown("<p style='font-size:12px; line-height:3.5;'>Show by :</p>", unsafe_allow_html=True)
             with col2_bis: #On the second sub-column
