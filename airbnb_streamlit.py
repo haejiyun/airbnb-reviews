@@ -39,7 +39,7 @@ def inject_css():
     st.markdown("""
         <style>
         .main {
-        max-width: 200px;  /* Adjust the width as per your requirement */
+        max-width: 700px;  /* Adjust the width as per your requirement */
         margin: 0 auto;
         }
         h1 {  /* Title font size */
