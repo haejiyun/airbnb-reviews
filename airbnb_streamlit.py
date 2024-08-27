@@ -272,7 +272,7 @@ with SentimentTab: ################################################# Sentiment A
             st.write("") #Blank line
             wordcloud = plt.figure(facecolor = 'none', figsize=(5, 3.8)) #Set graph background transparent
             ax1 = wordcloud.add_axes([0, 0, 1, 1]) #Configure wordcloud position for positive comments
-            ax2 = wordcloud.add_axes([0, -0.8, 1, 1]) #Configure wordcloud position for negative comments
+            ax2 = wordcloud.add_axes([0, -0.9, 1, 1]) #Configure wordcloud position for negative comments
             ax1.imshow(wordcloud_pos) #Show wordcloud of positive comments
             ax1.set_title('Positive', color = '#00A699', size=20) #Title
             ax1.axis('off') #Remove axis
