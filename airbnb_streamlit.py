@@ -123,47 +123,25 @@ arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Vill
                       "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
                       "16 - Passy","17 - Batignolles-Monceau","18 - Buttes-Montmartre","19 - Buttes-Chaumont","20 - Ménilmontant"]
 
-
-@st.cache_data
-def get_default_selected():
-    return ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", 
-            "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"]
-
-# Initialize 'selected' in session state if it doesn't exist
-if 'selected' not in st.session_state:
-    st.session_state.selected = get_default_selected()
-
-# Initialize 'deselect_all_clicked' in session state if it doesn't exist
-if 'deselect_all_clicked' not in st.session_state:
-    st.session_state.deselect_all_clicked = False
-
-# Sidebar layout with columns
-col1, col2 = st.sidebar.columns([0.7, 1], gap='small')
-
+if 'selected' not in st.session_state: #Create session_state for selected arrondissement
+    st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
+col1, col2 = st.sidebar.columns([0.7, 1], gap = 'small')
 with col1:
-    if st.button('Select All'):
-        st.session_state.selected = arrondissement_all
-        st.session_state.deselect_all_clicked = False
-
+    if st.button('Select All'): #Create button for all selection
+        st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
 with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
-        st.session_state.deselect_all_clicked = True
-
-# Form for arrondissement selection
 with st.sidebar.form(" "):
-    # Update 'arrondissement' based on the session state
     arrondissement = st.multiselect("Select Arrondissement", 
-                                    arrondissement_all, 
-                                    default=st.session_state.selected if not st.session_state.deselect_all_clicked else [],
-                                    label_visibility="collapsed")
+                               arrondissement_all, 
+                               default=st.session_state.selected,
+                               label_visibility="collapsed"
+                              ) #Create arrondissement mutiselect filter
     submitted = st.form_submit_button("Apply selection")
 
-# Update session state with the selected arrondissements only after the form is submitted
-if submitted:
+if sumitted:
     st.session_state.selected = arrondissement
-    st.session_state.deselect_all_clicked = False
-
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
