@@ -203,7 +203,7 @@ with SentimentTab: ################################################# Sentiment A
                                      width=1000, #Update the dimension of the graph
                                      height=380,
                                     ) 
-            st.plotly_chart(choropleth) #Show the choropleth
+            st.plotly_chart(choropleth, use_container_width=False) #Show the choropleth
         
         with col2: #On the second column
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Common Words in Reviews</h5>", unsafe_allow_html=True) #Wordcloud title
