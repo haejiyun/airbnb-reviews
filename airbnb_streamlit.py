@@ -130,8 +130,7 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
 arrondissement = container.multiselect("Select Arrondissement", 
                                        arrondissement_all, 
                                        default=st.session_state.selected,
-                                       label_visibility="collapsed",
-                                       on_change = sleep,
+                                       label_visibility="collapsed"
                                       ) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement
 
