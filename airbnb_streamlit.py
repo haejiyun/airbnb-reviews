@@ -133,7 +133,7 @@ arrondissement = container.multiselect("Select Arrondissement",
                                        label_visibility="collapsed"
                                       ) #Create arrondissement mutiselect filter
 #st.session_state.selected = arrondissement
-if arrondissement != session_state.selected:
+if arrondissement != st.session_state.selected:
     raise RerunException(RerunData(widget_state=None))
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
