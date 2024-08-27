@@ -140,7 +140,7 @@ arrondissement = st.sidebar.multiselect("Select Arrondissement",
 st.session_state.selected = arrondissement
 
 with st.sidebar.form(" "):
-    st.multiselect("Select Arrondissement", 
+    arrondissement = st.multiselect("Select Arrondissement", 
                                    arrondissement_all, 
                                    default=st.session_state.selected,
                                    label_visibility="collapsed"
