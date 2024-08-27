@@ -129,12 +129,11 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
 def sleep():
     time.sleep(3)
-    threading.Thread(target=sleep_and_continue).start()
 arrondissement = container.multiselect("Select Arrondissement", 
                                        arrondissement_all, 
                                        default=st.session_state.selected,
                                        label_visibility="collapsed",
-                                       on_change = non_blocking_sleep,
+                                       on_change = sleep,
                                       ) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement
 
