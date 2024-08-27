@@ -62,7 +62,7 @@ def inject_css():
         font-size: 12px;
         }
         .st-ez {
-        margin-top: 0.3rem;
+        margin-top: 0.2rem;
         }
         </style>
     """, unsafe_allow_html=True)
