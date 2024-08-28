@@ -196,7 +196,7 @@ with SentimentTab: ################################################# Sentiment A
                                     hover_data=hover_data)
             choropleth.update_traces(marker_line_width=0, #Update marker configuration
                                      marker_opacity=0.8)
-            choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 355,'yanchor':'bottom','y': 0}, #Update colorbar configuration
+            choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 370,'yanchor':'bottom','y': 0}, #Update colorbar configuration
                                      margin=dict(l=0, r=0, t=0, b=0), #Update margins
                                      #width=1000, #Update the dimension of the graph
                                      height=350,
