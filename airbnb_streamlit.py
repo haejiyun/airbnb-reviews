@@ -137,6 +137,7 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
 col1, col2 = st.sidebar.columns([0.55, 1], gap = 'small')
 with col1:
     if st.button('Select All'): #Create button for all selection
+        st.session_state.selected = []
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
 with col2:
     if st.button('Deselect All'):
