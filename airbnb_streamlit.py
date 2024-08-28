@@ -143,12 +143,10 @@ with col1:
     if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
         st.session_state.select_all_clicked = True
-        st.session_state.deselect_all_clicked = False
 with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
         st.session_state.select_all_clicked = False
-        st.session_state.deselect_all_clicked = True
 with st.sidebar.form(" "):
     arrondissement = st.multiselect("Select Arrondissement", 
                                arrondissement_all, 
@@ -161,10 +159,8 @@ with st.sidebar.form(" "):
             # Programmatically "click" the Select All button
             st.session_state.selected = arrondissement_all
             st.session_state.select_all_clicked = True
-            st.session_state.deselect_all_clicked = False
         if st.session_state.select_all_clicked == True:
             st.session_state.selected = []
-            st.session_state.select_all_clicked = False
             st.session_state.deselect_all_clicked = True
         st.session_state.selected = arrondissement
 st.session_state.selected = arrondissement
