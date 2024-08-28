@@ -301,7 +301,7 @@ with ClassificationTab: ############################################ Multi-class
                               margin=dict(t=0, l=0, r=0, b=0),
                               paper_bgcolor= 'slategrey'
                               )
-            st.markdown("<h5 style='text-align: center; font-weight: normal;'>Multi-label of guest reviews</h5>", unsafe_allow_html=True) #Treemap title
+            st.markdown("<h5 style='text-align: center; font-weight: normal;'>Key Themes in Guest Reviews</h5>", unsafe_allow_html=True) #Treemap title
             st.plotly_chart(fig, use_container_width=True) #Show the graph
         
         with col2: #On the second column
@@ -323,7 +323,7 @@ with ClassificationTab: ############################################ Multi-class
                               )
             fig.update_yaxes(tickfont=dict(color='white'),categoryorder='category descending') #Update y-axes configuration
             fig.update_xaxes(tickfont=dict(color='white')) #Update x-axes configuration
-            st.markdown("<h5 style='text-align: center; font-weight: normal;'>Count of each label</h5>", unsafe_allow_html=True) #Barchart title
+            st.markdown("<h5 style='text-align: center; font-weight: normal;'>Count of single-label</h5>", unsafe_allow_html=True) #Barchart title
             st.plotly_chart(fig) #Show the plot
 
         st.markdown("")
