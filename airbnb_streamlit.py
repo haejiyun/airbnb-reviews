@@ -495,7 +495,7 @@ with ReadmeTab: #################################################### Readme
     - Frequency chart showing how often each topic appears in reviews
     - A section displaying 5 random reviews corresponding to user-selected topics
     
-    Both pages include filters for time period and arrondissement selection, allowing for dynamic exploration of the data. Users can interact with the results and filter information based on specific time periods or areas of Paris. Due to the extensive size of the dataset, the Streamlit transformation is currently limited to the results from 2024. 
+    Both pages include filters for time period and arrondissement selection, allowing for dynamic exploration of the data. Users can interact with the results and filter information based on specific time periods or areas of Paris. Due to the extensive size of the dataset, the Streamlit transformation is currently limited to the results from Q1 2024. 
              ''')
     
     st.write("") #Blank line
