@@ -134,13 +134,22 @@ arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Vill
 
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
+if 'select_all_clicked' not in st.session_state:
+    st.session_state.select_all_clicked = False
+if 'deselect_all_clicked' not in st.session_state:
+    st.session_state.deselect_all_clicked = False
+
 col1, col2 = st.sidebar.columns([0.55, 1], gap = 'small')
 with col1:
     if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
+        st.session_state.select_all_clicked = True
+        st.session_state.deselect_all_clicked = False
 with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
+        st.session_state.select_all_clicked = False
+        st.session_state.deselect_all_clicked = True
 with st.sidebar.form(" "):
     arrondissement = st.multiselect("Select Arrondissement", 
                                arrondissement_all, 
@@ -150,8 +159,10 @@ with st.sidebar.form(" "):
     submitted = st.form_submit_button("Apply selection")
     if submitted:
         st.session_state.selected = arrondissement
-
 st.session_state.selected = arrondissement
+
+st.sidebar.write('select all', st.session_state.select_all_clicked)
+st.sidebar.write('deselect all', st.session_state.deselect_all_clicked)
 
 # Debug output (optional)
 st.sidebar.write("Currently selected arrondissements:", st.session_state.selected)
