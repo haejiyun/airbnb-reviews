@@ -140,7 +140,7 @@ if 'deselect_all_clicked' not in st.session_state:
     st.session_state.deselect_all_clicked = False
 col1, col2 = st.sidebar.columns([0.6, 1], gap = 'small')
 with col1:
-    if button('Select All'): #Create button for all selection
+    if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
         st.session_state.select_all_clicked = True
         st.session_state.deselect_all_clicked = False
