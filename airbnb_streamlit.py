@@ -151,6 +151,11 @@ with st.sidebar.form(" "):
     if submitted:
         st.session_state.selected = arrondissement
 
+st.session_state.selected = arrondissement
+
+# Debug output (optional)
+st.sidebar.write("Currently selected arrondissements:", st.session_state.selected)
+
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
 
