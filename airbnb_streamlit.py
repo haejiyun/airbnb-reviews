@@ -56,10 +56,10 @@ def inject_css(): #Create CSS function
         svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el { /*Hide x in*/
         display: none !important;
         }
-        .st-emotion-cache-rkczhd p { /* Adjust paragraph font size inside sidebar */
+        .st-emotion-cache-rkczhd p { /*Button font size*/
         font-size: 0.75rem;
         }
-        .st-ez {/* Adjust margin for specific elements */
+        .st-ez {/*Radio margin*/
         margin-top: 0.2rem;
         }
         .st-f0 {/*Radio margin*/
@@ -75,7 +75,7 @@ def inject_css(): #Create CSS function
         }
         </style>
     """, unsafe_allow_html=True)
-inject_css()
+inject_css() #Execute CSS function
 
 
 
@@ -84,7 +84,7 @@ inject_css()
 df = pd.read_csv('df_streamlit.csv') #Load 
 
 df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d') #Set date data as date datatype
-df['month'] = pd.to_datetime(df['month'], format='%Y-%m') #Set date data as date datatype
+df['month'] = pd.to_datetime(df['month'], format='%Y-%m') #Set month data as date datatype
 df['labels_list'] = df['labels'].apply(ast.literal_eval) #Convert labels datatype as python list
 df['labels_list'] = df['labels_list'].apply(sorted) #Sort each list of labels
 df['labels_string'] = df['labels_list'].apply(lambda x: ', '.join(x)) #Create a column with labels as list of strings
@@ -111,37 +111,36 @@ selected_min, selected_max = st.sidebar.slider( #Create time filter slider
     min_value=min_date, #Minimum value
     max_value=max_date, #Maximum value
     format="YYYY-MM-DD", #Format
-    label_visibility="collapsed"
+    label_visibility="collapsed" #Hide slider name
 )
-st.sidebar.write("")
+st.sidebar.write("") #Blank line
 st.sidebar.markdown('#### Select Arrondissement') #Arrondissement Filter title
-arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon", 
+arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Ville","5 - Panthéon", #exhaustive list of arrondissement
                       "6 - Luxembourg","7 - Palais-Bourbon","8 - Élysée","9 - Opéra", "10 - Entrepôt",
                       "11 - Popincourt","12 - Reuilly","13 - Gobelins","14 - Observatoire","15 - Vaugirard",
                       "16 - Passy","17 - Batignolles-Monceau","18 - Buttes-Montmartre","19 - Buttes-Chaumont","20 - Ménilmontant"]
 
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
-    st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
-def change_option():
+    st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Default arrondissement
+def change_option(): #Create session_state for multiselect
     st.session_state.selected = st.session_state.options
-col1, col2 = st.sidebar.columns([0.55, 1], gap = 'small')
-with col1:
+col1, col2 = st.sidebar.columns([0.6, 1], gap = 'small') #Create columns for buttons
+with col1: #On first column
     if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-with col2:
-    if st.button('Deselect All'):
-        st.session_state.selected = []
-with st.sidebar.form("Options"):
-    arrondissement = st.multiselect("Select Arrondissement", 
-                                    arrondissement_all, 
-                                    default=st.session_state.selected,
-                                    label_visibility="collapsed",
-                                    key='options',
-                                    #on_change=change_option,
-                                    max_selections = 20
-                                  ) #Create arrondissement mutiselect filter
-    submitted = st.form_submit_button("Apply Selection", on_click=change_option)
-st.session_state.selected = arrondissement
+with col2: #On second column
+    if st.button('Deselect All'): #Create button to unselect all
+        st.session_state.selected = [] #If button is clicked, none arrondissement is selected
+with st.sidebar.form("Options"): #In a form
+    arrondissement = st.multiselect("Select Arrondissement", #Create arrondissement mutiselect filter
+                                    arrondissement_all, #Available options
+                                    default=st.session_state.selected, #Default selection
+                                    label_visibility="collapsed", #Hide title
+                                    key='options', #session_state.options
+                                    max_selections = 20 #maximum options that can be selected
+                                  ) 
+    submitted = st.form_submit_button("Apply Selection", on_click=change_option) #Create a button to apply selection
+st.session_state.selected = arrondissement #update selected arrondissement
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
@@ -172,9 +171,9 @@ with SentimentTab: ################################################# Sentiment A
         with col1: #On the first column
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Average Sentiment Score by Area</h5>", unsafe_allow_html=True) #Choropleth title
             col1_bis, col2_bis= st.columns([1,8]) #Create a sub-columns for sub-filteres
-            with col1_bis: #On the first sub-column
-                st.markdown("<p style='font-size:12px; line-height:3.5;'>Show by :</p>", unsafe_allow_html=True)
-            with col2_bis: #On the second sub-column
+            with col1_bis: #On the first sub-column write 'show by'
+                st.markdown("<p style='font-size:12px; line-height:3.5;'>Show by :</p>", unsafe_allow_html=True) 
+            with col2_bis: #On the second sub-column create radio with options 'quartier' and 'arrondissement'
                 zone = st.radio("Show by", options=["Quartier","Arrondissement"], horizontal=True, label_visibility="collapsed") #Create area division option filter
             if zone == "Quartier": #If quartier is selected
                 df_filtered_zone = df_filtered[['quartier','sentiment']].groupby('quartier').mean().reset_index() #Create dataset grouped by quartier
@@ -195,9 +194,9 @@ with SentimentTab: ################################################# Sentiment A
                                     center={"lat": 48.86, "lon": 2.347},
                                     #opacity=0.8,
                                     hover_data=hover_data)
-            choropleth.update_traces(marker_line_width=0, #Update market configuration
+            choropleth.update_traces(marker_line_width=0, #Update marker configuration
                                      marker_opacity=0.8)
-            choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 345,'yanchor':'bottom','y': 0}, #Update colorbar configuration
+            choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 355,'yanchor':'bottom','y': 0}, #Update colorbar configuration
                                      margin=dict(l=0, r=0, t=0, b=0), #Update margins
                                      #width=1000, #Update the dimension of the graph
                                      height=350,
