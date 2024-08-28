@@ -144,7 +144,7 @@ with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
 with st.sidebar.form("Options"):
-    arrondissement = st.sidebar.multiselect("Select Arrondissement", 
+    arrondissement = st.multiselect("Select Arrondissement", 
                                     arrondissement_all, 
                                     default=st.session_state.selected,
                                     label_visibility="collapsed",
