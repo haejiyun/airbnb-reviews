@@ -148,7 +148,8 @@ arrondissement = st.sidebar.multiselect("Select Arrondissement",
                                 default=st.session_state.selected,
                                 label_visibility="collapsed",
                                 key='options',
-                                on_change=change_option
+                                on_change=change_option,
+                                max_selections = 20
                               ) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement
 
