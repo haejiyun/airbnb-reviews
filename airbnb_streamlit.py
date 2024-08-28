@@ -23,24 +23,20 @@ import io
 import ast
 import random
 import time
-import threading
-
 
 
 
 
 
 #################################################################### STREAMLIT CONFIGURATION
-st.set_page_config(page_title="Airbnb Guest Reviews", layout="centered") #Set wide page layout
+st.set_page_config(page_title="Airbnb Guest Reviews") #Give page title to show on the browser tab
 
-# Adjust CSS
-# Inject CSS for styling
-def inject_css():
+# CSS
+def inject_css(): #Create CSS function
     st.markdown("""
         <style>
-        .block-container {
-        max-width: 950px;  /* Adjust the width as per your requirement */
-        margin: 0 auto;
+        .block-container { /* Adjust the width as per your requirement */
+        max-width: 950px;  
         }
         h1 {  /* Title font size */
             font-size: 2.5rem;  /* Use rem units for responsive design */
