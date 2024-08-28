@@ -159,6 +159,8 @@ with st.sidebar.form(" "):
     submitted = st.form_submit_button("Apply selection")
     if submitted:
         st.session_state.selected = arrondissement
+        st.session_state.select_all_clicked = False
+        st.session_state.deselect_all_clicked = False
 st.session_state.selected = arrondissement
 
 st.sidebar.write('select all', st.session_state.select_all_clicked)
