@@ -162,7 +162,7 @@ with st.sidebar.form(" "):
             st.session_state.selected = arrondissement_all
             st.session_state.select_all_clicked = True
             st.session_state.deselect_all_clicked = False
-        if st.session_state.select_all_clicked == True
+        if st.session_state.select_all_clicked == True:
             st.session_state.selected = []
             st.session_state.select_all_clicked = False
             st.session_state.deselect_all_clicked = True
