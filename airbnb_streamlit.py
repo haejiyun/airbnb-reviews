@@ -152,9 +152,6 @@ with st.sidebar.form(" "):
         st.session_state.selected = arrondissement
 st.session_state.selected = arrondissement
 
-st.sidebar.write('select all', st.session_state.select_all_clicked)
-st.sidebar.write('deselect all', st.session_state.deselect_all_clicked)
-
 # Debug output (optional)
 st.sidebar.write("Currently selected arrondissements:", st.session_state.selected)
 
