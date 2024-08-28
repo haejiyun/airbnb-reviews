@@ -146,7 +146,7 @@ with col1:
 with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
-        st.session_state.select_all_clicked = False
+        st.session_state.deselect_all_clicked = True
 with st.sidebar.form(" "):
     arrondissement = st.multiselect("Select Arrondissement", 
                                arrondissement_all, 
