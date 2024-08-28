@@ -149,7 +149,7 @@ with st.sidebar.form(" "):
                                     default=st.session_state.selected,
                                     label_visibility="collapsed",
                                     key = "options",
-                                    on_change = change_option
+                                    on_change=change_option()
                                   ) #Create arrondissement mutiselect filter
     if st.form_submit_button("Apply selection"):
         st.session_state.selected = arrondissement
