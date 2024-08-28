@@ -29,8 +29,6 @@ import time
 
 
 #################################################################### STREAMLIT CONFIGURATION
-st.set_page_config(page_title="Airbnb Guest Reviews") #Give page title to show on the browser tab
-
 # CSS
 def inject_css(): #Create CSS function
     st.markdown("""
