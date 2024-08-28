@@ -134,7 +134,9 @@ arrondissement_all = ["1 - Louvre","2 - Bourse","3 - Temple","4 - Hôtel-de-Vill
 
 if 'selected' not in st.session_state: #Create session_state for selected arrondissement
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Set default selection of arrondissement
-col1, col2 = st.sidebar.columns([0.6, 1], gap = 'small')
+def change_option():
+    st.session_state.selected = st.session_state.options
+col1, col2 = st.sidebar.columns([0.55, 1], gap = 'small')
 with col1:
     if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
@@ -143,10 +145,11 @@ with col2:
         st.session_state.selected = []
 with st.sidebar.form(" "):
     arrondissement = st.multiselect("Select Arrondissement", 
-                               arrondissement_all, 
-                               default=st.session_state.selected,
-                               label_visibility="collapsed"
-                              ) #Create arrondissement mutiselect filter
+                                    arrondissement_all, 
+                                    default=st.session_state.selected,
+                                    label_visibility="collapsed",
+                                    key = "options"
+                                  ) #Create arrondissement mutiselect filter
     if st.form_submit_button("Apply selection"):
         st.session_state.selected = arrondissement
 st.session_state.selected = arrondissement
