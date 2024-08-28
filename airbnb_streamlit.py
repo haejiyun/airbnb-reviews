@@ -39,35 +39,29 @@ def inject_css(): #Create CSS function
         max-width: 950px;  
         }
         h1 { /*Title font size*/
-        font-size: 2.5rem;
+        font-size: 40px;
         }
         h2 { /*Header font size*/
-        font-size: 1.875rem;
+            font-size: 30px;
         }
         h5 { /*Graph title font size*/
-        font-size: 1.125rem;
+            font-size: 18px;
         }
         p {  /*Paragraph font size */
-        font-size: 1rem;
+            font-size: 16px;
         }
         .st-co { /*Sidebar elements font size*/
-        font-size: 0.75rem !important;
+            font-size: 12px !important;
         }
         svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el { /*Hide x in*/
-        display: none !important;
+            display: none !important;
         }
         .st-emotion-cache-rkczhd p { /*Button font size*/
-        font-size: 0.75rem;
+            font-size: 12px;
         }
-        .st-ez {/*Radio margin*/
-        margin-top: 0.2rem;
+        .st-ez { /*Radio margin*/
+            margin-top: 3.2px;
         }
-        .st-f0 {/*Radio margin*/
-        margin-bottom: -15px;
-        }
-        /.stRadio {/*Radio margin*/
-        margin-bottom: -15px;
-        }/
         [data-testid="stSidebar"] {/*Sidebar width*/
         width: 280px; 
         min-width : 280px;
