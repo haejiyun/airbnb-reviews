@@ -124,7 +124,7 @@ if 'selected' not in st.session_state: #Create session_state for selected arrond
     st.session_state.selected = ["1 - Louvre", "2 - Bourse", "3 - Temple", "4 - Hôtel-de-Ville", "5 - Panthéon", "6 - Luxembourg", "7 - Palais-Bourbon"] #Default arrondissement
 def change_option(): #Create session_state for multiselect
     st.session_state.selected = st.session_state.options
-col1, col2 = st.sidebar.columns([0.6, 1], gap = 'small') #Create columns for buttons
+col1, col2 = st.sidebar.columns([0.65, 1], gap = 'small') #Create columns for buttons
 with col1: #On first column
     if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
@@ -184,21 +184,19 @@ with SentimentTab: ################################################# Sentiment A
                 gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, arrondissement_gdf, on='neighbourhood'), geometry='geometry') #Add arrondissement geolocalisation in the dataset
                 hover_data = ['arrondissement', 'sentiment'] # Define hover data for arrondissement
             choropleth = px.choropleth_mapbox(gdf_zone, #Create the choropleth
-                                    geojson= gdf_zone.geometry, 
-                                    locations=gdf_zone.index,
+                                    geojson= gdf_zone.geometry,
+                                    locations=gdf_zone.index, 
                                     color='sentiment',
                                     color_continuous_scale=['#FF5A5F','#00A699'],
                                     range_color=[0, 5],
                                     mapbox_style="carto-positron",
                                     zoom=10.4, 
                                     center={"lat": 48.86, "lon": 2.347},
-                                    #opacity=0.8,
                                     hover_data=hover_data)
             choropleth.update_traces(marker_line_width=0, #Update marker configuration
                                      marker_opacity=0.8)
             choropleth.update_layout(coloraxis_colorbar={'lenmode': 'pixels','len': 370,'yanchor':'bottom','y': 0}, #Update colorbar configuration
-                                     margin=dict(l=0, r=0, t=0, b=0), #Update margins
-                                     #width=1000, #Update the dimension of the graph
+                                     margin=dict(l=0, r=0, t=0, b=0), 
                                      height=350,
                                     ) 
             st.plotly_chart(choropleth, use_container_width=True) #Show the choropleth
@@ -223,7 +221,7 @@ with SentimentTab: ################################################# Sentiment A
             ax2.imshow(wordcloud_neg) #Show wordcloud of negative comments
             ax2.set_title('Negative', color='#FF5A5F', size=20, y=-0.1) #Title
             ax2.axis('off') #Remove axis
-            st.pyplot(wordcloud)
+            st.pyplot(wordcloud) #Show the wordcloud
         
         # Linechart
         st.write("")
@@ -234,15 +232,15 @@ with SentimentTab: ################################################# Sentiment A
         linechart.update_xaxes(dtick='D1', #Update ticks configuration
                                tickangle=-90, 
                                tickfont=dict(size=3))
-        linechart.update_layout(yaxis_title="Score", #Update y-axis title
+        linechart.update_layout(yaxis_title="Score", #Update axis & ticks configuration
                                 yaxis_title_font=dict(size=15), 
-                                xaxis_title=None, #Update x-axis title
+                                xaxis_title=None, 
                                 yaxis=dict(range=[0, 5.2]),
-                                yaxis_tickfont=dict(size=13), #Update y-ticks configuration
-                                xaxis_tickfont=dict(size=11) #Update x-ticks configuration
+                                yaxis_tickfont=dict(size=13), 
+                                xaxis_tickfont=dict(size=11) 
                                ) 
         linechart.update_layout(margin=dict(l=60, r=60, t=5, b=150)) #Update margin
-        linechart.update_traces(line_color="#00A699")
+        linechart.update_traces(line_color="#00A699") #update linecolor
         st.plotly_chart(linechart) #Show the chart
 
 
@@ -252,7 +250,7 @@ with ClassificationTab: ############################################ Multi-class
     labels_counts = df_filtered['labels_string'].value_counts().reset_index() #Create dataset with count of each combination of topics
     labels_counts['percent'] = (labels_counts['count'] / labels_counts['count'].sum() * 100).round(2).astype(str) + '%' #Calculate the percentage of each combination
     labels_counts['label_percent'] = '<b>'+labels_counts['labels_string']+'<br>'+labels_counts['percent'] #Create a column with the name and the percentage of each combination
-    labels_counts['label_type'] = labels_counts['labels_string'].apply(lambda x: 'multi-label' if len(x.split(',')) > 1 else 'single-label')
+    labels_counts['label_type'] = labels_counts['labels_string'].apply(lambda x: 'multi-label' if len(x.split(',')) > 1 else 'single-label') #Create a column specifying 'multi-label' or 'single-label'
     
     df_exploded = df_filtered.explode('labels_list') #Create dataset with single topic 
     df_exploded['labels_list'] = df_exploded['labels_list'].str.strip() #Remove space before and after each topic extracted
@@ -279,12 +277,9 @@ with ClassificationTab: ############################################ Multi-class
             fig.update_traces(textposition='middle center', #Update text configuration in the treemap
                               insidetextfont=dict(size=15),
                               marker=dict(cornerradius=3))
-            fig.update_layout(width=1000, #Update the dimension of the graph
+            fig.update_layout(width=1000, #Update graph layout
                               height=380, 
-                              coloraxis_showscale=False, #Hide colorbar
-                              #title_font_size=17, #Update title configuration
-                              #title_xanchor='center',
-                              #title_x = 0.5,
+                              coloraxis_showscale=False, 
                               margin=dict(t=0, l=0, r=0, b=0),
                               paper_bgcolor= 'slategrey'
                               )
@@ -295,16 +290,12 @@ with ClassificationTab: ############################################ Multi-class
             fig = px.histogram(labels_counts_exploded, #Create barplot
                                y='labels_list', 
                                x= 'count', 
-                               #title='Count of each topics', 
                                color_discrete_sequence=['#FF5A5F'])
-            fig.update_layout(width = 500, #Update the dimension of the graph
+            fig.update_layout(width = 500, #Update graph layout
                               height = 380,
-                              #title_font_size=17, #Update the title configuration
-                              #title_xanchor='center',
-                              #title_x = 0.6,
-                              yaxis_title=None, #Update axis title configuration
+                              yaxis_title=None,
                               xaxis_title=None,
-                              yaxis_tickfont=dict(size=15), #Update axis ticks configuration
+                              yaxis_tickfont=dict(size=15),
                               xaxis_tickfont=dict(size=15),
                               margin=dict(t=0, l=0, r=0, b=0)
                               )
@@ -313,7 +304,7 @@ with ClassificationTab: ############################################ Multi-class
             st.markdown("<h5 style='text-align: center; font-weight: normal;'>Count of single-label</h5>", unsafe_allow_html=True) #Barchart title
             st.plotly_chart(fig) #Show the plot
 
-        st.markdown("")
+        st.markdown("")#Blank line
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Random Guest Reviews</h5>", unsafe_allow_html=True) #Title
         col1, col2 = st.columns([6,0.8]) #Create columns for filters
         with col1: #On the first column
@@ -321,17 +312,17 @@ with ClassificationTab: ############################################ Multi-class
         with col2: #On the last column
             st.write('') #Blank line
             if st.button('Refresh comments'): #Create refresh button
-                filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en']
-                if len(filtered_df) >= 5:
-                    comments = filtered_df.sample(5) #If clicked, comments are refreshed
-                else:
-                    comments = filtered_df
+                filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en'] #Select filtered comments
+                if len(filtered_df) >= 5: #If number of filtered comments are more than 5
+                    comments = filtered_df.sample(5) #Show five random comments
+                else: #If number of filtered comments are less than 5
+                    comments = filtered_df #Show all comments
         
-        filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en']
-        if len(filtered_df) >= 5:
+        filtered_df = df_filtered.loc[df_filtered['labels_list'].apply(lambda x: x == list(sorted(topic))), 'comments_en'] #Select filtered comments
+        if len(filtered_df) >= 5: #If number of filtered comments are more than 5
             comments = filtered_df.sample(5) #Create 5 random comments which correspond to applied filters
-        else:
-            comments = filtered_df
+        else: #If number of filtered comments are less than 5
+            comments = filtered_df #Show all comments
         
         with st.container(border=True): #Create a container for the comments
             for index in range(len(comments)): #Show each comments generated in plain text
