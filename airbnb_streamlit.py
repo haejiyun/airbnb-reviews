@@ -35,31 +35,27 @@ st.set_page_config(page_title="Airbnb Guest Reviews") #Give page title to show o
 def inject_css(): #Create CSS function
     st.markdown("""
         <style>
-        .block-container { /* Adjust the width as per your requirement */
+        .block-container { /*Page block width*/
         max-width: 950px;  
         }
-        h1 {  /* Title font size */
-            font-size: 2.5rem;  /* Use rem units for responsive design */
+        h1 { /*Title font size*/
+        font-size: 2.5rem;
         }
-        h2 {  /* Header font size */
-            font-size: 1.875rem;
+        h2 { /*Header font size*/
+        font-size: 1.875rem;
         }
-        h5 {  /* Graph title font size */
-            font-size: 1.125rem;
+        h5 { /*Graph title font size*/
+        font-size: 1.125rem;
         }
-        p {  /* Paragraph font size */
-            font-size: 1rem;
+        p {  /*Paragraph font size */
+        font-size: 1rem;
         }
-        
-        /* Adjust sidebar elements font size */
-        .st-co {
-            font-size: 0.75rem !important;  /* Arrondissement filter options */
+        .st-co { /*Sidebar elements font size*/
+        font-size: 0.75rem !important;
         }
-
-        /* Hide unnecessary SVG icons */
-        svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el {
-            display: none !important;
-        }
+        /svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el { /*Hide x in*/
+        display: none !important;
+        }/
         
         /* Adjust paragraph font size inside sidebar */
         .st-emotion-cache-rkczhd p {
