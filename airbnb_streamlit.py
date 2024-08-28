@@ -143,17 +143,19 @@ with col1:
 with col2:
     if st.button('Deselect All'):
         st.session_state.selected = []
-with st.sidebar.form(" "):
-    arrondissement = st.multiselect("Select Arrondissement", 
-                                    arrondissement_all, 
-                                    default=st.session_state.selected,
-                                    label_visibility="collapsed",
-                                    key='options',
-                                    on_change=change_option
-                                  ) #Create arrondissement mutiselect filter
-    if st.form_submit_button("Apply selection"):
-        st.session_state.selected = arrondissement
+arrondissement = st.multiselect("Select Arrondissement", 
+                                arrondissement_all, 
+                                default=st.session_state.selected,
+                                label_visibility="collapsed",
+                                key='options',
+                                on_change=change_option
+                              ) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement
+#with st.sidebar.form(" "):
+
+#    if st.form_submit_button("Apply selection"):
+        
+#st.session_state.selected = arrondissement
 
 # Debug output (optional)
 st.sidebar.write("Currently selected arrondissements:", st.session_state.selected)
