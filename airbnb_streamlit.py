@@ -140,7 +140,7 @@ if 'deselect_all_clicked' not in st.session_state:
     st.session_state.deselect_all_clicked = False
 col1, col2 = st.sidebar.columns([0.6, 1], gap = 'small')
 with col1:
-    if select_all = st.button('Select All'): #Create button for all selection
+    if st.button('Select All'): #Create button for all selection
         st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
         st.session_state.select_all_clicked = True
         st.session_state.deselect_all_clicked = False
@@ -157,13 +157,16 @@ with st.sidebar.form(" "):
                               ) #Create arrondissement mutiselect filter
     submitted = st.form_submit_button("Apply selection")
     if submitted:
-        if st.session_state.deselect_all_clicked = True:
-            select_all
+        if st.session_state.deselect_all_clicked == True:
+            # Programmatically "click" the Select All button
+            st.session_state.selected = arrondissement_all
+            st.session_state.select_all_clicked = True
+            st.session_state.deselect_all_clicked = False
         if st.session_state.select_all_clicked = True
-            deselect_all
+            st.session_state.selected = []
+            st.session_state.select_all_clicked = False
+            st.session_state.deselect_all_clicked = True
         st.session_state.selected = arrondissement
-        st.session_state.select_all_clicked = False
-        st.session_state.deselect_all_clicked = False
 st.session_state.selected = arrondissement
 
 st.sidebar.write('select all', st.session_state.select_all_clicked)
