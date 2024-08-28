@@ -138,18 +138,7 @@ if 'select_all_clicked' not in st.session_state:
     st.session_state.select_all_clicked = False
 if 'deselect_all_clicked' not in st.session_state:
     st.session_state.deselect_all_clicked = False
-
-col1, col2 = st.sidebar.columns([0.55, 1], gap = 'small')
-with col1:
-    if st.button('Select All'): #Create button for all selection
-        st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
-        st.session_state.select_all_clicked = True
-        st.session_state.deselect_all_clicked = False
-with col2:
-    if st.button('Deselect All'):
-        st.session_state.selected = []
-        st.session_state.select_all_clicked = False
-        st.session_state.deselect_all_clicked = True
+container = st.sidebar.container()
 with st.sidebar.form(" "):
     arrondissement = st.multiselect("Select Arrondissement", 
                                arrondissement_all, 
@@ -161,6 +150,19 @@ with st.sidebar.form(" "):
         st.session_state.selected = arrondissement
         st.session_state.select_all_clicked = False
         st.session_state.deselect_all_clicked = False
+col1, col2 = st.container.sidebar.columns([0.6, 1], gap = 'small')
+with col1:
+    if st.button('Select All'): #Create button for all selection
+        st.session_state.selected = arrondissement_all #If the button is clicked, all arrondissement is selected
+        st.session_state.selected = arrondissement
+        st.session_state.select_all_clicked = True
+        st.session_state.deselect_all_clicked = False
+with col2:
+    if st.button('Deselect All'):
+        st.session_state.selected = []
+        st.session_state.selected = arrondissement
+        st.session_state.select_all_clicked = False
+        st.session_state.deselect_all_clicked = True
 st.session_state.selected = arrondissement
 
 st.sidebar.write('select all', st.session_state.select_all_clicked)
