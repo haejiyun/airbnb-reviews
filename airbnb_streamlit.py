@@ -53,27 +53,23 @@ def inject_css(): #Create CSS function
         .st-co { /*Sidebar elements font size*/
         font-size: 0.75rem !important;
         }
-        /svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el { /*Hide x in*/
+        svg.st-dv.st-dw.st-eh.st-ei.st-ej.st-ek.st-el { /*Hide x in*/
         display: none !important;
+        }
+        .st-emotion-cache-rkczhd p { /* Adjust paragraph font size inside sidebar */
+        font-size: 0.75rem;
+        }
+        .st-ez {/* Adjust margin for specific elements */
+        margin-top: 0.2rem;
+        }
+        .st-f0 {/*Radio margin*/
+        margin-bottom: -15px;
+        }
+        /.stRadio {/*Radio margin*/
+        margin-bottom: -15px;
         }/
-        
-        /* Adjust paragraph font size inside sidebar */
-        .st-emotion-cache-rkczhd p {
-            font-size: 0.75rem;
-        }
-
-        /* Adjust margin for specific elements */
-        .st-ez {
-            margin-top: 0.2rem;
-        }
-        .st-f0 {
-            margin-bottom: -15px;
-        }
-        .stRadio {
-            margin-bottom: -15px;
-        }
-        [data-testid="stSidebar"] {
-        width: 280px; /* Set the desired width here */
+        [data-testid="stSidebar"] {/*Sidebar width*/
+        width: 280px; 
         min-width : 280px;
         max-width : 280px;
         }
