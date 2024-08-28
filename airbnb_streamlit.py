@@ -151,14 +151,6 @@ arrondissement = st.sidebar.multiselect("Select Arrondissement",
                                 on_change=change_option
                               ) #Create arrondissement mutiselect filter
 st.session_state.selected = arrondissement
-#with st.sidebar.form(" "):
-
-#    if st.form_submit_button("Apply selection"):
-        
-#st.session_state.selected = arrondissement
-
-# Debug output (optional)
-st.sidebar.write("Currently selected arrondissements:", st.session_state.selected)
 
 mask = (df['date'] >= selected_min) & (df['date'] <= selected_max) & (df['arrondissement'].isin(arrondissement)) #Create a mask with the filter selection
 df_filtered = df[mask] #Select filtered data
