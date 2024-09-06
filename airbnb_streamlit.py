@@ -59,9 +59,6 @@ def inject_css(): #Create CSS function
         .st-emotion-cache-rkczhd p { /*Button font size*/
             font-size: 12px;
         }
-        .st-emotion-cache-p2sra5 e1nzilvr5 p
-            font-size: 12px;
-        }
         .st-ez { /*Radio margin*/
             margin-top: 3.2px;
         }
