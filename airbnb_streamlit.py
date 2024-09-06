@@ -60,7 +60,7 @@ def inject_css(): #Create CSS function
             font-size: 12px;
         }
         .st-emotion-cache-p2sra5 e1nzilvr5 p
-        font-size: 12px;
+            font-size: 12px;
         }
         .st-ez { /*Radio margin*/
             margin-top: 3.2px;
