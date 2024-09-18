@@ -305,7 +305,7 @@ with ClassificationTab: ############################################ Multi-class
         st.markdown("<h5 style='text-align: center; font-weight: normal;'>Random Guest Reviews</h5>", unsafe_allow_html=True) #Title
         col1, col2 = st.columns([6,0.8]) #Create columns for filters
         with col1: #On the first column
-            topic = st.multiselect("Select Topics", ['apartment', 'bed', 'communication', 'location', 'neighborhood'], default=['apartment', 'bed', 'communication', 'location', 'neighborhood']) #Create topic selector
+            topic = st.multiselect("Select Labels", ['apartment', 'bed', 'communication', 'location', 'neighborhood'], default=['apartment', 'bed', 'communication', 'location', 'neighborhood']) #Create topic selector
         with col2: #On the last column
             st.write('') #Blank line
             if st.button('Refresh comments'): #Create refresh button
