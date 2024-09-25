@@ -475,5 +475,5 @@ with ReadmeTab: #################################################### Readme
     
     st.write("") #Blank line
     st.subheader("Code Source") #Header
-    "[Github code](https://github.com/haejiyun/airbnb-reviews/blob/main/airbnb_nlp.py)" #Github code link
+    "[Full code](https://github.com/haejiyun/airbnb-reviews/blob/main/airbnb_nlp.py)" #Github code link
     "[Author's page](https://haejiyun.github.io/)" #Github page link
