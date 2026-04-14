@@ -1,0 +1,7 @@
+geopandas
+matplotlib
+plotly.express
+nltk
+wordcloud
+Pillow
+seaborn
