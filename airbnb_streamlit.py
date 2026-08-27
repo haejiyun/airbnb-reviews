@@ -181,12 +181,12 @@ with SentimentTab: ################################################# Sentiment A
                 gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, arrondissement_gdf, on='neighbourhood'), geometry='geometry') #Add arrondissement geolocalisation in the dataset
                 hover_data = ['arrondissement', 'sentiment'] # Define hover data for arrondissement
             choropleth = px.choropleth_map(gdf_zone, #Create the choropleth
-                                    geojson= gdf_zone.geometry,
+                                    geojson= gdf_zone.__geo_interface__,
                                     locations=gdf_zone.index, 
                                     color='sentiment',
                                     color_continuous_scale=['#FF5A5F','#00A699'],
                                     range_color=[0, 5],
-                                    mapbox_style="carto-positron",
+                                    map_style="carto-positron",
                                     zoom=10.4, 
                                     center={"lat": 48.86, "lon": 2.347},
                                     hover_data=hover_data)
