@@ -180,7 +180,7 @@ with SentimentTab: ################################################# Sentiment A
                 df_filtered_zone = df_filtered[['arrondissement','neighbourhood','sentiment']].groupby(['arrondissement','neighbourhood']).mean().reset_index() #Create dataset grouped by arrondissement
                 gdf_zone = gpd.GeoDataFrame(pd.merge(df_filtered_zone, arrondissement_gdf, on='neighbourhood'), geometry='geometry') #Add arrondissement geolocalisation in the dataset
                 hover_data = ['arrondissement', 'sentiment'] # Define hover data for arrondissement
-            choropleth = px.choropleth_mapbox(gdf_zone, #Create the choropleth
+            choropleth = px.choropleth_map(gdf_zone, #Create the choropleth
                                     geojson= gdf_zone.geometry,
                                     locations=gdf_zone.index, 
                                     color='sentiment',
